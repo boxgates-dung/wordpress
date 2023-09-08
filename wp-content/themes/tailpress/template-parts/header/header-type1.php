@@ -1,5 +1,4 @@
-<header class="site-header header-type1 bg-white bor border-b border-solid	border-slate-100">
-
+<header class="site-header header-type1 sticky bg-transparent">
   <div class="container m-auto h-20 flex justify-between items-center">
     <div class="header-branding">
       <?php if (has_custom_logo()) { ?>

@@ -21,5 +21,7 @@ body {
 }
 
 .sticky {
-    @apply fixed w-full;
+    @apply fixed w-full bg-white border-b border-solid	border-slate-100;
+    box-shadow: -2px 2px 45px -20px rgba(0, 0, 0, .3);
+    transition-delay: .2s;
 }
