@@ -9,9 +9,37 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ "./resources/js/header.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global */ "./resources/js/global.js");
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_global__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helper */ "./resources/js/helper.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_helper__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./resources/js/header.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_2__);
 
+
+
+
+/***/ }),
+
+/***/ "./resources/js/global.js":
+/*!********************************!*\
+  !*** ./resources/js/global.js ***!
+  \********************************/
+/***/ (() => {
+
+jQuery(document).ready(function ($) {
+  // $('body').html('sdsd')
+  console.log("ready!");
+  $('.header-icon .top-action-btn').click(function () {
+    var modal_id = $(this).data('name');
+    $("#modal-".concat(modal_id)).click(function () {
+      console.log('sdsdgsauydfast');
+    });
+  });
+  $('.modal-show').click(function () {
+    console.log('sdsdgsauydfast');
+  });
+});
 
 /***/ }),
 
@@ -21,10 +49,17 @@ __webpack_require__.r(__webpack_exports__);
   \********************************/
 /***/ (() => {
 
-jQuery(document).ready(function ($) {
-  // $('body').html('sdsd')
-  console.log("ready!");
-});
+
+
+/***/ }),
+
+/***/ "./resources/js/helper.js":
+/*!********************************!*\
+  !*** ./resources/js/helper.js ***!
+  \********************************/
+/***/ (() => {
+
+
 
 /***/ }),
 

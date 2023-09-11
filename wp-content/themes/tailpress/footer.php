@@ -18,6 +18,11 @@
 
 <?php wp_footer(); ?>
 
+<!-- Popup modals -->
+<?php get_template_part('template-parts/popup/popup-quickcart'); ?>
+<?php get_template_part('template-parts/popup/popup-quickview'); ?>
+<?php get_template_part('template-parts/popup/popup-wishlist'); ?>
+
 </body>
 
 </html>

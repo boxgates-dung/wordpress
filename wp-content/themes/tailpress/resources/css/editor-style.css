@@ -4,24 +4,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    /* @apply font-sans; */
-    font-family: 'Poppins', sans-serif;
+  /* @apply font-sans; */
+  font-family: 'Poppins', sans-serif;
 }
 
-.wp-block{
-    @apply max-w-screen-xl;
+.wp-block {
+  @apply max-w-screen-xl;
 }
 
 .wp-block[data-align=wide] {
-    @apply max-w-screen-xl;
+  @apply max-w-screen-xl;
 }
 
 .wp-block[data-align=full] {
-    @apply max-w-full;
+  @apply max-w-full;
 }
 
 .sticky {
-    @apply fixed w-full bg-white border-b border-solid	border-slate-100;
-    box-shadow: -2px 2px 45px -20px rgba(0, 0, 0, .3);
-    transition-delay: .2s;
+  @apply fixed w-full bg-white border-b border-solid border-slate-100;
+  box-shadow: -2px 2px 45px -20px rgba(0, 0, 0, .3);
+  transition-delay: .2s;
+}
+
+#menu-main-menu {
+  li {
+    @apply mr-7;
+
+    &>a {
+      @apply text-sm pb-[3px] font-medium;
+
+      &::after {
+        content: "";
+        border-bottom: solid 2px #000;
+        height: 2px;
+        width: 0;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &.current-menu-item {
+      &>a {
+        &::after {
+          content: "";
+          border-bottom: solid 2px #000;
+          height: 2px;
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+  ul {
+    li {
+      display: none;
+    }
+  }
+}
+
+.modal-show {
+  @apply flex justify-center items-center bg-[#00000042]
 }
