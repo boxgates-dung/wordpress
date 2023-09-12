@@ -118,3 +118,9 @@ function theme_asset( $path ) {
 // }
 
 // add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+/**
+ * ADD FILTER 
+*/
+
+// add_filter();

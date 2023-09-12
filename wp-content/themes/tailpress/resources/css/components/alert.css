@@ -1,0 +1,7 @@
+.woocommerce-message {
+  @apply border-none my-5 py-5 pl-[60px] pr-5 bg-[#bff9d0] text-[#299c77];
+
+  &::before {
+    top: calc(50% - 10px);
+  }
+}

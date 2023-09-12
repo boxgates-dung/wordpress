@@ -1,0 +1,5 @@
+button,
+.button,
+.btn {
+  @apply bg-slate-900 text-white inline-block rounded-none;
+}

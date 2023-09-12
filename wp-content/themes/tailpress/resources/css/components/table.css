@@ -3,11 +3,70 @@
     @apply border-none border-spacing-0;
 
     th {
-      @apply border-none text-sm uppercase font-medium;
+      @apply border-none text-sm uppercase font-medium px-0 py-3;
     }
 
     td {
-      @apply font-normal text-base py-[20px] px-0;
+      @apply font-normal text-base py-[20px] px-0 text-left;
+    }
+
+    .product-price {
+      del {
+        @apply mr-2 text-slate-500;
+      }
+
+      ins {
+        text-decoration: none;
+      }
+    }
+
+    .product-thumbnail {
+      width: 140px;
+    }
+  }
+}
+
+.wishlist_table {
+  tr td.product-thumbnail a {
+    @apply max-w-[96px];
+  }
+
+  .product-add-to-cart {
+    text-align: right !important;
+    ;
+
+    a {
+      margin: 0 !important;
+      display: inline-block !important;
+    }
+  }
+}
+
+
+
+.wishlist_table .product-add-to-cart a {
+  @apply bg-slate-900 text-white font-medium min-w-[200px] leading-[60px] relative m-0;
+
+  &.loading {
+    &::after {
+      font-family: WooCommerce;
+      content: "\e01c";
+      vertical-align: top;
+      font-weight: 400;
+      position: absolute;
+      top: 0;
+      right: 1em;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+  }
+
+  &.added {
+    &::after {
+      font-family: WooCommerce;
+      content: "\e017";
+      margin-left: 0.53em;
+      vertical-align: bottom;
     }
   }
 }
