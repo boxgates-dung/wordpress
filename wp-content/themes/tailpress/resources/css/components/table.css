@@ -1,0 +1,13 @@
+.woocommerce {
+  table.shop_table {
+    @apply border-none border-spacing-0;
+
+    th {
+      @apply border-none text-sm uppercase font-medium;
+    }
+
+    td {
+      @apply font-normal text-base py-[20px] px-0;
+    }
+  }
+}

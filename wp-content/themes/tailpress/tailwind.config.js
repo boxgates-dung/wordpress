@@ -8,7 +8,8 @@ module.exports = {
     './**/*.php',
     './resources/css/*.css',
     './resources/js/*.js',
-    './safelist.txt'
+    './safelist.txt',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     container: {
@@ -32,6 +33,7 @@ module.exports = {
     }
   },
   plugins: [
-    tailpress.tailwind
+    tailpress.tailwind,
+    require('flowbite/plugin')
   ]
 };

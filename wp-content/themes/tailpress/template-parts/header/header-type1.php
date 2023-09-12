@@ -1,4 +1,4 @@
-<header class="site-header header-type1 sticky bg-transparent">
+<header class="site-header header-type1 bg-transparent">
   <?php get_template_part('template-parts/header/models/topbar'); ?>
 
   <div class="container m-auto h-20 flex justify-between items-center">

@@ -23,6 +23,7 @@
 		"autoprefixer": "^10.4.0",
 		"browser-sync": "^2.26.14",
 		"cross-env": "^6.0.3",
+		"flowbite": "^1.8.1",
 		"laravel-mix": "^6.0.29",
 		"postcss": "^8.2.10",
 		"postcss-import": "^14.0.0",
