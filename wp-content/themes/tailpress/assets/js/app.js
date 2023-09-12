@@ -28,16 +28,12 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (() => {
 
 jQuery(document).ready(function ($) {
-  // $('body').html('sdsd')
-  console.log("ready!");
   $('.header-icon .top-action-btn').click(function () {
     var modal_id = $(this).data('name');
-    $("#modal-".concat(modal_id)).click(function () {
-      console.log('sdsdgsauydfast');
-    });
+    $("#modal-".concat(modal_id)).toggleClass('modal-show');
   });
-  $('.modal-show').click(function () {
-    console.log('sdsdgsauydfast');
+  $('.modal .btn-close').click(function () {
+    $(this).parents('.modal').removeClass('modal-show');
   });
 });
 
