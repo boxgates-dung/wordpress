@@ -1,0 +1,142 @@
+.woocommerce-checkout {
+  @apply text-sm;
+
+  form.checkout_coupon {
+    @apply border-none px-0;
+
+    button[name="apply_coupon"] {
+      @apply bg-transparent rounded-none px-0 uppercase font-medium border-b-2 border-solid	border-gray-700 text-gray-900;
+    }
+  }
+
+  .woocommerce-info {
+    @apply border-2 border-solid	border-gray-200 bg-white p-6 text-center font-medium text-gray-400;
+
+    &:before {
+      @apply hidden;
+    }
+
+    a {
+      @apply text-gray-900;
+    }
+  }
+
+  #order_review {
+    .woocommerce-checkout-review-order-table {
+      tr {
+        td,
+        th {
+          @apply font-medium text-sm;
+
+          strong {
+            @apply font-semibold;
+          }
+
+          &:last-child {
+            @apply text-right;
+          }
+
+          .product-quantity {
+            @apply font-medium;
+          }
+        }
+      }
+    }
+  }
+
+  #payment {
+    @apply bg-transparent;
+
+    div.payment_box {
+      @apply bg-transparent p-0;
+
+      &::before {
+        @apply hidden;
+      }
+    }
+
+    ul.payment_methods {
+      @apply p-0 border-b-0;
+
+      .wc_payment_method {
+        @apply py-7 border-b border-solid	border-gray-200;
+
+        & > label {
+          @apply uppercase pt-[2px] text-gray-900 inline-block;
+
+          img {
+            @apply inline-block mt-0 max-h-5;
+          }
+        }
+
+        &:last-child {
+          @apply border-none;
+        }
+      }
+    }
+
+    .woocommerce-terms-and-conditions-wrapper {
+      @apply mb-8;
+    }
+
+    div.form-row {
+      @apply px-0;
+    }
+
+    #place_order {
+      @apply bg-slate-950 w-full text-sm font-medium h-16 uppercase rounded-none;
+    }
+
+    p {
+      @apply text-gray-400 leading-6;
+
+      a {
+        @apply text-black;
+      }
+    }
+  }
+
+  .woocommerce-order {
+    @apply text-base;
+
+    .woocommerce-thankyou-order-received {
+      @apply mb-5 text-lg text-lime-600 font-medium;
+    }
+
+    .woocommerce-order-overview.woocommerce-thankyou-order-details {
+      @apply mb-5;
+
+      li {
+        @apply w-full text-base mb-3 border-none pr-0 mr-0;
+
+        strong {
+          @apply text-sm font-semibold inline-block;
+        }
+      }
+    }
+
+    .woocommerce-customer-details {
+      .woocommerce-column__title {
+        @apply font-medium text-base mb-3;
+      }
+
+      address {
+        @apply border-none p-0 text-sm leading-6;
+      }
+    }
+  }
+
+  .order_details {
+    th, td {
+      &:last-child {
+        @apply text-right;
+      }
+    }
+
+    tfoot {
+      th, td {
+        @apply !font-semibold;
+      }
+    }
+  }
+}

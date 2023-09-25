@@ -1,0 +1,113 @@
+.single-product {
+  div.product {
+    .entry-summary {
+      @apply text-center;
+  
+  
+      .star-rating {
+        @apply float-none m-0 mx-auto;
+      }
+  
+      .woocommerce-review-link {
+        @apply text-xs text-gray-400;
+      }
+  
+      p.price {
+        @apply mb-7 text-gray-900 text-2xl;
+  
+        del {
+          @apply mr-3;
+        }
+  
+        ins {
+          @apply no-underline font-normal;
+        }
+      }
+  
+      .woocommerce-product-details__short-description {
+        @apply text-gray-400 font-normal;
+      }
+  
+      .product_meta {
+        @apply text-gray-400 text-xs py-8 border-y border-solid border-gray-100;
+  
+        .posted_in {
+          @apply uppercase;
+        }
+  
+        a {
+          @apply text-gray-900 normal-case;
+        }
+      }
+    }
+  }
+
+  form.cart {
+    @apply grid md:inline-flex;
+
+    .quantity {
+      @apply !mr-0 md:!mr-2 !mb-7 md:!mb-0;
+    }
+
+    .single_add_to_cart_button {
+      @apply min-w-[220px] !float-none inline-block md:mr-2 !mb-7 md:!mb-0;
+    }
+  }
+
+  .woocommerce-variation-add-to-cart {
+    @apply grid md:inline-flex;
+  }
+
+  table.variations {
+    tr {
+      th {
+        @apply mb-4;
+
+        label {
+          @apply uppercase !font-semibold;
+        }
+      }
+    }
+  }
+
+  .woocommerce-variation.single_variation {
+    @apply mb-7;
+
+    .price {
+      @apply text-sm text-gray-600;
+    }
+  }
+
+  .variable-items-wrapper {
+    @apply !justify-center;
+  }
+  
+  .yith-wcwl-add-to-wishlist {
+    @apply mt-0 inline-block;
+  }
+
+  .yith-wcwl-add-button {
+    .add_to_wishlist.single_add_to_wishlist, .delete_item {
+      @apply transition ease-in delay-150 truncate h-14 w-full md:w-14 bg-transparent border rounded-none border-solid border-gray-300 text-center inline-block text-xl;
+  
+      i {
+        @apply mr-0 w-full h-full flex items-center justify-center;
+      }
+      span {
+        @apply hidden;
+      }
+
+      &:hover {
+        @apply border-gray-900;
+      }
+    }
+
+    .delete_item {
+      @apply border-gray-900;
+    }
+
+    .view-wishlist, .separator {
+      @apply hidden;
+    }
+  }
+}

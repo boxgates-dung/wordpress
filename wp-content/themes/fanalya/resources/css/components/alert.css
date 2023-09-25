@@ -1,0 +1,29 @@
+.woocommerce-message {
+  @apply border-none my-5 py-5 pl-[60px] pr-5 bg-[#bff9d0] text-[#299c77];
+
+  &::before {
+    top: calc(50% - 10px);
+  }
+}
+
+.woocommerce-error {
+  @apply bg-[#ffd0d0] border-none text-[#d45757];
+
+  li {
+    @apply py-1;
+  }
+
+  &::before {
+    top: calc(50% - 10px);
+  }
+}
+
+.wc-empty-cart-message {
+  .cart-empty.woocommerce-info {
+    @apply border-none px-4 text-center;
+
+    &::before {
+      @apply hidden;
+    }
+  }
+}
