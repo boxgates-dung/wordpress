@@ -1,4 +1,4 @@
-<div class="header-branding">
+<div class="header-branding w-full md:w-auto text-center md:text-left">
   <?php if (has_custom_logo()) { ?>
     <div class="max-w-[200px] h-auto">
       <?php the_custom_logo(); ?>
