@@ -9,10 +9,6 @@
 * @subpackage Clotya
 * @since 1.0.0
 */
-
-	remove_action( 'clotya_main_header', 'clotya_main_header_function', 10 );
-	remove_action( 'clotya_main_footer', 'clotya_main_footer_function', 10 );
-
     get_header();
 
     while ( have_posts() ) : the_post();

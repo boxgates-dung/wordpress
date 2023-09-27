@@ -1,0 +1,5 @@
+.u-column1, .u-column2 {
+  &>h2 {
+    @apply font-semibold text-lg uppercase mb-7;
+  }
+}

@@ -10,10 +10,11 @@ define('THEME_PATH', get_template_directory());
 
 // require_once 'includes/merlin/merlin-config.php';
 
-
 /**
  * Theme setup.
  */
+add_action('after_setup_theme', 'theme_setup');
+
 function theme_setup()
 {
   add_theme_support('title-tag');
@@ -47,11 +48,11 @@ function theme_setup()
   add_editor_style('css/editor-style.css');
 }
 
-add_action('after_setup_theme', 'theme_setup');
-
 /**
  * Enqueue theme assets.
  */
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+
 function theme_enqueue_scripts()
 {
   $theme = wp_get_theme();
@@ -61,7 +62,19 @@ function theme_enqueue_scripts()
   wp_enqueue_style('theme-index-css', theme_asset('style.css'), array(), $theme->get('Version'));
 }
 
-add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+/**
+ * removing Woo Styles.
+ */
+add_action('wp_enqueue_scripts', 'removing_woo_styles');
+
+function removing_woo_styles()
+{
+  wp_dequeue_style('wc-block-vendors-style');
+  wp_dequeue_style('wc-block-style');
+  wp_dequeue_style('woocommerce-general');
+  wp_dequeue_style('woocommerce-layout');
+  wp_dequeue_style('woocommerce-smallscreen');
+}
 
 /**
  * Get asset path.
@@ -80,57 +93,10 @@ function theme_asset($path)
 }
 
 /**
- * Adds option 'li_class' to 'wp_nav_menu'.
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The current item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
- * @return array
- */
-// function tailpress_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
-//   if ( isset( $args->li_class ) ) {
-//     $classes[] = $args->li_class;
-//   }
-
-//   if ( isset( $args->{"li_class_$depth"} ) ) {
-//     $classes[] = $args->{"li_class_$depth"};
-//   }
-
-//   return $classes;
-// }
-
-// add_filter( 'nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4 );
-
-/**
- * Adds option 'submenu_class' to 'wp_nav_menu'.
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The current item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
- * @return array
- */
-// function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
-//   if ( isset( $args->submenu_class ) ) {
-//     $classes[] = $args->submenu_class;
-//   }
-
-//   if ( isset( $args->{"submenu_class_$depth"} ) ) {
-//     $classes[] = $args->{"submenu_class_$depth"};
-//   }
-
-//   return $classes;
-// }
-
-// add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
-
-/**
- * ADD FILTER 
- */
-
-// add_filter();
-
+ * 
+ * Add wishlist button after add to cart button in single product page
+ * 
+*/
 
 add_action('woocommerce_after_add_to_cart_button', 'add_custom_button', 10, 0);
 function add_custom_button()

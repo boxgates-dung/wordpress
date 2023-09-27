@@ -1,27 +1,45 @@
-input[type="radio"],
-input.input-checkbox {
-  @apply w-5 h-5 rounded-none text-gray-400 border border-solid border-gray-600 !inline-block;
+input.input-text,
+.input-text,
+textarea,
+input {
+  @apply border-0 border-b-2 border-solid border-gray-300 w-full px-0 py-1 text-sm transition duration-150 ease-in-out;
 
   &:focus {
     outline: none;
     box-shadow: none;
-  }
-
-  &:checked {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    @apply border border-solid border-gray-600 text-white bg-[length:12px_12px] bg-no-repeat;
+    @apply border-gray-700;
   }
 }
 
-.woocommerce-invalid #terms {
-  outline: none;
+textarea.input-text {
+  @apply min-h-[100px] ;
+}
+
+.form-row {
+  @apply mb-9 leading-4;
+
+  &>label {
+    @apply text-gray-400;
+
+    .required {
+      @apply text-red-600;
+    }
+  }
+
+  &.woocommerce-invalid-required-field {
+    input {
+      @apply border-red-700;
+    }
+  }
 }
 
 .select2-container--default {
   .select2-selection--single {
-    @apply rounded-none border-t-0 border-x-0 border-b-2 border-solid	border-gray-200 text-sm px-0 pb-7;
+    @apply rounded-none border-t-0 border-x-0 border-b-2 border-solid border-gray-200 text-sm px-0 pb-7;
+  }
+
+  .select2-results__option--highlighted[data-selected] {
+    @apply bg-gray-900;
   }
 }
 
@@ -31,36 +49,57 @@ input.input-checkbox {
       @apply px-0 pb-1;
     }
   }
+
+  .select2-dropdown {
+    box-shadow: 0 4px 10px 0 rgba(3, 3, 3, .1);
+    @apply border border-solid border-[#f1f2f4];
+
+    .select2-search__field {
+      @apply h-10 border-0 border-b-2 border-solid border-gray-300 w-full px-0 py-1 text-sm transition duration-150 ease-in-out;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        @apply border-gray-700;
+      }
+    }
+
+    .select2-results__option {
+      @apply py-3;
+    }
+  }
 }
 
-.woocommerce {
-  form {
-    .form-row {
-      @apply mb-5;
+input.input-radio, input[type="checkbox"], input.shipping_method {
+  @apply rounded-none w-6 h-6 mr-3 border border-solid border-gray-300 bg-gray-300;
 
-      label {
-        @apply text-gray-400;
-      }
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
 
-      input.input-text {
-        @apply border-t-0 border-x-0 border-b-2 border-solid	border-gray-200 text-sm px-0 pb-1;
+  &:checked {
+    @apply bg-transparent border-gray-900 bg-[length:12px_12px];
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
+  }
+}
 
-        &:focus {
-          outline: none;
-          box-shadow: none;
-          @apply border-gray-700;
-        }
-      }
+.woocommerce-form-login, .woocommerce-form-register {
+  @apply mb-8;
+
+  &>p {
+    &:first-child {
+      @apply mb-6;
     }
   }
 
-  textarea {
-    @apply border-t-0 border-x-0 border-b-2 border-solid	border-gray-200 text-sm px-0 pb-1;
+  .form-row {
+    .woocommerce-form-login__rememberme {
+      @apply w-full block;
+    }
 
-    &:focus {
-      outline: none;
-      box-shadow: none;
-      @apply border-gray-700;
+    button[type="submit"] {
+      @apply w-full mt-7;
     }
   }
 }

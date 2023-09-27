@@ -1,46 +1,11 @@
-.woocommerce {
-
-  button,
-  .button,
-  .btn,
-  .button.wc-backward,
-  .woocommerce-button.button.woocommerce-form-login__submit,
-  .single_add_to_cart_button.button, #submit {
-    @apply !bg-gray-900 !text-white inline-block !rounded-none h-14 leading-7 font-medium;
-
-    &:hover {
-      @apply !bg-gray-800 text-white;
-    }
-  }
-}
-
-.quantity {
-  @apply relative h-14 transition ease-in delay-150 border rounded-none border-solid border-gray-300 inline-block p-[7px];
-
-  .plus,
-  .minus {
-    @apply inline-block transition ease-in delay-150 fill-gray-400 align-middle p-1;
-
-    &:hover {
-      @apply fill-gray-900;
-    }
-
-    svg {
-      @apply w-4 h-4;
-    }
-  }
-
-  input.qty {
-    @apply border-none !w-16 px-0 py-1 h-10;
-
-    &:focus {
-      border: none;
-      outline: none;
-      box-shadow: none;
-    }
-  }
+button, .button {
+  @apply bg-gray-900 text-white font-medium uppercase rounded-none px-5 h-14 transition duration-150 ease-in-out;
 
   &:hover {
-    @apply border-gray-900;
+    @apply bg-gray-600;
+  }
+
+  &disabled, &.disabled {
+    @apply bg-gray-500 cursor-no-drop;
   }
 }

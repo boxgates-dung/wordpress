@@ -38,7 +38,7 @@ function woocheckout_gateway_paypal_load()
 
   if (version_compare(phpversion(), WOOCHECKOUT_GATEWAY_PAYPAL_MIN_PHP_VER, '<')) {
     add_action('admin_notices', function () {
-      echo '<div class="error"><p>' . sprintf(__('WooCommerce Stripe - The minimum PHP version required for this plugin is %1$s. You are running %2$s.', 'woocommerce-gateway-stripe'), WC_STRIPE_MIN_PHP_VER, phpversion()) . '</p></div>';
+      echo '<div class="error"><p>' . sprintf(__('WooCommerce Stripe - The minimum PHP version required for this plugin is %1$s. You are running %2$s.', 'woocommerce-gateway-stripe'), 'sdsd', phpversion()) . '</p></div>';
     });
     return;
   }
@@ -47,7 +47,7 @@ function woocheckout_gateway_paypal_load()
   require_once WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_PATH . './load.php';
   static $plugin;
   if (!isset($plugin)) {
-    $plugin = Load::get_instance();
+    // $plugin = Load::get_instance();
   }
   return $plugin;
 }

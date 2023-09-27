@@ -33,7 +33,7 @@
   </div>
 <?php endif; ?>
 
-<div class="container m-auto pt-12">
+<div class="container m-auto pt-12 pb-20">
   <?php
   if (have_posts()) {
     the_post();

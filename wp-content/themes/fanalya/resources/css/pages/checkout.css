@@ -1,141 +1,230 @@
 .woocommerce-checkout {
-  @apply text-sm;
-
-  form.checkout_coupon {
-    @apply border-none px-0;
-
-    button[name="apply_coupon"] {
-      @apply bg-transparent rounded-none px-0 uppercase font-medium border-b-2 border-solid	border-gray-700 text-gray-900;
+  main {
+    &>.container {
+      @apply max-w-[1140px]
     }
   }
 
   .woocommerce-info {
-    @apply border-2 border-solid	border-gray-200 bg-white p-6 text-center font-medium text-gray-400;
-
-    &:before {
-      @apply hidden;
-    }
+    @apply border-2 border-solid border-gray-200 px-6 py-5 md:px-14 md:py-8 mb-6 font-medium text-gray-500;
 
     a {
-      @apply text-gray-900;
+      @apply text-gray-900 uppercase font-medium;
     }
   }
 
-  #order_review {
-    .woocommerce-checkout-review-order-table {
-      tr {
-        td,
-        th {
-          @apply font-medium text-sm;
+  .woocommerce-form-coupon {
+    @apply flex;
 
-          strong {
-            @apply font-semibold;
-          }
-
-          &:last-child {
-            @apply text-right;
-          }
-
-          .product-quantity {
-            @apply font-medium;
-          }
-        }
-      }
+    .form-row {
+      @apply inline-block;
     }
-  }
 
-  #payment {
-    @apply bg-transparent;
-
-    div.payment_box {
-      @apply bg-transparent p-0;
-
-      &::before {
+    &>p {
+      &:first-child {
         @apply hidden;
       }
     }
 
-    ul.payment_methods {
-      @apply p-0 border-b-0;
+    .form-row-first {
+      @apply flex-1 mr-2;
+    }
 
-      .wc_payment_method {
-        @apply py-7 border-b border-solid	border-gray-200;
+    button[name="apply_coupon"] {
+      @apply p-0 h-10 bg-transparent text-gray-900 border-b-2 border-solid border-gray-900;
+    }
 
-        & > label {
-          @apply uppercase pt-[2px] text-gray-900 inline-block;
+    .input-text {
+      @apply h-10;
+    }
+  }
 
-          img {
-            @apply inline-block mt-0 max-h-5;
+  #order_review_heading,
+  #billing_heading {
+    @apply font-medium text-2xl mb-6;
+  }
+
+  #ship-to-different-address {
+    @apply mb-7;
+  }
+
+  form.checkout {
+    .woocommerce-billing-fields {
+      &>h3 {
+        @apply hidden;
+      }
+    }
+  }
+
+  table.shop_table {
+    thead {
+      @apply hidden;
+    }
+
+    tr {
+      &.woocommerce-shipping-totals {
+        @apply flex flex-col w-[200%];
+
+        th {
+          @apply border-0;
+        }
+
+        td {
+          @apply text-left pt-0;
+
+          .woocommerce-shipping-methods {
+            li {
+              @apply mb-2 font-normal text-gray-400;
+            }
+          }
+
+          input:checked+label {
+            @apply text-gray-900;
           }
         }
+      }
+    }
 
-        &:last-child {
-          @apply border-none;
+    tfoot {
+      @apply uppercase;
+
+      strong {
+        .amount {
+          @apply font-semibold text-base;
         }
       }
     }
 
-    .woocommerce-terms-and-conditions-wrapper {
-      @apply mb-8;
+    th,
+    td {
+      @apply font-medium;
     }
 
-    div.form-row {
-      @apply px-0;
-    }
-
-    #place_order {
-      @apply bg-slate-950 w-full text-sm font-medium h-16 uppercase rounded-none;
-    }
-
-    p {
-      @apply text-gray-400 leading-6;
-
-      a {
-        @apply text-black;
-      }
-    }
-  }
-
-  .woocommerce-order {
-    @apply text-base;
-
-    .woocommerce-thankyou-order-received {
-      @apply mb-5 text-lg text-lime-600 font-medium;
-    }
-
-    .woocommerce-order-overview.woocommerce-thankyou-order-details {
-      @apply mb-5;
-
-      li {
-        @apply w-full text-base mb-3 border-none pr-0 mr-0;
-
-        strong {
-          @apply text-sm font-semibold inline-block;
-        }
+    th {
+      &:first-child {
+        @apply text-left;
       }
     }
 
-    .woocommerce-customer-details {
-      .woocommerce-column__title {
-        @apply font-medium text-base mb-3;
-      }
-
-      address {
-        @apply border-none p-0 text-sm leading-6;
-      }
-    }
-  }
-
-  .order_details {
-    th, td {
+    td {
       &:last-child {
         @apply text-right;
       }
     }
 
-    tfoot {
-      th, td {
-        @apply !font-semibold;
+    strong.product-quantity {
+      @apply font-medium text-slate-700;
+    }
+  }
+
+  .woocommerce-checkout-payment {
+    p {
+      @apply text-gray-400;
+    }
+  }
+
+  #payment {
+    ul {
+      @apply mb-5;
+    }
+
+    li {
+      @apply py-6 border-b border-solid border-gray-200;
+
+      &>label {
+        @apply uppercase cursor-pointer;
+
+        img {
+          @apply inline-block ml-2 max-h-12 mt-[-2px];
+        }
+      }
+    }
+
+    .payment_box {
+      @apply mt-5;
+    }
+
+    a {
+      @apply text-gray-900;
+
+      &:hover {
+        @apply text-gray-500;
+      }
+    }
+
+    .woocommerce-terms-and-conditions-wrapper {
+      @apply mb-5 leading-6;
+    }
+
+    #place_order {
+      @apply w-full h-14 md:h-16;
+    }
+  }
+
+  .col2-set,
+  #order_review {
+    @apply border-2 border-solid border-gray-200 px-6 py-5 md:px-14 md:py-8 mb-6;
+  }
+
+  /* Thanks you page */
+
+  .woocommerce-order {
+    .woocommerce-notice--success {
+      @apply mb-12 text-lg text-lime-600 font-medium;
+    }
+
+    ul.woocommerce-order-overview {
+      @apply mb-12;
+
+      li {
+        @apply w-full mb-5 border-none pr-0 mr-0;
+
+        strong {
+          @apply font-semibold inline-block;
+        }
+      }
+    }
+
+    .woocommerce-order-details {
+      @apply mb-12;
+
+      .woocommerce-order-details__title {
+        @apply font-medium my-3 text-lg;
+      }
+
+      table.order_details {
+        @apply border border-solid border-gray-200;
+
+        th,
+        td {
+          @apply px-4;
+
+          &:last-child {
+            @apply text-right;
+          }
+        }
+
+        tfoot {
+
+          th,
+          td {
+            @apply font-semibold;
+          }
+        }
+      }
+    }
+
+    .col2-set.addresses {
+      @apply border-none p-0;
+    }
+
+    .woocommerce-customer-details {
+      .woocommerce-column__title {
+        @apply font-medium mb-3 text-lg;
+      }
+
+      address {
+        @apply border border-solid border-gray-200 leading-7 p-4 not-italic mb-7;
       }
     }
   }
