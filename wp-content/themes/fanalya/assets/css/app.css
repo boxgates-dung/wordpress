@@ -1733,7 +1733,7 @@ input{
   line-height: 1.75rem;
   font-weight: 500;
 }.woocommerce-checkout .woocommerce-order .woocommerce-customer-details address{
-  margin-bottom: 1.75rem;
+  margin-bottom: 3rem;
   border-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
@@ -1741,6 +1741,8 @@ input{
   padding: 1rem;
   font-style: normal;
   line-height: 1.75rem;
+}.woocommerce-checkout .woocommerce-order .woocommerce-customer-details .woocommerce-column--shipping-address address{
+  margin-bottom: 0px;
 }.u-column1>h2, .u-column2>h2{
   margin-bottom: 1.75rem;
   font-size: 1.125rem;

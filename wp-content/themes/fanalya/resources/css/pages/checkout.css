@@ -224,7 +224,13 @@
       }
 
       address {
-        @apply border border-solid border-gray-200 leading-7 p-4 not-italic mb-7;
+        @apply border border-solid border-gray-200 leading-7 p-4 not-italic mb-12;
+      }
+
+      .woocommerce-column--shipping-address {
+        address {
+          @apply mb-0;
+        }
       }
     }
   }
