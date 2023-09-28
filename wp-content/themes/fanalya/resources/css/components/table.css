@@ -1,7 +1,172 @@
 table.shop_table {
-  @apply w-full table-fixed;
+  @apply w-full;
 
-  th, td {
+  thead {
+    tr {
+      th {
+        @apply font-medium uppercase py-3 text-left;
+      }
+    }
+  }
+
+  tbody {
+    th {
+      @apply text-left font-medium;
+    }
+  }
+
+  th,
+  td {
     @apply border-b border-solid py-5 border-gray-200;
+  }
+
+  .product-thumbnail {
+    @apply w-24 md:w-36;
+
+    img {
+      @apply w-20 md:w-24;
+    }
+  }
+
+  .product-name {
+    @apply text-sm md:text-base;
+
+    .price {
+      @apply text-sm text-gray-400 block md:hidden;
+    }
+
+    p.product-remove {
+      @apply text-left block md:hidden;
+    }
+
+    .remove {
+      @apply text-sm text-red-600;
+
+      &::after,
+      &::before {
+        @apply hidden;
+      }
+    }
+  }
+
+  .product-quantity {
+    @apply w-20 md:w-36 text-right md:text-left;
+
+    .quantity {
+      @apply border-0 md:border p-0 md:p-2;
+
+      .input-text {
+        @apply w-7 md:w-16;
+      }
+
+      .plus,
+      .minus {
+        @apply p-[2px];
+      }
+    }
+  }
+
+  .product-remove {
+    @apply text-right w-14;
+  }
+
+  .product-price,
+  .product-subtotal,
+  .product-remove {
+    @apply hidden md:table-cell;
+  }
+
+  .product-price {
+    @apply px-2;
+
+    del {
+      @apply text-gray-400 text-sm mr-2;
+    }
+
+    ins {
+      @apply no-underline;
+    }
+  }
+
+  .product-stock-status {
+    @apply text-left hidden md:table-cell;
+  }
+
+  strong {
+    @apply font-medium;
+  }
+
+  /* Shipping method */
+  .woocommerce-shipping-methods {
+    li {
+      @apply mb-3 font-normal text-gray-400;
+    }
+  }
+
+  input:checked+label {
+    @apply text-gray-900;
+  }
+
+  .woocommerce-shipping-destination {
+    @apply leading-6 normal-case;
+  }
+
+  .shipping-calculator-button {
+    @apply text-[#4CAF50] font-medium leading-6 normal-case;
+
+    &:hover {
+      @apply text-[#55d459];
+    }
+  }
+
+  .woocommerce-remove-coupon {
+    @apply text-red-500;
+  }
+
+  /* Action */
+
+  .actions {
+    @apply border-0;
+
+    .coupon {
+      @apply w-full mb-7;
+    }
+
+    #coupon_code {
+      @apply flex-1;
+    }
+
+    .button[name="update_cart"] {
+      @apply w-full;
+    }
+  }
+
+  /* Wishlist */
+  &.wishlist_table {
+    thead {
+      @apply text-sm;
+
+      th {
+        @apply border-t-0;
+      }
+    }
+
+    tbody {
+      @apply text-base;
+    }
+
+    .product-add-to-cart {
+      a {
+        @apply !inline-block !py-0 px-1 text-sm align-middle min-w-[90px];
+      }
+    }
+
+    .product-price {
+      @apply text-left;
+    }
+
+    a.remove {
+      @apply !bg-transparent;
+    }
   }
 }

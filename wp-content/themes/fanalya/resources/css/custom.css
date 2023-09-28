@@ -46,4 +46,8 @@ article>*:not(.entry-content),
 
 a {
   @apply transition duration-150 ease-in-out;
+
+  &:hover {
+    @apply text-gray-600;
+  }
 }

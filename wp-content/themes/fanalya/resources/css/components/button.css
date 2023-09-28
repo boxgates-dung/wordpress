@@ -2,10 +2,48 @@ button, .button {
   @apply bg-gray-900 text-white font-medium uppercase rounded-none px-5 h-14 transition duration-150 ease-in-out;
 
   &:hover {
-    @apply bg-gray-600;
+    @apply bg-gray-600 text-white;
   }
 
-  &disabled, &.disabled {
-    @apply bg-gray-500 cursor-no-drop;
+  &[disabled], &.disabled {
+    @apply bg-gray-500 cursor-no-drop text-white;
   }
+}
+
+a.button {
+  @apply inline-block leading-[56px];
+}
+
+#place_order, .checkout-button {
+  @apply w-full h-14 md:h-16 inline-block text-center leading-[56px] md:leading-[64px];
+}
+
+.quantity {
+  @apply inline-block border border-solid border-gray-300 p-2 transition delay-150 duration-150 ease-in;
+
+  input.input-text {
+    @apply inline-block border-none w-16 h-10 text-center text-base align-middle;
+  }
+
+  .plus, .minus {
+    @apply inline-block align-middle px-1;
+
+    svg {
+      @apply fill-gray-400 transition delay-150 duration-150 ease-in;
+    }
+
+    &:hover {
+      svg {
+        @apply fill-gray-800;
+      }
+    }
+  }
+
+  &:hover {
+    @apply border-gray-800;
+  }
+}
+
+.return-to-shop {
+  @apply text-center;
 }

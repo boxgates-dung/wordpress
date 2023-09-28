@@ -10,6 +10,7 @@
 @import "components/alert.css";
 @import "components/button.css";
 @import "components/form.css";
+@import "components/heading.css";
 @import "components/navbar.css";
 @import "components/table.css";
 
@@ -18,3 +19,4 @@
 @import "pages/cart.css";
 @import "pages/my-account.css";
 @import "pages/single-product.css";
+@import "pages/wishlist.css";

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php if (is_cart()) : ?>
+<?php if (is_cart() || is_page('wishlist') ) : ?>
   <div class="h-20 bg-[#f1f2f4] text-[#909097] overflow-y-scroll md:overflow-hidden">
     <div class="container h-full m-auto text-center">
       <!-- Breacrum -->

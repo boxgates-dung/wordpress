@@ -63,7 +63,7 @@ function theme_enqueue_scripts()
 }
 
 /**
- * removing Woo Styles.
+ * removing Woocommerce Styles.
  */
 add_action('wp_enqueue_scripts', 'removing_woo_styles');
 
@@ -75,6 +75,7 @@ function removing_woo_styles()
   wp_dequeue_style('woocommerce-layout');
   wp_dequeue_style('woocommerce-smallscreen');
 }
+
 
 /**
  * Get asset path.
@@ -96,7 +97,7 @@ function theme_asset($path)
  * 
  * Add wishlist button after add to cart button in single product page
  * 
-*/
+ */
 
 add_action('woocommerce_after_add_to_cart_button', 'add_custom_button', 10, 0);
 function add_custom_button()
