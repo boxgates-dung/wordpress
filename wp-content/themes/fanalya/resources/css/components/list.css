@@ -17,3 +17,12 @@ ul.wc_payment_methods {
     }
   }
 }
+
+/* Variation */
+.wc-item-meta {
+  @apply text-gray-500 text-sm;
+
+  p {
+    @apply inline-block font-semibold text-gray-900;
+  }
+}

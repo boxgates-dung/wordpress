@@ -1,0 +1,23 @@
+.woocommerce-column--billing-address,
+.woocommerce-column--shipping-address, .woocommerce-customer-details {
+  &>h2 {
+    @apply text-base uppercase font-medium mb-6;
+  }
+}
+
+.addresses {
+  @apply md:flex;
+
+  .woocommerce-column__title {
+    @apply mb-6;
+  }
+
+  .col-1,
+  .col-2 {
+    @apply flex-1 mb-8;
+  }
+}
+
+address {
+  @apply not-italic leading-6;
+}

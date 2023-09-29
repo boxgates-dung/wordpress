@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php if (is_cart() || is_page('wishlist') ) : ?>
+<?php if (is_cart() || is_page('wishlist') || is_account_page() ) : ?>
   <div class="h-20 bg-[#f1f2f4] text-[#909097] overflow-y-scroll md:overflow-hidden">
     <div class="container h-full m-auto text-center">
       <!-- Breacrum -->
@@ -18,7 +18,7 @@
           <a href="https://demo.uix.store/sober/order-tracking/" class="flex h-full items-center justify-center">Order Tracking</a>
         </li>
         <li class="login-link shopping-cart-link inline-block relative h-20 px-[20px] py-0 font-medium text-base w-max">
-          <a href="https://demo.uix.store/sober/my-account/" class="flex h-full items-center justify-center">Login</a>
+          <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="flex h-full items-center justify-center">Login</a>
         </li>
       </ul>
       <!-- Breakcrum -->

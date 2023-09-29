@@ -1,5 +1,69 @@
-.u-column1, .u-column2 {
+.u-column1,
+.u-column2 {
   &>h2 {
     @apply font-semibold text-lg uppercase mb-7;
+  }
+}
+
+.woocommerce-account {
+  .woocommerce {
+    @apply md:flex gap-4;
+  }
+  
+  /* Address  */
+  .addresses {
+    @apply mt-5;
+  }
+  
+  .u-columns {
+    @apply md:flex gap-5;
+    .col-1, .col-2 {
+      @apply md:flex-1;
+    }
+
+    .woocommerce-Address-title {
+      @apply mb-5;
+      h3 {
+        @apply text-base font-medium inline-block uppercase;
+      }
+
+      .edit {
+        @apply ml-3 text-red-500 font-medium;
+      }
+    }
+  }
+
+  .woocommerce-MyAccount-navigation {
+
+    @apply md:w-72 mb-10;
+
+    .woocommerce-MyAccount-navigation-link {
+      @apply border-b border-x border-solid border-gray-200 transition duration-300 ease-in-out;
+
+      &:first-child {
+        @apply border-t;
+      }
+
+      &.is-active,
+      &:hover {
+        @apply bg-gray-800 border-gray-800;
+
+        a {
+          @apply text-white;
+        }
+      }
+
+      a {
+        @apply block px-5 py-3 font-medium uppercase;
+      }
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    @apply flex-1;
+  }
+
+  .woocommerce-order-details {
+    @apply mb-8;
   }
 }

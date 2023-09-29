@@ -148,6 +148,12 @@ textarea , textarea.input-text {
   &.place-order, &.notes{
     @apply mb-0;
   }
+
+  span {
+    em {
+      @apply text-red-500 pt-2 block;
+    }
+  }
 }
 
 /* Form coupon */
@@ -192,8 +198,8 @@ textarea , textarea.input-text {
   }
 }
 
-/* Form Login */
-.woocommerce-form-login {
+/* Form Login & Register */
+.woocommerce-form-login, .woocommerce-form-register {
   @apply px-1;
 
   &>p {
