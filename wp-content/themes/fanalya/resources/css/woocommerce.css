@@ -1,29 +1,3 @@
 .woocommerce {
-  a.remove {
-    @apply w-5 h-5 inline-block bg-transparent relative align-middle;
 
-    &::after,
-    &::before {
-      @apply absolute w-5 h-[2px] bg-[#9E9E9E] left-0;
-      content: "";
-      top: calc(50% - 2px);
-      transition: all 0.3s ease;
-    }
-
-    &::after {
-      @apply rotate-45;
-    }
-
-    &::before {
-      @apply rotate-[-45deg];
-    }
-
-    &:hover {
-
-      &::after,
-      &::before {
-        @apply bg-gray-900;
-      }
-    }
-  }
 }

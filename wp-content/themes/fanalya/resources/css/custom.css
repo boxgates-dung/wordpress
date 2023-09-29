@@ -45,7 +45,7 @@ article>*:not(.entry-content),
 }
 
 a {
-  @apply transition duration-150 ease-in-out;
+  @apply transition duration-150 ease-in-out text-gray-900;
 
   &:hover {
     @apply text-gray-600;

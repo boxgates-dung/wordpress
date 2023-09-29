@@ -5,155 +5,15 @@
     }
   }
 
-  .woocommerce-info {
-    @apply border-2 border-solid border-gray-200 px-6 py-5 md:px-14 md:py-8 mb-6 font-medium text-gray-500;
-
-    a {
-      @apply text-gray-900 uppercase font-medium;
-    }
-  }
-
-  .woocommerce-form-coupon {
-    @apply flex px-1;
-
-    .form-row {
-      @apply inline-block;
-    }
-
-    &>p {
-      &:first-child {
-        @apply hidden;
-      }
-    }
-
-    .form-row-first {
-      @apply flex-1 mr-2;
-    }
-
-    button[name="apply_coupon"] {
-      @apply p-0 h-10 bg-transparent text-gray-900 border-b-2 border-solid border-gray-900;
-
-      &:focus {
-        @apply border-x-0 border-t-0;
-      }
-    }
-
-    .input-text {
-      @apply h-10;
-    }
-  }
-
-  .woocommerce-form-login {
-    @apply px-1;
-  }
-
-  /* Billing styles */
-  #ship-to-different-address {
-    @apply mb-7;
-  }
-
-  form.checkout {
-    .woocommerce-billing-fields {
-      &>h3 {
-        @apply hidden;
-      }
-    }
-  }
-
-  table.shop_table {
-    @apply table-fixed;
-
-    thead {
+  .woocommerce-billing-fields {
+    &>h3 {
       @apply hidden;
     }
-
-    tr {
-      &.woocommerce-shipping-totals {
-        @apply flex flex-col w-[200%];
-
-        th {
-          @apply border-0;
-        }
-
-        td {
-          @apply text-left pt-0;          
-        }
-      }
-    }
-
-    tfoot {
-      @apply uppercase;
-
-      strong {
-        .amount {
-          @apply font-semibold text-base;
-        }
-      }
-    }
-
-    th,
-    td {
-      @apply font-medium;
-    }
-
-    th {
-      &:first-child {
-        @apply text-left;
-      }
-    }
-
-    td {
-      &:last-child {
-        @apply text-right;
-      }
-    }
-
-    strong.product-quantity {
-      @apply font-medium text-slate-700;
-    }
   }
 
-  .woocommerce-checkout-payment {
-    p {
-      @apply text-gray-400;
-    }
-  }
-
-  #payment {
-    ul {
-      @apply mb-5;
-    }
-
-    li {
-      @apply py-6 border-b border-solid border-gray-200;
-
-      &>label {
-        @apply uppercase cursor-pointer;
-
-        img {
-          @apply inline-block ml-2 max-h-12 mt-[-2px];
-        }
-      }
-    }
-
-    .payment_box {
-      @apply mt-5;
-    }
-
-    a {
-      @apply text-gray-900;
-
-      &:hover {
-        @apply text-gray-500;
-      }
-    }
-
-    .woocommerce-terms-and-conditions-wrapper {
-      @apply mb-8 leading-6;
-    }
-
-    .place-order {
-      @apply mb-5;
+  .woocommerce-shipping-fields {
+    #ship-to-different-address {
+      @apply mb-7;
     }
   }
 
@@ -162,8 +22,15 @@
     @apply border-2 border-solid border-gray-200 px-6 py-5 md:px-14 md:py-8 mb-6;
   }
 
-  /* Thanks you page */
+  .woocommerce-checkout-payment {
+    @apply text-gray-500;
+  }
 
+  .woocommerce-terms-and-conditions-wrapper {
+    @apply mb-8 leading-6;
+  }
+
+  /* Thanks you page */
   .woocommerce-order {
     .woocommerce-notice--success {
       @apply mb-12 text-lg text-lime-600 font-medium;

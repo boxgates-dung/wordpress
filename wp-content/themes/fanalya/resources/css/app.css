@@ -11,8 +11,10 @@
 @import "components/button.css";
 @import "components/form.css";
 @import "components/heading.css";
+@import "components/list.css";
 @import "components/navbar.css";
 @import "components/table.css";
+@import "components/remove.css";
 
 /* Pages */
 @import "pages/checkout.css";

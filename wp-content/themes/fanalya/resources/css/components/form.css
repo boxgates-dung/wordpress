@@ -1,8 +1,94 @@
-input.input-text,
-.input-text,
-textarea,
+/* Lable */
+label {
+  @apply text-gray-400;
+
+  .required {
+    @apply text-red-600;
+  }
+}
+
+/* Input Field */
 input {
-  @apply border-0 border-b-2 border-solid border-gray-300 w-full px-0 py-1 text-sm transition duration-150 ease-in-out;
+
+  &,
+  &[type="text"],
+  &[type="tel"],
+  &[type="email"],
+  &[type="password"],
+  &[type="number"],
+  &[type="search"],
+  &[type="date"],
+  &[type="month"],
+  &[type="week"],
+  input-text {
+    @apply border-0 border-b-2 border-solid border-gray-300 w-full px-0 py-1 text-sm transition duration-300 ease-in-out;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      @apply border-gray-700;
+    }
+  }
+}
+
+/* Input quantity */
+.quantity {
+  @apply inline-block border border-solid border-gray-300 p-2 transition delay-150 duration-150 ease-in;
+
+  input.input-text {
+    @apply inline-block border-none w-16 h-10 text-center text-base align-middle;
+  }
+
+  .plus,
+  .minus {
+    @apply inline-block align-middle px-1;
+
+    svg {
+      @apply fill-gray-400 transition delay-150 duration-150 ease-in;
+    }
+
+    &:hover {
+      svg {
+        @apply fill-gray-800;
+      }
+    }
+  }
+
+  &:hover {
+    @apply border-gray-800;
+  }
+}
+
+/* Input Checkbox & Radio */
+input {
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    @apply rounded-none w-6 h-6 mr-3 border border-solid border-gray-300 bg-gray-300;
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+
+    &:checked {
+      @apply bg-transparent border-gray-900 bg-[length:12px_12px];
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
+    }
+  }
+
+  &:not(:checked)+label {
+    @apply text-gray-400;
+  }
+
+  &:checked+label {
+    @apply text-gray-900;
+  }
+}
+
+/* Textarea */
+textarea , textarea.input-text {
+  @apply border-0 border-b-2 border-solid border-gray-300 w-full px-0 py-1 text-sm transition duration-300 ease-in-out min-h-[100px];
 
   &:focus {
     outline: none;
@@ -11,28 +97,7 @@ input {
   }
 }
 
-textarea.input-text {
-  @apply min-h-[100px] ;
-}
-
-.form-row {
-  @apply mb-9 leading-4;
-
-  &>label {
-    @apply text-gray-400;
-
-    .required {
-      @apply text-red-600;
-    }
-  }
-
-  &.woocommerce-invalid-required-field {
-    input {
-      @apply border-red-700;
-    }
-  }
-}
-
+/* Select */
 .select2-container--default {
   .select2-selection--single {
     @apply rounded-none border-t-0 border-x-0 border-b-2 border-solid border-gray-200 text-sm px-0 pb-7;
@@ -70,36 +135,68 @@ textarea.input-text {
   }
 }
 
-input.input-radio, input[type="checkbox"], input.shipping_method {
-  @apply rounded-none w-6 h-6 mr-3 border border-solid border-gray-300 bg-gray-300;
+/* Form row */
+.form-row {
+  @apply mb-9 leading-4;
 
-  &:focus {
-    outline: 0;
-    box-shadow: none;
+  &.woocommerce-invalid-required-field {
+    input {
+      @apply border-red-700;
+    }
   }
 
-  &:checked {
-    @apply bg-transparent border-gray-900 bg-[length:12px_12px];
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
+  &.place-order, &.notes{
+    @apply mb-0;
   }
 }
 
-.woocommerce-form-login, .woocommerce-form-register {
-  @apply mb-8;
+/* Form coupon */
+.woocommerce-form-coupon {
+  @apply flex px-1;
+
+  .form-row {
+    @apply inline-block;
+  }
 
   &>p {
     &:first-child {
-      @apply mb-6;
+      @apply hidden;
     }
   }
 
-  .form-row {
-    .woocommerce-form-login__rememberme {
-      @apply w-full block;
-    }
+  .form-row-first {
+    @apply flex-1 mr-2;
+  }
 
-    button[type="submit"] {
-      @apply w-full mt-7;
+  button[name="apply_coupon"] {
+    @apply p-0 h-10 bg-transparent text-gray-900 border-b-2 border-solid border-gray-900;
+
+    &:focus {
+      @apply border-x-0 border-t-0;
     }
+  }
+
+  .input-text {
+    @apply h-10;
+  }
+}
+
+/* Form toggle */
+.woocommerce-form-coupon-toggle, .woocommerce-form-login-toggle {
+  .woocommerce-info {
+    @apply border-2 border-solid border-gray-200 px-6 py-5 md:px-14 md:py-8 mb-6 font-medium text-gray-500;
+
+    a {
+      @apply text-gray-900 uppercase font-medium;
+    }
+  }
+}
+
+/* Form Login */
+.woocommerce-form-login {
+  @apply px-1;
+
+  &>p {
+    @apply mb-9;
   }
 }

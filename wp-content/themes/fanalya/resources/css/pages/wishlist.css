@@ -1,13 +1,11 @@
 .woocommerce-wishlist {
-  /* .wishlist_table {
-    .product-add-to-cart {
-      a {
-        @apply !inline-block leading-[56px] !py-0 text-sm;
-      }
+  main {
+    &>.container {
+      @apply max-w-[1140px]
     }
-
-    .product-price {
-      @apply text-left;
-    }
-  } */
+  }
+  
+  .wishlist-title-container {
+    @apply hidden;
+  }
 }

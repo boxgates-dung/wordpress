@@ -1,0 +1,19 @@
+ul.wc_payment_methods {
+  @apply mb-5;
+
+  li.wc_payment_method {
+    @apply py-6 border-b border-solid border-gray-200;
+
+    &>label {
+      @apply uppercase cursor-pointer;
+
+      img {
+        @apply inline-block ml-2 max-h-12 mt-[-2px];
+      }
+    }
+
+    .payment_box {
+      @apply mt-5;
+    }
+  }
+}
