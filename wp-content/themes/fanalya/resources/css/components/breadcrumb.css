@@ -1,0 +1,29 @@
+.page-header {
+  ul {
+    li {
+      a {
+        &::after {
+          transition: all .5s;
+          content: '';
+          @apply bg-gray-900 w-0 h-[2px] bottom-0 left-0 absolute;
+        }
+
+        span {
+          transition: all .5s;
+        }
+      }
+
+      &.active, &:hover {
+        a {
+          &::after {
+            @apply w-full;
+          }
+
+          span {
+            @apply bg-gray-900;
+          }
+        }
+      }
+    }
+  }
+}

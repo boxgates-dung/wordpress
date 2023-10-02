@@ -40,3 +40,24 @@ a.button {
     }
   }
 }
+
+/* Add to wishlist single page */
+form.cart {
+  .yith-wcwl-add-to-wishlist {
+    @apply mt-0;
+  }
+  .yith-wcwl-add-button {
+    @apply w-full md:w-14 h-14 overflow-hidden relative;
+
+   .view-wishlist, .separator {
+    @apply hidden;
+   }
+   a {
+    @apply w-full h-full;
+
+    i {
+      @apply w-full h-full flex items-center justify-center text-xl border border-solid border-gray-400;
+    }
+   }
+  }
+}

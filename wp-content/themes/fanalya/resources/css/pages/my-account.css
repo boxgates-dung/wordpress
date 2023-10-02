@@ -7,7 +7,7 @@
 
 .woocommerce-account {
   .woocommerce {
-    @apply md:flex gap-4;
+    @apply md:flex gap-8;
   }
   
   /* Address  */

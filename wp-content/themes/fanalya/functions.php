@@ -4,6 +4,8 @@ define('THEME_DOMAIN', 'Fanalya');
 define('THEME_URI', get_template_directory_uri());
 define('THEME_PATH', get_template_directory());
 
+require_once THEME_PATH . '/includes/woocommerce.php';
+
 // require_once 'includes/merlin/vendor/autoload.php';
 // require_once 'includes/merlin/class-merlin.php';
 // require_once 'includes/merlin/merlin-config.php';

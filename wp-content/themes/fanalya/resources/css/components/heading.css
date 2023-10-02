@@ -12,3 +12,17 @@ fieldset {
 form>h3 {
   @apply text-base font-medium uppercase mb-8;
 }
+
+.product_title.entry-title {
+  @apply mb-6 text-3xl;
+}
+
+.price {
+  ins {
+    @apply no-underline;
+  }
+
+  del {
+    @apply text-gray-400 text-sm mr-2;
+  }
+}

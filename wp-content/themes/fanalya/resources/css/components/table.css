@@ -227,3 +227,10 @@ table.woocommerce-checkout-review-order-table,
     }
   }
 }
+
+/* My account order_details */
+.woocommerce-account table.order_details {
+  th, td {
+    @apply text-sm py-4;
+  }
+}

@@ -33,7 +33,7 @@ input {
 
 /* Input quantity */
 .quantity {
-  @apply inline-block border border-solid border-gray-300 p-2 transition delay-150 duration-150 ease-in;
+  @apply inline-block border border-solid border-gray-300 p-2 transition delay-150 duration-150 ease-in h-14 min-w-[130px];
 
   input.input-text {
     @apply inline-block border-none w-16 h-10 text-center text-base align-middle;
@@ -204,5 +204,27 @@ textarea , textarea.input-text {
 
   &>p {
     @apply mb-9;
+  }
+
+  .woocommerce-privacy-policy-text {
+    @apply mb-9;
+  }
+
+  button[type="submit"] {
+    @apply w-full;
+  }
+}
+
+/* Form add to cart */
+
+form.cart {
+  @apply md:flex gap-3 mb-8 justify-center;
+
+  .quantity {
+    @apply block mb-7;
+  }
+
+  button[type="submit"] {
+    @apply block w-full md:w-auto md:min-w-[220px] mb-7;
   }
 }

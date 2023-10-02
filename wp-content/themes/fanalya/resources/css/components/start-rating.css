@@ -1,0 +1,15 @@
+.star-rating {
+  @apply relative overflow-hidden h-4 w-[86px] text-xs leading-none font-['star'] mx-auto tracking-[5px];
+
+  &::before {
+    @apply content-['sssss'] float-left top-0 left-0 absolute text-[#d3ced2] font-['star'];
+  }
+
+  span {
+    @apply overflow-hidden float-left top-0 left-0 absolute pt-6;
+
+    &::before {
+      @apply content-['SSSSS'] absolute top-0 left-0 text-[#ffb136];
+    }
+  }
+}

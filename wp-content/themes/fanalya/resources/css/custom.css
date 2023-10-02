@@ -28,7 +28,7 @@ article>*:not(.entry-content),
       }
     }
 
-    @apply mb-8;
+    @apply mb-5;
   }
 
   ul:not(.block-editor-block-variation-picker__variations) {
