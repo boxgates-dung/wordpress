@@ -1,0 +1,40 @@
+.woocommerce-pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  ul.page-numbers {
+    margin-top: 35px;
+  }
+
+  a.page-numbers, span.page-numbers {
+    width: 48px;
+    height: 48px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    line-height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 400;
+    margin: 4px 3px;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    color: #646464;
+    font-size: 15px;
+
+    &.current, &:hover {
+      background-color: $primary-color;
+      color: $light-color;
+    }
+
+    &.dots {
+      background-color: transparent;
+      color: $color-text;
+    }
+  }
+}
