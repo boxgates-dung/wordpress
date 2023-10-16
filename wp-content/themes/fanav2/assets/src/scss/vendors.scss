@@ -1,0 +1,35 @@
+$grid-gutter-width: 20px;
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+
+@import "~bootstrap/scss/mixins";
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/nav";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/spinners";
+
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/badge";
+
+@import '~swiper/css';
+@import '~swiper/css/navigation';
+@import '~swiper/css/thumbs';
+@import "~swiper/css/free-mode";
+@import "~select2/dist/css/select2";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min';
