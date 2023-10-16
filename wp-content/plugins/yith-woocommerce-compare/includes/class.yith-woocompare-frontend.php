@@ -796,6 +796,7 @@ if ( ! class_exists( 'YITH_Woocompare_Frontend' ) ) {
 					'product'   => false,
 					'type'      => 'default',
 					'container' => 'yes',
+                    'button_text' => false,
 				),
 				$atts
 			);
@@ -842,6 +843,9 @@ if ( ! class_exists( 'YITH_Woocompare_Frontend' ) ) {
 			if ( 'yes' === $atts['container'] ) {
 				echo '<div class="woocommerce product compare-button">';
 			}
+
+            $content = $atts['button_text'] ? : $content;
+
 			$this->add_compare_link(
 				$product_id,
 				array(

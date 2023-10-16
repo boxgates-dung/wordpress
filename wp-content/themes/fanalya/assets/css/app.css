@@ -774,6 +774,8 @@ video {
   margin-top: 0.5rem;
 }.mt-4{
   margin-top: 1rem;
+}.mb-12{
+  margin-bottom: 3rem;
 }.block{
   display: block;
 }.inline-block{
@@ -2684,6 +2686,9 @@ a.button{
   }.md\:py-8{
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }.md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }@media (min-width: 960px){.lg\:-mx-4{
     margin-left: -1rem;

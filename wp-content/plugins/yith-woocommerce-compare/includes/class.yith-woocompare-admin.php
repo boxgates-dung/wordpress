@@ -152,7 +152,9 @@ if ( ! class_exists( 'YITH_Woocompare_Admin' ) ) {
 				'options-path'     => YITH_WOOCOMPARE_DIR . '/plugin-options',
 				'class'            => yith_set_wrapper_class(),
 				'plugin_slug'      => YITH_WOOCOMPARE_SLUG,
-			);
+                'is_free'          => defined( YITH_WOOCOMPARE ),
+
+            );
 
 			if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 				require_once YITH_WOOCOMPARE_DIR . 'plugin-fw/lib/yit-plugin-panel-wc.php';

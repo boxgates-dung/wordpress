@@ -98,7 +98,7 @@ if ( ! class_exists( 'YITH_WCAN_Cache_Helper' ) ) {
 			if ( is_null( $index ) ) {
 				self::$transients[ $transient ]['value'] = $value;
 			} else {
-				if ( ! isset( self::$transients[ $transient ]['value'] ) ) {
+				if ( empty( self::$transients[ $transient ]['value'] ) ) {
 					self::$transients[ $transient ]['value'] = array();
 				}
 				self::$transients[ $transient ]['value'][ $index ] = $value;
