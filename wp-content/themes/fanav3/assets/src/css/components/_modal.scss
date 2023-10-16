@@ -1,0 +1,40 @@
+.modal-content {
+  padding: 40px;
+}
+
+#loginModal {
+  .form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+    line-height: 38px;
+    font-weight: 400;
+    font-family: $second-font-family;
+    color: $primary-color;
+  }
+
+  .login-form-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 18px;
+    font-size: 17px;
+  }
+
+  .woocommerce-LostPassword {
+    color: $primary-color;
+  }
+
+  .modal-dialog {
+    max-width: 480px;
+  }
+}
+
+#quickviewModal {
+  .modal-dialog {
+    max-width: 1400px;
+  }
+}

@@ -1,0 +1,12 @@
+    speak: none;
+    -webkit-animation: spin 2s linear infinite;
+    -o-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    content: "\e04d";
+    display: inline-block;
+    font-family: tb-icon;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    text-indent: 0;
+    vertical-align: middle;
