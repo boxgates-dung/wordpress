@@ -8,9 +8,11 @@
  * 
  */
 
-define('THEME_DOMAIN', 'Fanalya');
+define('THEME_DOMAIN', 'latoya');
 define('THEME_URI', get_template_directory_uri());
 define('THEME_PATH', get_template_directory());
+
+require_once THEME_PATH . '/admin/index.php';
 
 /**
  * Theme setup.
@@ -120,7 +122,6 @@ function get_static_template($static_name)
   }
   return $staticId;
 }
-
 
 /* Register static page */
 add_action('admin_init', function () {
