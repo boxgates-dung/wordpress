@@ -80,7 +80,7 @@ function theme_enqueue_scripts()
   wp_enqueue_style('theme-vendors', theme_asset('assets/dist/css/vendors.css'), array(), $theme->get('Version'));
   wp_enqueue_style('theme-style', theme_asset('assets/dist/css/theme.css'), array(), $theme->get('Version'));
   wp_enqueue_style('theme-index-css', theme_asset('style.css'), array(), $theme->get('Version'));
-  wp_enqueue_script('theme-app', theme_asset('assets/dist/js/app.min.js'), array(), $theme->get('Version'));
+  wp_enqueue_script('theme-app', theme_asset('assets/dist/js/app.min.js'), array('jquery'), $theme->get('Version'));
 }
 
 /**

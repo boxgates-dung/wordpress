@@ -9,7 +9,6 @@ require_once THEME_PATH . '/includes/woocommerce.php';
 // require_once 'includes/merlin/vendor/autoload.php';
 // require_once 'includes/merlin/class-merlin.php';
 // require_once 'includes/merlin/merlin-config.php';
-
 // require_once 'includes/merlin/merlin-config.php';
 
 /**

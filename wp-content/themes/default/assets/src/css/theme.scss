@@ -9,6 +9,7 @@
 
 //components
 // @import "components/alert";
+@import "components/animation";
 // @import "components/badge";
 // @import "components/breadcrumb";
 @import "components/button";
@@ -16,13 +17,13 @@
 // @import "components/dropdown";
 // @import "components/footer";
 // @import "components/cart";
-// @import "components/form";
-// @import "components/heading";
+@import "components/form";
+@import "components/heading";
 // @import "components/listing";
-// @import "components/menu";
+@import "components/menu";
 // @import "components/modal";
 @import "components/nav";
-// @import "components/offcanvas";
+@import "components/offcanvas";
 // @import "components/pagination";
 // @import "components/search";
 // @import "components/sidebar";

@@ -204,7 +204,7 @@
                 
                 $this->add_inline_style();
                 
-                $is_defer = is_wp_version_compatible( '6.3' ) ? array( 'strategy' => 'defer' ) : true;
+                // $is_defer = is_wp_version_compatible( '6.3' ) ? array( 'strategy' => 'defer' ) : true;
                 
                 wp_register_script( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/js/frontend{$suffix}.js" ), array(
                     'jquery',
@@ -215,7 +215,7 @@
                     'wp-api-fetch',
                     'wp-polyfill',
                     'wp-url'
-                ),                  woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), $is_defer );
+                ),                  woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), true );
                 
                 $extra_params_for_rest_uri = apply_filters( 'woo_variation_swatches_rest_add_extra_params', array() );
                 
@@ -773,7 +773,7 @@
                     $single_attribute_variation_image_id = empty( $variation ) ? 0 : $variation[ 'variation_image_id' ];
                 }
                 
-                return array(
+                $data = array(
                     'is_archive'         => isset( $args[ 'is_archive' ] ) ? $args[ 'is_archive' ] : false,
                     'is_selected'        => $is_selected,
                     'is_term'            => $is_term,
@@ -792,6 +792,8 @@
                     'args'               => $args,
                     'product'            => $product,
                 );
+                
+                return apply_filters( 'woo_variation_swatches_get_swatch_data', $data, $args, $product );
             }
             
             public function dropdown( $html, $args ) {
@@ -917,6 +919,11 @@
                         $attribute_type = $__attribute_type;
                         if ( 'image' === $attribute_type && ! is_array( $this->get_image_attribute( $data, $attribute_type ) ) ) {
                             $attribute_type = 'button';
+                        }
+                        
+                        // If 3rd party plugin wants to remove some attribute from list
+                        if ( apply_filters( 'woo_variation_swatches_remove_attribute_item', false, $data, $attribute_type ) ) {
+                            continue;
                         }
                         
                         $item .= $this->item_start( $data, $attribute_type );
