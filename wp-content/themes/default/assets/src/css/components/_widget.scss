@@ -44,6 +44,11 @@
     position: relative;
     z-index: 1;
     border: 1px solid #eeecec;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $light-color;
+    }
   }
 
   @include media-breakpoint-down(md) {
@@ -138,6 +143,7 @@
         margin-bottom: 8px;
         font-weight: 600;
         color: $dark-color;
+        transition: all 0.3s ease;
 
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;

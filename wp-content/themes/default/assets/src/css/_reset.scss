@@ -354,6 +354,10 @@ input[type=number] {
   padding-right: 15px;
 }
 
+.post-list {
+  padding-right: 25px;
+}
+
 @include media-breakpoint-down(lg) {
   body {
     padding-top: 60px;
@@ -362,5 +366,9 @@ input[type=number] {
   .row {
     --bs-gutter-x: 15px;
     --bs-gutter-x-inverse: -15px;
+  }
+
+  .post-list {
+    padding-right: calc(var(--bs-gutter-x)*.5)
   }
 }

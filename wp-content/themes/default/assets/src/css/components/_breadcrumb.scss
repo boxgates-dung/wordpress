@@ -39,4 +39,22 @@
   font-weight: 500;
   color: $light-color;
   margin-top: 7px;
+
+  a {
+    color: $light-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &>span {
+    span {
+      padding: 0 4px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
 }

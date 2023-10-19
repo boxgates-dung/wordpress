@@ -10,7 +10,7 @@
     font-size: 15px;
     font-weight: 500;
     color: $dark-color;
-    background-color: #fff;
+    background-color: $light-color;
     display: inline-block;
     margin: 0 16px 0 0;
     -webkit-border-radius: 0;
@@ -30,7 +30,7 @@
     border: none;
     overflow: hidden;
 
-    &.current, &:hover {
+    &.current, &.page:hover, &.previouspostslink:hover, &.nextpostslink:hover {
       background-color: $primary-color;
       color: $light-color;
     }
