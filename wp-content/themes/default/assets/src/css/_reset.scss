@@ -344,9 +344,19 @@ input[type=number] {
   font-family: $second-font-family;
 }
 
+.site-content {
+  padding: 110px 0 170px;
+  position: relative;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 @include media-breakpoint-down(lg) {
-  .container {
-    padding: 0 15px;
+  body {
+    padding-top: 60px;
   }
 
   .row {

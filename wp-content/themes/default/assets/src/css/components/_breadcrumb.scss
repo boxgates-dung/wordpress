@@ -1,46 +1,42 @@
-.shop-header-page, .wishlist-header-page {
-  min-height: 240px;
+.page-header {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: #0e0e0e;
+  padding: 110px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 
-  .breadscrumb-inner {
-    width: 1400px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3,0,20,.67);
+  }
+
+  .page-title {
+    color: #fff;
+    font-size: 60px;
+    margin-bottom: 0;
   }
 
   @include media-breakpoint-down(lg) {
-    min-height: 140px;
-  }
-}
-
-.single-header-page {
-  margin-bottom: 40px;
-  background-color: #f6f6f6;
-
-  .breadscrumb-inner {
-    margin: 0;
-    padding: 19px 0;
-  }
-
-  @include media-breakpoint-down(lg) {
-    display: none;
-  }
-}
-
-.breadscrumb-inner {
-  padding: 0 10px;
-  flex: 1;
-  .tb-icon-arrow-next {
-    &::before {
-      content: "";
-      speak: none;
-      font-style: normal;
-      font-weight: 400;
-
-      color: #6b6b6b;
-      font-size: 11px;
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 11px;
-      line-height: 1;
-      margin-top: -4px;
+    .page-title {
+      font-size: 40px;
     }
   }
+}
+
+#breadcrumbs{
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  color: $light-color;
+  margin-top: 7px;
 }

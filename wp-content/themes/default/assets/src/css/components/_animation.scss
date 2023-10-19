@@ -43,3 +43,15 @@
     width: 100%;
   }
 }
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%
+  }
+}
+
+@-webkit-keyframes btn_shine {
+  100% {
+    left: 200%
+  }
+}

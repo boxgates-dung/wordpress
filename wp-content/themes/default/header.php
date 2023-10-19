@@ -53,51 +53,53 @@
       </div>
 
       <div class="header-main">
-        <div class="container d-none d-lg-flex">
-          <div class="row w-100">
-            <div class="header-branding">
-              <div class="header-branding-inner">
+        <div class="container d-none d-lg-block p-0">
+          <div class="d-flex gx-0 justify-content-around">
+            <div class="row w-100">
+              <div class="header-branding">
+                <div class="header-branding-inner">
 
-                <?php if (get_custom_logo()) { ?>
-                  <?php echo get_custom_logo(); ?>
-                <?php } else { ?>
-                  <a href="<?php echo esc_url(home_url('/')); ?>" class="custom-logo-link">
-                    <span>
-                      <?php echo get_bloginfo('name'); ?>
-                    </span>
-                  </a>
-                <?php } ?>
+                  <?php if (get_custom_logo()) { ?>
+                    <?php echo get_custom_logo(); ?>
+                  <?php } else { ?>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="custom-logo-link">
+                      <span>
+                        <?php echo get_bloginfo('name'); ?>
+                      </span>
+                    </a>
+                  <?php } ?>
 
-              </div>
-            </div>
-
-            <div class="header-navigation flex-fill w-100">
-              <nav class="main-navigation">
-                <div class="main-navigation-inner">
-                  <!-- nav -->
-                  <?php wp_nav_menu([
-                    'theme_location' => 'primary',
-                    'container' => '',
-                    'menu_class' => 'primary-menu-nav',
-                  ]) ?>
-                  <!-- end nav -->
                 </div>
-              </nav>
-            </div>
-
-            <div class="header-meta">
-              <div class="header-right-item h-btn-search">
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
               </div>
-            </div>
 
-            <div class="header-social">
-              <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <div class="header-navigation flex-fill w-100">
+                <nav class="main-navigation">
+                  <div class="main-navigation-inner">
+                    <!-- nav -->
+                    <?php wp_nav_menu([
+                      'theme_location' => 'primary',
+                      'container' => '',
+                      'menu_class' => 'primary-menu-nav',
+                    ]) ?>
+                    <!-- end nav -->
+                  </div>
+                </nav>
+              </div>
+
+              <div class="header-meta">
+                <div class="header-right-item h-btn-search">
+                  <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="header-social">
+                <a href="<?php echo esc_url('https://www.facebook.com/sharer/sharer.php?u=' . get_permalink(get_the_ID())); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="<?php echo esc_url('https://twitter.com/intent/tweet?url=' . get_permalink(get_the_ID())); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="<?php echo esc_url('https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink(get_the_ID())); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="<?php echo esc_url('https://www.instagram.com/?url=' . get_permalink(get_the_ID())); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -166,7 +168,7 @@
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMobileSidebar" aria-labelledby="offcanvasMobileSidebarLabel">
     <div class="offcanvas-header">
       <!-- <h5 id="offcanvasRightLabel">Offcanvas right</h5> -->
-      <a href="javascript:;" class="offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="tb-icon tb-icon-cross"></i></a>
+      <a href="javascript:;" class="offcanvas-close btn-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></a>
     </div>
     <div class="offcanvas-body">
       <!-- Render menu -->
@@ -181,10 +183,17 @@
 
   <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
     <div class="offcanvas-header">
-      <h5 id="offcanvasTopLabel">Offcanvas top</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <a href="javascript:;" class="offcanvas-close btn-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></a>
     </div>
-    <div class="offcanvas-body">
-      ...
+    <div class="offcanvas-body po">
+
+
+      <form role="search" method="get" class="search-form-offcanvas position-relative top-50 start-50" action="https://demo.casethemes.net/bixol/">
+        <div class="searchform-wrap"> <input type="text" placeholder="Enter Keywords..." id="search" name="s" class="search-field">
+          <button type="submit" class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
+
+
     </div>
   </div>

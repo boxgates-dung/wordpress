@@ -123,6 +123,17 @@ function get_static_template($static_name)
   return $staticId;
 }
 
+add_action('widgets_init', function () {
+  register_sidebar(array(
+    'name'          => 'Blog sidebar',
+    'id'            => 'sidebar_blog',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="widget-title">',
+    'after_title'   => '</h4>',
+  ));
+});
+
 /* Register static page */
 add_action('admin_init', function () {
   // register static footer part
@@ -219,3 +230,36 @@ add_action('admin_init', function () {
     array('label_for' => 'theme_footer_part')
   );
 });
+
+
+function setup_theme(): void
+{
+  load_theme_textdomain(THEME_DOMAIN, THEME_PATH . '/languages');
+  add_theme_support('post-thumbnails');
+  add_theme_support('woocommerce');
+  set_post_thumbnail_size(800, 1022, true);
+  register_nav_menus(
+    array(
+      'primary'   => __('Primary', THEME_DOMAIN),
+      'footer' => __('Footer Menu', THEME_DOMAIN),
+      'social' => __('Social Links Menu', THEME_DOMAIN),
+      'sidebar' => __('Sidebar', THEME_DOMAIN),
+    )
+  );
+  add_theme_support('align-wide');
+  add_theme_support(
+    'custom-logo',
+    array(
+      'height' => 190,
+      'width' => 190,
+      'flex-width' => true,
+      'flex-height' => true,
+    )
+  );
+  // Add support for editor styles.
+  add_theme_support('editor-styles');
+  // Enqueue editor styles.
+  add_editor_style('style-editor.css');
+  remove_theme_support('widgets-block-editor');
+}
+add_action('after_setup_theme', 'setup_theme');

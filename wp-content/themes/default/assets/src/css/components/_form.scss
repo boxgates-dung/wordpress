@@ -30,6 +30,35 @@
     button.search-submit {
       height: 40px;
       width: 40px;
+      line-height: 1;
     }
+  }
+}
+
+.search-form-offcanvas {
+  width: 100%;
+  max-width: 450px;
+  transform: translateX(-50%);
+  margin-top: -30px;
+}
+.searchform-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 2px #ddd;
+
+  input[type="text"] {
+    border: 0;
+    flex: 1;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  button[type="submit"] {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 24px;
   }
 }
