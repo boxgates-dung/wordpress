@@ -1,3 +1,59 @@
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=number],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
+textarea,
+select,
+.nice-select {
+  background-color: #fff;
+  border: 1px solid #e3e7f2;
+  color: #727a9f;
+  padding: 6px 22px;
+  line-height: normal;
+  font-size: 15px;
+  font-weight: 400;
+  height: 50px;
+  -webkit-transition: all 200ms linear 0ms;
+  -khtml-transition: all 200ms linear 0ms;
+  -moz-transition: all 200ms linear 0ms;
+  -ms-transition: all 200ms linear 0ms;
+  -o-transition: all 200ms linear 0ms;
+  transition: all 200ms linear 0ms;
+  -webkit-box-shadow: none;
+  -khtml-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -khtml-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  width: 100%;
+  outline: none;
+}
+
+textarea {
+  max-width: 100%;
+  line-height: 1.625;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  height: 150px;
+}
+
 .search-form-mobile {
   overflow: hidden;
   border-radius: 5px;
@@ -41,6 +97,7 @@
   transform: translateX(-50%);
   margin-top: -30px;
 }
+
 .searchform-wrap {
   width: 100%;
   display: flex;
@@ -60,5 +117,77 @@
     outline: none;
     border: none;
     font-size: 24px;
+  }
+}
+
+.comment-form {
+  .comment-form-comment {
+    margin-bottom: 0;
+  }
+  .row>div {
+    margin-top: 30px;
+  }
+}
+
+.comment-form-cookies-consent {
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+  margin-top: 20px;
+  color: $dark-color;
+  font-weight: 600;
+  font-family: $second-font-family;
+  padding-left: 20px;
+
+  input {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 0;
+    top: 6px;
+
+    &:checked+label {
+      &:before {
+        border-color: $secondary-color;
+        background-color: #fff;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  label {
+    &::before {
+      content: '';
+      border: 1px solid #b7bccc;
+      background-color: #eceef4;
+      z-index: 1;
+
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 0;
+      top: 6px;
+    }
+
+    &::after {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 0;
+      top: 6px;
+
+      content: '\f00c';
+      font-family: "font awesome 6 free";
+      font-weight: 400;
+      z-index: 2;
+      font-size: 8px;
+      color: var(--primary-color);
+      opacity: 0;
+      line-height: 12px;
+      text-align: center;
+    }
   }
 }

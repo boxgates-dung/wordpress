@@ -4,3 +4,32 @@
   letter-spacing: 2px;
   color: #fff;
 }
+
+.comments-title,
+.comment-reply-title {
+  display: inline-block;
+  padding-right: 47px;
+  position: relative;
+  font-size: 22px;
+  margin-bottom: 30px;
+  padding-bottom: 11px;
+  position: relative;
+  font-weight: 700;
+  color: $dark-color;
+
+  &::before {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background-color: $secondary-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-box-shadow: 0 8px 10px rgba(12, 12, 12, .1);
+    -khtml-box-shadow: 0 8px 10px rgba(12, 12, 12, .1);
+    -moz-box-shadow: 0 8px 10px rgba(12, 12, 12, .1);
+    -ms-box-shadow: 0 8px 10px rgba(12, 12, 12, .1);
+    -o-box-shadow: 0 8px 10px rgba(12, 12, 12, .1);
+    box-shadow: 0 8px 10px rgba(12, 12, 12, .1);
+  }
+}

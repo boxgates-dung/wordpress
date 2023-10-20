@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <div class="container">
   <div class="row">
     <div class="col-lg-6 mx-auto my-5">

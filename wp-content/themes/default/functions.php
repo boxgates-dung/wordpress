@@ -126,7 +126,7 @@ function get_static_template($static_name)
 add_action('widgets_init', function () {
   register_sidebar(array(
     'name'          => 'Blog sidebar',
-    'id'            => 'sidebar_blog',
+    'id'            => 'sidebar-blog',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="widget-title">',

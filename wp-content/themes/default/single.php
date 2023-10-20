@@ -6,13 +6,10 @@
       if (have_posts()) {
         the_post();
         get_template_part('template-parts/post', 'content');
-        // the_content();
       }
       ?>
     </div>
-    <div class="col-12 col-md-4">
-      <?php dynamic_sidebar('sidebar_blog'); ?>
-    </div>
+    <?php get_sidebar(); ?>
   </div>
 </div>
 <?php get_footer();

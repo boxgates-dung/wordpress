@@ -1,4 +1,3 @@
-
 <div id="pageHeader" class="page-header bg-image" style="background-image: url('https://demo.casethemes.net/bixol/wp-content/uploads/2020/11/page-title-update.jpg');">
   <div class="container">
     <div class="page-title-inner">

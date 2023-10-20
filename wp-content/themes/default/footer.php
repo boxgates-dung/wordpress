@@ -10,22 +10,9 @@
 
 <?php
 /* Offcanvas */
-get_template_part('template-parts/offcanvas/offcanvas', 'mini-cart');
-get_template_part('template-parts/offcanvas/offcanvas', 'menu');
-
-/*  Modals */
-get_template_part('template-parts/modals/modal', 'quickview');
-get_template_part('template-parts/modals/modal', 'login');
-get_template_part('template-parts/modals/modal', 'register');
-get_template_part('template-parts/modals/modal', 'aska-question');
-get_template_part('template-parts/modals/modal', 'delivery-return');
-get_template_part('template-parts/modals/modal', 'size-guide');
-
-/*  Navs */
-get_template_part('template-parts/mobile', 'footer-nav');
-get_template_part('template-parts/mobile', 'quickbuy-nav');
+// get_template_part('template-parts/offcanvas/offcanvas', 'mini-cart');
 ?>
-
+<a href="#" class="btn-scroll-top"><i class="fa-solid fa-chevron-up"></i></a>
 <?php wp_footer(); ?>
 </body>
 

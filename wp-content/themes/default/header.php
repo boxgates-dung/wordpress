@@ -173,9 +173,9 @@
     <div class="offcanvas-body">
       <!-- Render menu -->
       <?php wp_nav_menu([
-        'theme_location' => 'primary',
-        'container' => '',
-        'menu_class' => 'primary-mobile-menu-nav',
+        'theme_location'  => 'primary',
+        'container'       => '',
+        'menu_class'      => 'primary-mobile-menu-nav',
       ]) ?>
       <!-- End render menu -->
     </div>
@@ -186,14 +186,6 @@
       <a href="javascript:;" class="offcanvas-close btn-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></a>
     </div>
     <div class="offcanvas-body po">
-
-
-      <form role="search" method="get" class="search-form-offcanvas position-relative top-50 start-50" action="https://demo.casethemes.net/bixol/">
-        <div class="searchform-wrap"> <input type="text" placeholder="Enter Keywords..." id="search" name="s" class="search-field">
-          <button type="submit" class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-      </form>
-
-
+      <?php get_search_form(); ?>
     </div>
   </div>
