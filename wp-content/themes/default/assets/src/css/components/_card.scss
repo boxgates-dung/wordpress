@@ -480,6 +480,7 @@ article {
         .entry-social {
           right: 42px;
           opacity: 1;
+          z-index: 1;
         }
       }
 
@@ -502,6 +503,7 @@ article {
         -ms-transition: all 240ms linear 0ms;
         -o-transition: all 240ms linear 0ms;
         transition: all 240ms linear 0ms;
+        z-index: -1;
 
         a {
           margin-left: 10px;
