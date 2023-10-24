@@ -1,0 +1,395 @@
+*,
+::after,
+::before {
+  box-sizing: inherit;
+  word-wrap: break-word;
+}
+
+:root {
+  font-size: 16px;
+  font-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-weight: 400;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 400;
+  color: #646464;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+a {
+  color: $color-text;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+
+abbr[title],
+abbr[data-bs-original-title] {
+  text-decoration: underline;
+  cursor: help;
+  text-decoration-skip-ink: none;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    // font-family: $font-family-heading;
+    line-height: 1.2;
+  }
+}
+
+h1 {}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 30px;
+
+}
+
+h6 {
+  font-size: 24px;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+sub,
+sup {
+  position: relative;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+pre,
+code,
+kbd,
+samp {
+  direction: ltr #{"/* rtl:ignore */"};
+  unicode-bidi: bidi-override;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+
+  code {
+    word-break: normal;
+  }
+}
+
+code {
+  word-wrap: break-word;
+}
+
+table {
+  margin-bottom: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td,
+  th {
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #e9e9e9;
+  }
+}
+
+dl {
+  dt {
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  dd {
+    margin-bottom: .5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+ul,
+ol {
+  margin-bottom: 0;
+
+  li & {
+    margin-bottom: 0;
+  }
+}
+
+ol ol {
+  list-style: upper-alpha;
+
+  ol {
+    list-style: lower-roman;
+  }
+}
+
+:focus {
+  outline: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle
+}
+
+svg {
+  vertical-align: middle;
+}
+
+hr {
+  margin-bottom: 2rem;
+  border: 0;
+  //border-top: 1px solid $border-color-light;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+select {
+  word-wrap: normal;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// Remove the inner padding in Chrome and Safari on macOS.
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+// Remove padding around color pickers in webkit browsers
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+// stylelint-disable-next-line selector-pseudo-element-no-unknown
+::file-selector-button {
+  font: inherit;
+}
+
+// 1. Change font properties to `inherit`
+// 2. Correct the inability to style clickable types in iOS and Safari.
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+i {
+  font-style: normal;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+blockquote,
+input,
+textarea,
+button,
+select,
+optgroup {
+  font-family: inherit;
+  margin: 0;
+}
+
+blockquote {
+  margin: 0 0 20px;
+  padding: 20px;
+  border-left: 2px solid $primary-color;
+  background: #f4f4f4;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.modal-backdrop {
+  z-index: 10 !important;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.font-family_sfu {
+  font-family: $font-family;
+}
+
+.font-family_ivy-mode {
+  font-family: $second-font-family;
+}
+
+.row {
+  --bs-gutter-x: 40px;
+  --bs-gutter-x-inverse: -40px;
+}
+
+@include media-breakpoint-down(lg) {
+  body {
+    padding-top: 94px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .row {
+    --bs-gutter-x: 15px;
+    --bs-gutter-x-inverse: -15px;
+  }
+
+  #wpadminbar {
+    position: fixed;
+  }
+
+  .admin-bar {
+    .mobile-nav {
+      top: 46px !important;
+    }
+
+    body {
+      padding-top: 140px;
+    }
+  }
+}

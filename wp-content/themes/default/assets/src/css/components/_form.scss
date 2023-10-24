@@ -87,6 +87,10 @@ textarea {
       height: 40px;
       width: 40px;
       line-height: 1;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }

@@ -1,0 +1,118 @@
+// .heading-title {
+//   display: block;
+//   margin-bottom: 40px;
+
+//   .subtitle {
+//     font-size: 16px;
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     line-height: 24px;
+//     letter-spacing: 8px;
+//     color: #ca6d6f;
+//     margin-bottom: 24px;
+//     display: block;
+//   }
+
+//   .title {
+//     margin-bottom: 40px;
+//     max-width: 680px;
+//     font-size: 40px;
+//     line-height: 48px;
+//     font-family: $second-font-family;
+//     display: block;
+//     text-align: center;
+//     width: 100%;
+//     color: $color-text;
+//     margin: auto;
+//   }
+
+//   @include media-breakpoint-down(lg) {
+//     .subtitle {
+//       margin-bottom: 16px;
+//     }
+
+//     .title {
+//       font-size: 28px;
+//     }
+//   }
+// }
+
+// .page-title {
+//   color: $color-text;
+//   margin: 0 0 5px;
+//   font-size: 40px;
+//   font-weight: 400;
+//   line-height: 48px;
+//   padding: 0;
+//   text-align: left;
+//   word-break: break-word;
+//   font-family: $second-font-family;
+// }
+
+// .related {
+//   margin-bottom: 40px;
+
+//   &>h2 {
+//     margin-bottom: 40px;
+//     font-family: $second-font-family;
+//     font-weight: 400;
+//     text-align: center;
+//     color: $color-text;
+//     font-size: 22px;
+//     line-height: 30px;
+//     border-bottom: 1px solid $color-accent;
+//     padding: 0 0 7px 0;
+//   }
+// }
+
+// .woocommerce-billing-fields>h3, #order_review_heading {
+//   font-size: 16px;
+//   font-weight: 600;
+//   line-height: 24px;
+//   margin: 0 0 27px;
+//   color: $color-text;
+// }
+
+// .woocommerce-column__title, .woocommerce-order-details__title {
+//   border-bottom: 0;
+//   line-height: 50px;
+//   padding: 0;
+//   font-size: 17px;
+//   font-weight: 700;
+//   margin: 0 0 15px 0;
+//   font-weight: 600;
+//   color: $color-text;
+// }
+
+// p.woocommerce-shipping-destination {
+//   strong {
+//     font-weight: 500;
+//     color: $color-text;
+//   }
+// }
+
+// .title-404{
+//   color: $color-text;
+//   font-size: 48px;
+//   line-height: 56px;
+//   font-weight: 400;
+//   margin: 0 0 17px;
+//   font-family: $second-font-family;
+// }
+
+.price {
+  color: $primary-color;
+  font-weight: 600;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  del {
+    font-weight: 400;
+    margin-right: 12px;
+    font-size: 15px;
+    line-height: 27px;
+    color: #939393;
+  }
+}

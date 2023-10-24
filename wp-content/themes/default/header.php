@@ -176,7 +176,12 @@
         'theme_location'  => 'primary',
         'container'       => '',
         'menu_class'      => 'primary-mobile-menu-nav',
-      ]) ?>
+      ]);
+
+      wp_nav_menu(array(
+        'theme_location'  => 'primary',
+        "walker"          => new Mobile_Nav_Walker('primary-mobile-menu'),
+      )); ?>
       <!-- End render menu -->
     </div>
   </div>

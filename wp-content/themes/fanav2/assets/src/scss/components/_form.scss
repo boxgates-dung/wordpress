@@ -1,0 +1,254 @@
+.quantity {
+  .box {
+    background: $light-color;
+    display: inline-flex;
+    padding: 0;
+    border: 1px solid $color-accent;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+
+  button {
+    line-height: 32px;
+    height: 38px;
+    border: 0;
+    background: 0 0;
+    clear: both;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    -ms-border-radius: 3px 0 0 3px;
+    -o-border-radius: 3px 0 0 3px;
+    transition: all 0.3s ease;
+    color: $color-text;
+
+    &.minus {
+      padding: 0 0 0 16px;
+    }
+
+    &.plus {
+      padding: 0 16px 0 0;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  input.qty {
+    height: 38px;
+    width: 41px;
+    color: $color-text;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    background-color: transparent;
+    padding: 0 2px;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  border: 0;
+  line-height: normal;
+  padding: 0 24px;
+  font-size: 15px;
+  outline: 0;
+  height: 52px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #f8f8f8;
+  color: #6b6b6b;
+}
+
+// #order_comments {
+//   min-height: 200px;
+//   font-size: 15px;
+//   padding: 20px 24px;
+//   line-height: normal;
+//   margin-top: 10px;
+//   resize: none;
+// }
+
+// input[type="checkbox"] {
+//   width: 20px;
+//   height: 20px;
+//   border: solid 2px #000;
+//   vertical-align: middle;
+//   display: inline-block;
+//   margin-right: 5px;
+//   border-radius: 6px;
+//   margin-top: -4px;
+
+//   &:checked {
+//     accent-color: $primary-color;
+//   }
+// }
+
+// .woocommerce-form__label-for-checkbox {
+//   color: $color-text;
+// }
+
+// .form-row {
+//   label {
+//     padding-bottom: 8px;
+//   }
+
+//   input.input-text {
+//     width: 100%;
+//   }
+// }
+
+// a.create-account-button {
+//   background-color: $primary-color;
+// }
+
+// .show-password-input:after,
+// .show-password-input:after {
+//   font-family: WooCommerce;
+//   speak: never;
+//   font-weight: 400;
+//   font-variant: normal;
+//   text-transform: none;
+//   line-height: 1;
+//   -webkit-font-smoothing: antialiased;
+//   margin-left: 0.618em;
+//   content: "\e010";
+//   text-decoration: none;
+// }
+
+// form.cart {
+//   padding-top: 25px;
+
+//   .variations {
+//     .label {
+//       padding: 0;
+//       padding-bottom: 6px;
+//     }
+//   }
+// }
+
+// label {
+//   .required {
+//     color: red;
+//     text-decoration: none;
+//   }
+// }
+
+// .woocommerce-form__label-for-checkbox {
+//   span {
+//     color: #888;
+//     font-weight: 400;
+//     align-items: center;
+//     line-height: 31px;
+//     font-size: 16px;
+//   }
+// }
+
+// .select2-container--default {
+//   .select2-selection--single {
+//     height: 52px;
+//     border: none;
+
+//     .select2-selection__rendered {
+//       height: 52px;
+//       background-color: #f8f8f8;
+//       line-height: 52px;
+//     }
+
+//     .select2-selection__arrow {
+//       height: 52px;
+//     }
+//   }
+// }
+
+// .before-checkout-form {
+//   form.checkout_coupon {
+//     padding: 25px 24px 14px;
+//     display: table;
+//     width: 100%;
+//     margin: 34px 0 3px;
+//     border-radius: 0;
+//     -webkit-border-radius: 0;
+//     -moz-border-radius: 0;
+//     -ms-border-radius: 0;
+//     -o-border-radius: 0;
+//     border: 1px solid $color-accent;
+//   }
+
+//   form.woocommerce-form-login {
+//     padding: 30px 23px 24px;
+//     border: 1px solid $color-accent;
+//     margin-top: 40px;
+  
+//     @include media-breakpoint-down(lg) {
+//       padding: 0;
+//       border: 0;
+//     }
+//   }
+
+//   .form-row-first, .form-row-last {
+//     width: 100% !important;
+//   }
+// }
+
+// .wc_payment_method {
+//   &>input {
+//     display: none;
+//   }
+
+//   &>input+label {
+//     cursor: pointer;
+    
+//     &::before {
+//       content: " ";
+//       background: #fff;
+//       color: $primary-color;
+//       width: 20px;
+//       height: 20px;
+//       min-width: 20px;
+//       line-height: 20px;
+//       text-align: center;
+//       justify-content: center;
+//       border: 2px solid #646464;
+//       font-weight: 700;
+//       display: inline-flex;
+//       align-items: center;
+//       margin-right: 16px;
+//       margin-left: 0;
+//       font-size: 0;
+//       vertical-align: middle;
+//       -webkit-transition: .3s;
+//       -o-transition: .3s;
+//       transition: .3s;
+//       cursor: pointer;
+//       border-radius: 50%;
+//       -webkit-border-radius: 50%;
+//       -moz-border-radius: 50%;
+//       -ms-border-radius: 50%;
+//       -o-border-radius: 50%;
+//     }
+//   }
+
+//   &>input:checked+label {
+//     &:before {
+//       content: "";
+//       speak: none;
+//       font-style: normal;
+//       font-weight: 400;
+//       font-family: tb-icon;
+//       font-size: 8px;
+//       border-color: $primary-color;
+//     }
+//   }
+// }
