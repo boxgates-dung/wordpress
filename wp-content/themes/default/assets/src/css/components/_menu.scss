@@ -1,7 +1,7 @@
 ul.primary-menu-nav {
   padding-left: 0;
 
-  & > li {
+  &>li {
     list-style: none;
     display: inline-block;
     margin: 0 22px;
@@ -13,7 +13,7 @@ ul.primary-menu-nav {
 
     &:hover,
     &.current_page_item {
-      & > a {
+      &>a {
         &::before {
           opacity: 1;
           width: 100%;
@@ -21,7 +21,7 @@ ul.primary-menu-nav {
       }
     }
 
-    & > a {
+    &>a {
       font-weight: 500;
       font-family: roboto, sans-serif;
       line-height: 67px;
@@ -50,7 +50,7 @@ ul.primary-menu-nav {
     }
 
     &.menu-item-has-children {
-      & > a {
+      &>a {
         &::after {
           content: "+";
           margin-left: 5px;
@@ -168,8 +168,9 @@ ul.primary-menu-nav {
         }
       }
 
-      &:hover, &.current-menu-item {
-        & > a {
+      &:hover,
+      &.current-menu-item {
+        &>a {
           padding-left: 18px;
           color: $primary-color;
 
@@ -224,9 +225,59 @@ ul.primary-menu-nav {
 }
 
 ul.primary-mobile-menu-nav {
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: block;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
   li {
     list-style: none;
   }
 
-  
+  &>li {
+
+    &.menu-item-has-children {
+      &>ul {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid #ebebeb;
+      }
+    }
+
+    &>a {
+      display: block;
+      padding: 0;
+      line-height: 50px;
+      color: #3a4268;
+      font-family: poppins, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      border-bottom: 1px solid #ebebeb;
+    }
+  }
+
+  .sub-menu {
+    a {
+      padding: 0 0 0 10px;
+      line-height: 34px;
+      font-weight: 500;
+      font-size: 14px;
+      border: none;
+      font-family: poppins,sans-serif;
+      color: rgb(58, 66, 104);
+    }
+
+    .sub-menu {
+      a {
+        padding: 0 0 0 20px;
+      }
+    }
+  }
 }
