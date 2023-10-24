@@ -6,7 +6,7 @@ if (have_posts()) {
 
   get_template_part('template-parts/page', 'header');
 ?>
-  <div class="container pt-lg-4 pb-5">
+  <div class="containerd">
     <?php the_content(); ?>
   </div>
 <?php }

@@ -1,18 +1,18 @@
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=number],
-input[type=range],
-input[type=date],
-input[type=month],
-input[type=week],
-input[type=time],
-input[type=datetime],
-input[type=datetime-local],
-input[type=color],
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea,
 select,
 .nice-select {
@@ -60,7 +60,7 @@ textarea {
   display: none;
 
   &.show {
-    animation: .95s ease 0s normal forwards 1 running showMobileFormSearch;
+    animation: 0.95s ease 0s normal forwards 1 running showMobileFormSearch;
     display: block;
   }
 
@@ -122,9 +122,9 @@ textarea {
 
 .comment-form {
   .comment-form-comment {
-    margin-bottom: 0;
+    margin-bottom: 25px;
   }
-  .row>div {
+  .row > div {
     margin-top: 30px;
   }
 }
@@ -133,11 +133,12 @@ textarea {
   font-size: 14px;
   line-height: 24px;
   position: relative;
-  margin-top: 20px;
+  margin-top: 25px;
   color: $dark-color;
   font-weight: 600;
   font-family: $second-font-family;
-  padding-left: 20px;
+  padding-left: 25px;
+  margin-bottom: 25px;
 
   input {
     position: absolute;
@@ -146,7 +147,7 @@ textarea {
     left: 0;
     top: 6px;
 
-    &:checked+label {
+    &:checked + label {
       &:before {
         border-color: $secondary-color;
         background-color: #fff;
@@ -160,7 +161,7 @@ textarea {
 
   label {
     &::before {
-      content: '';
+      content: "";
       border: 1px solid #b7bccc;
       background-color: #eceef4;
       z-index: 1;
@@ -179,15 +180,132 @@ textarea {
       left: 0;
       top: 6px;
 
-      content: '\f00c';
-      font-family: "font awesome 6 free";
-      font-weight: 400;
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
       z-index: 2;
       font-size: 8px;
-      color: var(--primary-color);
+      color: $secondary-color;
       opacity: 0;
       line-height: 12px;
       text-align: center;
     }
+  }
+}
+
+.form-subscribe {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    background-color: $secondary-color;
+
+    font-weight: 900;
+    font-family: "font awesome 6 free";
+    height: 46px;
+    width: 62px;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &::after {
+    z-index: 2;
+    content: "\f1d8";
+    font-weight: 400;
+    font-family: "font awesome 6 free";
+    height: 46px;
+    width: 62px;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .wpcf7-not-valid-tip {
+    padding-top: 10px;
+  }
+
+  .wpcf7-spinner {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: -6px;
+    z-index: 9;
+  }
+
+  br {
+    display: none;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type="email"] {
+    border: none;
+    background-color: #1e294a;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    height: 46px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $light-color;
+    padding-left: 20px;
+    padding-right: 70px;
+
+    &::placeholder {
+      color: $light-color;
+    }
+  }
+
+  input[type="submit"] {
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 46px;
+    width: 62px;
+    padding: 0;
+    opacity: 0;
+    z-index: 3;
+  }
+
+  &:hover {
+    &::after {
+      -o-animation: toTopFromBottom 0.3s forwards;
+      -ms-animation: toTopFromBottom 0.3s forwards;
+      -webkit-animation: toTopFromBottom 0.3s forwards;
+      animation: toTopFromBottom 0.3s forwards;
+    }
+  }
+}
+
+.submitting {
+  .wpcf7-spinner {
+    display: block;
+    
   }
 }

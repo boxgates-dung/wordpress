@@ -1,17 +1,5 @@
 footer {
-  background-color: #f1f1f1;
-
-  .footer-info {
-    border-bottom: solid 1px #dcdcdc;
-  }
-}
-
-.copyright {
-  padding: 20px 0 24px;
-}
-
-.copyright-content {
-  p {
-    color: $color-text;
+  .wpcf7-response-output {
+    display: none;
   }
 }

@@ -12,7 +12,7 @@ ul.primary-menu-nav {
     }
 
     &:hover,
-    &.current_page_item {
+    &.current_page_item, &.current-menu-item {
       & > a {
         &::before {
           opacity: 1;
