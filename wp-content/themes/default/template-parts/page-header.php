@@ -1,8 +1,6 @@
 <?php if (!is_front_page()) { ?>
   <?php
-  if (is_single()) {
-    $background_img = get_the_post_thumbnail_url(null, 'full');
-  } else if (is_page()) {
+  if (is_page()) {
     $background_img = get_the_post_thumbnail_url(null, 'full');
   } else {
     $background_img = get_the_post_thumbnail_url(get_option('page_for_posts'), 'full');

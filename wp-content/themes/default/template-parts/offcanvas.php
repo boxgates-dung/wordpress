@@ -1,4 +1,4 @@
-<!-- Offcanvas -->
+<!-- Offcanvas mobile sidebar-->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMobileSidebar" aria-labelledby="offcanvasMobileSidebarLabel">
   <a href="javascript:;" class="offcanvas-close btn-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></a>
   <div class="offcanvas-body">
@@ -26,7 +26,9 @@
     <!-- End render menu -->
   </div>
 </div>
+<!-- End offcanvas mobile sidebar-->
 
+<!-- Search Offcanvas -->
 <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
   <div class="offcanvas-header">
     <a href="javascript:;" class="offcanvas-close btn-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></a>
@@ -37,4 +39,4 @@
     </div>
   </div>
 </div>
-<!-- End Offcanvas -->
+<!-- End Search Offcanvas -->
