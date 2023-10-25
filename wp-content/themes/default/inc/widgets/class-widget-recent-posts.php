@@ -53,12 +53,8 @@ class Theme_Widget_Recent_Posts extends WP_Widget
       while ($r->have_posts()) {
         $r->the_post();
 
-        $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'thumbnaill');
-        if ($thumbnail) {
-          $thumbnail = $thumbnail[0];
-        } else {
-          $thumbnail = THEME_URI . '/assets/images/empty-image.png';
-        }
+        $thumbnail = get_the_post_thumbnail_url();
+        if (!$thumbnail) $thumbnail = THEME_URI . '/assets/images/empty-image.png';
 
         echo '<div class="entry-brief">';
         echo '<div class="entry-media"><a href="' . get_the_permalink() . '"><img src="' . $thumbnail . '" alt="' . get_the_title() . '"></a></div>';
@@ -104,18 +100,20 @@ class Theme_Widget_Recent_Posts extends WP_Widget
     $title     = isset($instance['title']) ? esc_attr($instance['title']) : '';
     $number    = isset($instance['number']) ? absint($instance['number']) : 5;
     $show_date = isset($instance['show_date']) ? (bool) $instance['show_date'] : false;
-?>
-    <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
-      <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
-    </p>
 
-    <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to show:'); ?></label>
-      <input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-    </p>
+    echo '<p>';
+    echo '<label for="' . $this->get_field_id('title') . '">' . __('Title:') . '</label>';
+    echo '<input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" />';
+    echo '</p>';
 
-    <p><input class="checkbox" type="checkbox" <?php checked($show_date); ?> id="<?php echo $this->get_field_id('show_date'); ?>" name="<?php echo $this->get_field_name('show_date'); ?>" />
-      <label for="<?php echo $this->get_field_id('show_date'); ?>"><?php _e('Display post date?'); ?></label>
-    </p>
-<?php
+    echo '<p>';
+    echo '<label for="' . $this->get_field_id('number') . '">' . __('Number of posts to show:') . '</label>';
+    echo '<input class="widefat" id="' . $this->get_field_id('number') . '" name="' . $this->get_field_name('number') . '" type="text" value="' . $number . '" size="3" />';
+    echo '</p>';
+
+    echo '<p>';
+    echo '<input class="checkbox" type="checkbox" ' . checked($show_date, 1, false) . ' id="' . $this->get_field_id('show_date') . '" name="' . $this->get_field_name('show_date') . '" />';
+    echo '<label for="' . $this->get_field_id('show_date') . '">' . __('Display post date?') . '</label>';
+    echo '</p>';
   }
 }

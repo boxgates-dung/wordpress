@@ -29,6 +29,17 @@ $(document).ready(function () {
   })
 
   /**
+   * Action toggle mobile menu
+   * */ 
+
+  $('.primary-mobile-menu-nav a i').click(function (e) {
+    e.preventDefault()
+    const _self = $(this)
+
+    _self.parent().next().slideToggle()
+  })
+
+  /**
    * 
    * Show button Back to top and show nav when scroll from top
    * */ 

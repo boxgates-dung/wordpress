@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/page', 'header');?>
+ 
 <div class="container pt-5">
   <div class="row">
     <div class="col-12 col-md-8 post-list">

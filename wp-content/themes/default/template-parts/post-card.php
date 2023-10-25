@@ -1,6 +1,11 @@
+<?php
+$thumbnail = get_the_post_thumbnail_url();
+if (!$thumbnail) $thumbnail = THEME_URI . '/assets/images/empty-image.png';
+?>
+
 <article id="post-<?php the_ID(); ?>" class="post single-hentry post-<?php the_ID(); ?>">
   <div class="entry-featured image-effect-white">
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php the_post_thumbnail_url(null, 'full'); ?>);">
+    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo $thumbnail; ?>);">
       <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?>
     </a>
     <div class="entry-date"> <span><?php echo get_post_time('d'); ?></span> <span><?php echo get_post_time('M, y'); ?></span></div>
@@ -37,7 +42,7 @@
           <a class="pin-social" title="Pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&amp;media=<?php the_post_thumbnail_url(null, 'full'); ?>&amp;description=<?php the_title() ?>">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a class="lin-social" title="LinkedIn" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title() ;?>">
+          <a class="lin-social" title="LinkedIn" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>

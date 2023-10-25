@@ -13,6 +13,7 @@ define('THEME_URI', get_template_directory_uri());
 define('THEME_PATH', get_template_directory());
 
 require_once THEME_PATH . '/inc/widgets/class-widget-recent-posts.php';
+require_once THEME_PATH . '/inc/class-walker-menu.php';
 
 /**
  * Theme setup.
@@ -92,7 +93,7 @@ function theme_widgets_init()
   ));
 
   // Add custom widget
-  register_widget( 'Theme_Widget_Recent_Posts' );
+  register_widget('Theme_Widget_Recent_Posts');
 }
 
 add_action('widgets_init', 'theme_widgets_init');

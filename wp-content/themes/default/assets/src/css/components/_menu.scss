@@ -230,6 +230,20 @@ ul.primary-mobile-menu-nav {
 
   a {
     display: block;
+
+    i {
+      position: absolute;
+      top: 10px;
+      height: 30px;
+      right: 0;
+      border: 1px solid #ebebeb;
+      width: 30px;
+      cursor: pointer;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 11px;
+    }
   }
 
   ul {
@@ -260,10 +274,13 @@ ul.primary-mobile-menu-nav {
       font-size: 15px;
       font-weight: 600;
       border-bottom: 1px solid #ebebeb;
+      position: relative;
     }
   }
 
   .sub-menu {
+    display: none;
+    
     a {
       padding: 0 0 0 10px;
       line-height: 34px;
@@ -272,6 +289,10 @@ ul.primary-mobile-menu-nav {
       border: none;
       font-family: poppins,sans-serif;
       color: rgb(58, 66, 104);
+      position: relative;
+      i {
+        top: 2px;
+      }
     }
 
     .sub-menu {
