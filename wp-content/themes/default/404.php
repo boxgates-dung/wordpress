@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-6 mx-auto my-5">
       <div class="img-404">
-        <img src="<?php echo THEME_URI . '/assets/images/image-404.png' ?>" alt="Img 404" class="lazyloaded">
+        <img src="<?php echo THEME_URI . '/assets/images/image-404.png'; ?>" alt="Img 404">
       </div>
       <section class="error-404 text-center mt-4">
         <h1 class="title-404"><?php esc_html_e('Page Not Found', THEME_DOMAIN); ?></h1>
