@@ -14,11 +14,11 @@ define('THEME_PATH', get_template_directory());
 
 require_once THEME_PATH . '/inc/widgets/class-widget-recent-posts.php';
 require_once THEME_PATH . '/inc/class-walker-menu.php';
+require_once THEME_PATH . '/elementor/elementor.php';
 
 /**
  * Theme setup.
  */
-
 function theme_setup()
 {
   load_theme_textdomain(THEME_DOMAIN, THEME_PATH . '/languages');
@@ -64,7 +64,6 @@ add_action('after_setup_theme', 'theme_setup');
 /**
  * Enqueue theme assets.
  */
-
 function theme_enqueue_scripts()
 {
   $theme = wp_get_theme();
@@ -80,7 +79,6 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 /**
  * Theme widget init
  */
-
 function theme_widgets_init()
 {
   register_sidebar(array(
@@ -191,9 +189,9 @@ add_action('admin_init', function () {
     'reading', // option group "reading", default WP group
     'theme_footer_part', // option name
     [
-      'type' => 'string',
+      'type'              => 'string',
       'sanitize_callback' => 'sanitize_text_field',
-      'default' => NULL,
+      'default'           => NULL,
     ]
   );
 
@@ -202,9 +200,9 @@ add_action('admin_init', function () {
     'reading', // option group "reading", default WP group
     'theme_header_part', // option name
     [
-      'type' => 'string',
+      'type'              => 'string',
       'sanitize_callback' => 'sanitize_text_field',
-      'default' => NULL,
+      'default'           => NULL,
     ]
   );
 
@@ -216,11 +214,11 @@ add_action('admin_init', function () {
       $staticId = get_option('theme_header_part');
       // get all pages
       $args = array(
-        'posts_per_page' => -1,
-        'orderby' => 'name',
-        'order' => 'ASC',
-        'post_type' => 'elementor_library',
-        'meta_query' => array(
+        'posts_per_page'  => -1,
+        'orderby'         => 'name',
+        'order'           => 'ASC',
+        'post_type'       => 'elementor_library',
+        'meta_query'      => array(
           array(
             'key' => '_elementor_template_type',
             'value' => 'section',
@@ -252,14 +250,14 @@ add_action('admin_init', function () {
       $staticId = get_option('theme_footer_part');
       // get all pages
       $args = array(
-        'posts_per_page' => -1,
-        'orderby' => 'name',
-        'order' => 'ASC',
-        'post_type' => 'elementor_library',
-        'meta_query' => array(
+        'posts_per_page'  => -1,
+        'orderby'         => 'name',
+        'order'           => 'ASC',
+        'post_type'       => 'elementor_library',
+        'meta_query'      => array(
           array(
-            'key' => '_elementor_template_type',
-            'value' => 'section',
+            'key'     => '_elementor_template_type',
+            'value'   => 'section',
           )
         )
       );

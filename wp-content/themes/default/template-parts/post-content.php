@@ -1,6 +1,12 @@
 <article id="post-<?php the_ID(); ?>" class="post post-<?php the_ID(); ?>">
   <div class="entry-featured mb-4">
-    <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?>
+    <?php
+    if (the_post_thumbnail()) {
+      the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']);
+    } else {
+      echo '<img src="' . THEME_URI . '/assets/images/empty-image.png' . '" class="img-fluid wp-post-image" alt="">';
+    }
+    ?>
   </div>
 
   <div class="entry-body">
