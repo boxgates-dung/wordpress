@@ -42,25 +42,169 @@ class Top_Head_Widget extends Widget_Base
       ]
     );
 
-    // $this->add_control(
-		// 	'widget_title',
-		// 	[
-		// 		'label'       => esc_html__( 'Title', THEME_DOMAIN ),
-		// 		'type'        => Controls_Manager::TEXT,
-		// 		'default'     => esc_html__( 'Default title', THEME_DOMAIN ),
-		// 		'placeholder' => esc_html__( 'Type your title here', THEME_DOMAIN ),
-		// 	]
-		// );
+    /* Email */
     $this->add_control(
-			'widget_title',
-			[
-				'label'       => esc_html__( 'Title', THEME_DOMAIN ),
-				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Default title', THEME_DOMAIN ),
-				'placeholder' => esc_html__( 'Type your title here', THEME_DOMAIN ),
-			]
-		);
+      'email_heading',
+      [
+        'label'     => esc_html__('Email', THEME_DOMAIN),
+        'type'      => Controls_Manager::HEADING,
+        'separator' => 'before',
+      ]
+    );
 
+    $this->add_control(
+      'email_title',
+      [
+        'label'       => esc_html__('Title', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Default title', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+    $this->add_control(
+      'email_address',
+      [
+        'label'       => esc_html__('Email Address', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('youremail@domain.com', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+
+    $this->add_control(
+      'email_url',
+      [
+        'label'       => esc_html__( 'Link', THEME_DOMAIN ),
+				'type'        => Controls_Manager::URL,
+				'options'     => [ 'url', 'is_external', 'nofollow' ],
+				'default'     => [
+					'url'         => 'youremail@domain.com',
+					'is_external' => true,
+					'nofollow'    => true,
+				],
+				'label_block' => true,
+      ]
+    );
+
+    /* Phone */
+    $this->add_control(
+      'phone_heading',
+      [
+        'label'     => esc_html__('Phone', THEME_DOMAIN),
+        'type'      => Controls_Manager::HEADING,
+        'separator' => 'before',
+      ]
+    );
+
+    $this->add_control(
+      'phone_title',
+      [
+        'label'       => esc_html__('Title', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Default title', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+    $this->add_control(
+      'phone_address',
+      [
+        'label'       => esc_html__('Phone Number', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Phone Number', THEME_DOMAIN),
+        'placeholder' => esc_html__('Phone Number here', THEME_DOMAIN),
+      ]
+    );
+
+    $this->add_control(
+      'phone_url',
+      [
+        'label'       => esc_html__( 'Phone Link', THEME_DOMAIN ),
+				'type'        => Controls_Manager::URL,
+				'options'     => [ 'url', 'is_external', 'nofollow' ],
+				'default'     => [
+					'url'         => '840123456',
+					'is_external' => true,
+					'nofollow'    => true,
+				],
+				'label_block' => true,
+      ]
+    );
+
+    /* Open Time */
+    $this->add_control(
+      'open_time_heading',
+      [
+        'label'     => esc_html__('Open Time', THEME_DOMAIN),
+        'type'      => Controls_Manager::HEADING,
+        'separator' => 'before',
+      ]
+    );
+
+    $this->add_control(
+      'open_time_title',
+      [
+        'label'       => esc_html__('Title', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Default title', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+
+    $this->add_control(
+      'open_time',
+      [
+        'label'       => esc_html__('Open Time', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Default title', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+
+    /* Address */
+
+    $this->add_control(
+      'address_heading',
+      [
+        'label'     => esc_html__('Address', THEME_DOMAIN),
+        'type'      => Controls_Manager::HEADING,
+        'separator' => 'before',
+      ]
+    );
+
+    $this->add_control(
+      'address_title',
+      [
+        'label'       => esc_html__('Title', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Default title', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+
+    $this->add_control(
+      'address',
+      [
+        'label'       => esc_html__('Address', THEME_DOMAIN),
+        'type'        => Controls_Manager::TEXT,
+        'default'     => esc_html__('Default Address', THEME_DOMAIN),
+        'placeholder' => esc_html__('Type your title here', THEME_DOMAIN),
+      ]
+    );
+
+    $this->add_control(
+      'location_url',
+      [
+        'label'       => esc_html__( 'Location Link', THEME_DOMAIN ),
+				'type'        => Controls_Manager::URL,
+				'options'     => [ 'url', 'is_external', 'nofollow' ],
+				'default'     => [
+					'url'         => 'https://www.google.com/maps?q=380+St+Kilda+Road,+Melbourne,+Australia',
+					'is_external' => true,
+					'nofollow'    => true,
+				],
+				'label_block' => true,
+      ]
+    );
 
     $this->end_controls_section();
   }
@@ -91,19 +235,34 @@ class Top_Head_Widget extends Widget_Base
             <div class="header-holder">
               <div class="middle-item">
                 <div class="middle-icon"><i class="flaticon flaticon-mail"></i></div>
-                <div class="middle-meta"> <label>envato@gmail.com</label> <span>Mail to us</span></div> <a href="mailto:envato@gmail.com" class="middle-link"></a>
+                <div class="middle-meta">
+                  <label><?php echo $settings['email_title']; ?></label>
+                  <span><?php echo $settings['email_address']; ?></span>
+                </div>
+                <a href="<?php echo $settings['address_url']['url']; ?>" class="middle-link"></a>
               </div>
               <div class="middle-item">
                 <div class="middle-icon"><i class="flaticon flaticon-phone"></i></div>
-                <div class="middle-meta"> <label>Call for help:</label> <span>(+123) 5462 3257</span></div> <a href="tel:+12354623257" class="middle-link"></a>
+                <div class="middle-meta">
+                  <label><?php echo $settings['phone_title']; ?></label>
+                  <span><?php echo $settings['phone_address']; ?></span>
+                </div>
+                <a href="<?php echo $settings['phone_url']['url']; ?>" class="middle-link"></a>
               </div>
               <div class="middle-item">
                 <div class="middle-icon"><i class="flaticon flaticon-alarm-clock"></i></div>
-                <div class="middle-meta"> <label>Sunday - Friday:</label> <span>9am - 8pm</span></div>
+                <div class="middle-meta">
+                  <label><?php echo $settings['open_time_title']; ?></label> 
+                  <span><?php echo $settings['open_time']; ?></span>
+                </div>
               </div>
               <div class="middle-item">
                 <div class="middle-icon"><i class="flaticon flaticon-pin"></i></div>
-                <div class="middle-meta"> <label>380 Albert St, Melbourne</label> <span>Australia</span></div> <a href="https://www.google.com/maps?q=380+St+Kilda+Road,+Melbourne,+Australia" class="middle-link"></a>
+                <div class="middle-meta">
+                  <label><?php echo $settings['address_title']; ?></label>
+                  <span><?php echo $settings['address']; ?></span>
+                </div>
+                <a href="<?php echo $settings['location_url']['url']; ?>" class="middle-link"></a>
               </div>
             </div>
           </div>
