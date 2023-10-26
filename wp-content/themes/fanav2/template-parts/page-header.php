@@ -11,7 +11,7 @@ $pageThumbnailUrl = wp_get_attachment_image_src(get_post_thumbnail_id($pageId), 
 if ($pageThumbnailUrl) {
   $pageThumbnailUrl = $pageThumbnailUrl[0];
 } else {
-  $pageThumbnailUrl = THEME_URI . '/assets/images/breadcrumbs-woo-scaled.jpg';
+  $pageThumbnailUrl = LATOYA_THEME_URI . '/assets/images/breadcrumbs-woo-scaled.jpg';
 }
 ?>
 

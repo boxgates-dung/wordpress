@@ -34,3 +34,11 @@ function latoya_template_footer()
   }
 }
 add_action('latoya_theme_footer', 'latoya_template_footer');
+
+function latoya_add_template_footer()
+{
+  /* Offcanvas */
+  get_template_part('template-parts/offcanvas/offcanvas', 'menu');
+  get_template_part('template-parts/offcanvas/offcanvas', 'wishlist-and-mini-cart');
+}
+add_action('latoya_theme_footer', 'latoya_add_template_footer', 20, 1);
