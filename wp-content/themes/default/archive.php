@@ -10,7 +10,7 @@
           get_template_part('template-parts/post', 'card');
         }
       };
-      if (function_exists('_pagenavi_init')) wp_pagenavi('<div id="wp_pagenavi">', '</div>');
+      posts_pagination();
       ?>
     </div>
     <?php get_sidebar(); ?>

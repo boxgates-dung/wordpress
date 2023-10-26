@@ -10,15 +10,8 @@
           get_template_part('template-parts/post', 'card');
         }
       };
-      if (function_exists('_pagenavi_init')) wp_pagenavi('<div id="wp_pagenavi">', '</div>');
 
-      the_posts_pagination( array(
-        'mid_size'  => 2,
-        'end_size'  => 0,
-        'prev_text' => __( '<', 'textdomain' ),
-        'next_text' => __( '>', 'textdomain' ),
-      ) );
-      
+      posts_pagination();
       ?>
     </div>
     <?php get_sidebar(); ?>

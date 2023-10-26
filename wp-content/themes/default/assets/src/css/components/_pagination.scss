@@ -1,38 +1,59 @@
-.wp-pagenavi {
+.posts-pagination {
+  padding-left: 0;
 
-  &>span,
-  &>a {
-    padding: 0 10px;
-    text-align: center;
-    height: 50px;
-    min-width: 50px;
-    line-height: 50px;
+  &>li {
+    list-style: none;
+    margin: 0 16px 0 0;
+    border: none;
+    z-index: 1;
+    color: $dark-color;
+    display: inline-block;
     font-size: 15px;
     font-weight: 500;
-    color: $dark-color;
-    background-color: $light-color;
-    display: inline-block;
-    margin: 0 16px 0 0;
+    height: 50px;
+    line-height: 50px;
+    min-width: 50px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
     -webkit-border-radius: 0;
     -khtml-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
     border-radius: 0;
-    -webkit-transition: all 300ms linear 0ms;
-    -khtml-transition: all 300ms linear 0ms;
-    -moz-transition: all 300ms linear 0ms;
-    -ms-transition: all 300ms linear 0ms;
-    -o-transition: all 300ms linear 0ms;
-    transition: all 300ms linear 0ms;
-    position: relative;
-    z-index: 1;
-    border: none;
-    overflow: hidden;
 
-    &.current, &.page:hover, &.previouspostslink:hover, &.nextpostslink:hover {
-      background-color: $primary-color;
-      color: $light-color;
+    &.active,
+    &:hover {
+
+      a, .current {
+        background-color: $primary-color;
+        color: $light-color;
+      }
+    }
+
+    &>* {
+      display: block;
+      padding: 0 10px;
+      width: 100%;
+      height: 100%;
+      background-color: $light-color;
+      -webkit-transition: all .3s linear 0ms;
+      -khtml-transition: all .3s linear 0ms;
+      -moz-transition: all .3s linear 0ms;
+      -ms-transition: all .3s linear 0ms;
+      -o-transition: all .3s linear 0ms;
+      transition: all .3s linear 0ms;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &>li {
+      height: 45px;
+      line-height: 45px;
+      min-width: 45px;
+      margin: 0 12px 0 0;
     }
   }
 }

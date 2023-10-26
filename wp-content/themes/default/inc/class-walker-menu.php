@@ -72,8 +72,8 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
     $attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
 
     // Build HTML output and pass through the proper filter.
-    $args = (object) $args;
-    $item_output = sprintf(
+    $args         = (object) $args;
+    $item_output  = sprintf(
       '%1$s<a%2$s>%3$s%4$s%5$s %6$s</a>%7$s',
       $args->before,
       $attributes,
@@ -83,7 +83,6 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
       $args->walker->has_children ? '<i class="fa-solid fa-angle-down"></i>' : '',
       $args->after
     );
-
 
     $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
   }

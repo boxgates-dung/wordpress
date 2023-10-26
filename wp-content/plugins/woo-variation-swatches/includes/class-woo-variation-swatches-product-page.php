@@ -39,6 +39,10 @@
                 
                 add_action( 'woocommerce_before_variations_form', array( $this, 'before_variations_form' ) );
                 add_action( 'woocommerce_after_variations_form', array( $this, 'after_variations_form' ) );
+                
+                
+                // add_action( 'pmxi_before_post_import', $callback);
+                
                 // add_action( 'woocommerce_after_variations_form', array( $this, 'enqueue_script' ) );
                 
                 // add_filter( 'nocache_headers', array( $this, 'cache_ajax_response' ), 99 );
@@ -141,9 +145,13 @@
             
             public function variable_children_args( $all_args, $product, $visible_only ) {
                 
-                if ( ! $visible_only && ! is_admin() ) {
-                    // Don't load disabled variation on ajax variation threshold is 0
-                    // Ajax variation load all variation
+                // The issue is: During import it does not save disabled variation.
+                if ( function_exists( 'wp_all_import_get_import_id' ) && wp_all_import_get_import_id() !== 'new' ) {
+                    return $all_args;
+                }
+                
+                // Show only published variation product.
+                if ( ! $visible_only ) {
                     $all_args[ 'post_status' ] = 'publish';
                 }
                 
