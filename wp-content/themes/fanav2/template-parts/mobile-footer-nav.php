@@ -30,7 +30,7 @@
           <span class="menu-icon-child d-inline-block position-relative">
             <i class="icon- icon-heart"></i>
             <span class="badge count_wishlist position-absolute text-center rounded-circle font-weight-normal text-light">
-              <?php echo YITH_WCWL()->count_all_products();?>
+              0
             </span>
             <span><?php echo __('Wishlist', THEME_DOMAIN); ?></span>
           </span>

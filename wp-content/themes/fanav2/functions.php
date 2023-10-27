@@ -13,7 +13,7 @@ define('LATOYA_THEME_URI', get_template_directory_uri() . '/');
 define('LATOYA_THEME_DIR', get_template_directory() . '/');
 
 // Latoya ajax, functions, hooks.
-require_once LATOYA_THEME_DIR . 'includes/template-ajax.php';
+require_once LATOYA_THEME_DIR . 'includes/ajax.php';
 require_once LATOYA_THEME_DIR . 'includes/template-hooks.php';
 require_once LATOYA_THEME_DIR . 'includes/template-functions.php';
 

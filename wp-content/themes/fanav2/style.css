@@ -1,5 +1,5 @@
 /*
-Theme Name: Fana V2
+Theme Name: Latoya
 Theme URI:
 Author:
 Author URI:
@@ -8,4 +8,14 @@ Version: 0.1.0
 License: MIT
 License URI:
 Text Domain:
+*/
+
+
+/* 
+display: inline-block;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+display: -webkit-box;
+letter-spacing: 0;
+overflow: hidden; 
 */

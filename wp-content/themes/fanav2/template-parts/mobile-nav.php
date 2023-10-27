@@ -18,7 +18,7 @@
         <?php if (get_custom_logo()) {
           echo get_custom_logo();
         } else {
-          echo '<a href="' . get_home_url() . '" class="custom-logo-link"><span>' . esc_html__(get_bloginfo('name'), LATOYA_THEME_DOMAIN) . '</span></a>';
+          echo '<a href="' . esc_url(get_home_url()) . '" class="custom-logo-link"><span>' . esc_html__(get_bloginfo('name'), LATOYA_THEME_DOMAIN) . '</span></a>';
         }; ?>
       </div>
     </div>
@@ -37,45 +37,7 @@
   <!-- Mobile form search -->
   <div class="bottombar-device-mobile">
     <div class="search-form search-mobile">
-      <form action="<?php echo get_home_url(); ?>" data-ajax_action="<?php echo admin_url('admin-ajax.php'); ?>" method="get" class="search-form ajax-search show-category">
-
-        <div class="form-group">
-          <div class="input-group">
-
-            <div class="select-category order-3 w-100">
-              <select name="product_cat" id="product-cat-EzxqJ" class="dropdown_product_cat border-0 rounded-0 position-relative">
-                <option value="" selected="selected">All</option>
-                <option class="level-0" value="accessories">Accessories&nbsp;&nbsp;(6)</option>
-                <option class="level-0" value="bags">Bags&nbsp;&nbsp;(4)</option>
-                <option class="level-0" value="bathing-dress">Bathing dress&nbsp;&nbsp;(10)</option>
-                <option class="level-0" value="pants">Pants&nbsp;&nbsp;(9)</option>
-                <option class="level-0" value="shoes">Shoes&nbsp;&nbsp;(7)</option>
-                <option class="level-0" value="swimsuit">Swimsuit&nbsp;&nbsp;(10)</option>
-                <option class="level-0" value="tankini">Tankini&nbsp;&nbsp;(11)</option>
-                <option class="level-0" value="vintage">Vintage&nbsp;&nbsp;(8)</option>
-              </select>
-            </div>
-
-            <button type="submit" class="button-search btn btn-sm border-0 shadow-none>">
-              <i class="tb-icon tb-icon-search-normal"></i>
-            </button>
-
-            <input type="text" placeholder="Search in 20.000+ products..." name="s" required="" class="form-control input-sm border-0 px-1 shadow-none" autocomplete="off">
-            <input type="hidden" name="post_type" value="product" class="post_type">
-
-            <!-- Search result -->
-            <div class="search-results-wrapper">
-              <div class="search-results position-absolute bg-white d-none">
-                <!-- <div class="suggestion-title no-found-msg">No products found.</div> -->
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-      </form>
-      <div id="search-mobile-nav-cover"></div>
+      <?php do_action('latoya_product_search_form'); ?>
     </div>
   </div>
   <!-- End mobile form search -->

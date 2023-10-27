@@ -1,5 +1,36 @@
 #offcanvasWishlistAndMiniCart {
-  max-width: 88%;
+  max-width: 90%;
+
+  .inner-empty {
+    img {
+      margin-top: 120px;
+    }
+
+    .empty-heading {
+      font-size: 14px;
+      line-height: 20px;
+      color: #6b6b6b;
+    }
+
+    .wc-continue {
+      color: $primary-color;
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 22px;
+      margin-top: 10px;
+
+      i {
+        margin: 5px 0 0 7px;
+        vertical-align: unset;
+        font-size: inherit;
+        line-height: 1;
+        display: inline-block;
+        color: $color-text;
+        font-size: 10px;
+      }
+    }
+  }
 }
 
 #offcanvasMenu {
@@ -9,7 +40,7 @@
 .offcanvas {
   .offcanvas-close {
     position: absolute;
-    top: 16px;
+    top: 18px;
     right: 20px;
     left: auto;
     text-align: center;
