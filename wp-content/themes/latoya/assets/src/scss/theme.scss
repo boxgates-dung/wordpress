@@ -1,0 +1,36 @@
+//customize to import bootstrap
+@import "~bootstrap/scss/bootstrap-utilities";
+@import "~bootstrap/scss/mixins";
+
+@import "variable";
+@import "fonts";
+@import "reset";
+//@import "utils";
+
+//components
+// @import "components/alert";
+@import "components/badge";
+// @import "components/breadcrumb";
+@import "components/button";
+@import "components/card";
+// @import "components/dropdown";
+// @import "components/footer";
+@import "components/cart";
+@import "components/form";
+@import "components/heading";
+@import "components/listing";
+@import "components/menu";
+// @import "components/modal";
+@import "components/nav";
+@import "components/offcanvas";
+// @import "components/pagination";
+@import "components/search";
+// @import "components/sidebar";
+@import "components/spinner";
+// @import "components/table";
+
+//pages
+// @import "pages/account.scss";
+// @import "pages/shop.scss";
+// @import "pages/single-product";
+// @import "pages/checkout";

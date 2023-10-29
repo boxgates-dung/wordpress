@@ -1,0 +1,109 @@
+
+
+/* Freeshipping conditional */ 
+.total-condition-wrap {
+  .total-condition {
+    width: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, .1);
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+    .total-condition-hint {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      line-height: inherit;
+      color: transparent;
+      text-align: center;
+    }
+
+    .subtotal-condition {
+      color: $light-color;
+      background: $bg-free-shipping;
+      position: relative;
+      z-index: 1;
+      line-height: inherit;
+      width: 2px;
+      height: 100%;
+      overflow: hidden;
+      text-align: center;
+      font-weight: 400;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+    }
+
+    .total-condition-hint,
+    .subtotal-condition {
+      -webkit-transition: width .5s ease;
+      -o-transition: width .5s ease;
+      transition: width .5s ease;
+    }
+  }
+
+  .total-condition-desc {
+    max-width: 620px;
+    margin: 3px auto 13px;
+    text-align: center;
+    line-height: 27px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #6b6b6b;
+
+    .amount {
+      color: $primary-color;
+      font-size: 18px;
+      line-height: 31px;
+      font-weight: 400;
+    }
+
+    strong {
+      font-weight: 400;
+    }
+  }
+
+  .hide-in-cart {
+    display: none;
+  }
+}
+
+/* Cart */ 
+.wc-proceed-to-checkout {
+  .button {
+    width: 100%;
+  }
+}
+
+.cart-total-info {
+  margin-top: 60px;
+}
+
+.cart_totals {
+  width: 100% !important;
+
+  h2 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    margin: 0;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 21px;
+    text-transform: capitalize;
+    color: $color-text;
+  }
+
+  .wc-proceed-to-checkout {
+    display: none;
+  }
+}
