@@ -69,9 +69,9 @@ final class Custom_Elementor
   function init_categories(Elements_Manager $categories_manager)
   {
     $categories_manager->add_category(
-      'boxgates',
+      'latoya',
       [
-        'title' => 'BoxGates',
+        'title' => 'Latoya',
         'icon'  => 'fa fa-plug',
       ]
     );
@@ -80,12 +80,12 @@ final class Custom_Elementor
   public function init_widgets()
   {
     //Include Widget files
-    require_once('widgets/product-carousel.php');
-
+    require_once('widgets/header-icons.php');
+    require_once('widgets/nav.php');
 
     // Register widget
-    // Plugin::instance()->widgets_manager->register(new FANA_Product_Carousel_Widget());
-
+    Plugin::instance()->widgets_manager->register(new Latoya_Header_Icons_Widget());
+    Plugin::instance()->widgets_manager->register(new Latoya_Nav_Widget());
   }
 
   public function init_controls()

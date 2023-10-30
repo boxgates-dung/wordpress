@@ -13,7 +13,9 @@ defined('ABSPATH') || exit;
  */
 function latoya_template_header()
 {
-  $header_static_id = get_static_template('theme_header_part');
+  $theme_options_config = get_option('theme_options_config', array('header_id' => ''));
+  $header_static_id     = $theme_options_config['header_id'];
+
   if ($header_static_id) {
     $ele = Elementor\Plugin::instance();
     echo '<header id="header">' . $ele->frontend->get_builder_content_for_display($header_static_id) . '</header>';
@@ -27,21 +29,24 @@ add_action('latoya_theme_header', 'latoya_template_header');
  */
 function latoya_template_footer()
 {
-  $footer_static_id = get_static_template('theme_footer_part');
+  $theme_options_config = get_option('theme_options_config', array('footer_id' => ''));
+  $footer_static_id     = $theme_options_config['footer_id'];
+
   if ($footer_static_id) {
     $ele = Elementor\Plugin::instance();
     echo '<footer id="footer">' . $ele->frontend->get_builder_content_for_display($footer_static_id) . '</footer>';
   }
-}
-add_action('latoya_theme_footer', 'latoya_template_footer');
 
-function latoya_add_template_footer()
-{
   /* Offcanvas */
   get_template_part('template-parts/offcanvas/offcanvas', 'menu');
+  get_template_part('template-parts/offcanvas/offcanvas', 'search');
   get_template_part('template-parts/offcanvas/offcanvas', 'wishlist-and-mini-cart');
+
+  /* Modals */
+  get_template_part('template-parts/modals/modal', 'login');
+
 }
-add_action('latoya_theme_footer', 'latoya_add_template_footer', 20, 1);
+add_action('latoya_theme_footer', 'latoya_template_footer');
 
 /**
  * Hook product search form
@@ -64,7 +69,7 @@ function latoya_product_search_form()
   echo '<div class="input-group">';
 
   echo '<div class="select-category order-3 w-100">';
-  echo '<select name="product_cat" id="product-cat-EzxqJ" class="dropdown_product_cat border-0 rounded-0 position-relative">';
+  echo '<select name="product_cat" class="dropdown_product_cat border-0 rounded-0 position-relative">';
   echo '<option value="" selected="selected">' . __('All', LATOYA_THEME_DOMAIN) . '</option>';
   foreach ($product_cats as $cat) {
     echo '<option class="level-0" value="' . $cat->slug . '">' . $cat->name . '&nbsp;&nbsp;(' . $cat->count . ')</option>';

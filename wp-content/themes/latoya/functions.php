@@ -15,7 +15,6 @@ define('LATOYA_THEME_DIR', get_template_directory() . '/');
 // Latoya ajax, functions, hooks.
 require_once LATOYA_THEME_DIR . 'includes/ajax.php';
 require_once LATOYA_THEME_DIR . 'includes/template-hooks.php';
-require_once LATOYA_THEME_DIR . 'includes/template-functions.php';
 require_once LATOYA_THEME_DIR . 'includes/elementor/elementor.php';
 require_once LATOYA_THEME_DIR . 'includes/admin/index.php';
 require_once LATOYA_THEME_DIR . 'includes/class-walker-menu.php';
@@ -107,100 +106,3 @@ function removing_woo_styles()
  * Remove breadcrumb in shop page
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20); /*remove breadcrumb*/
-
-/* Register static page */
-add_action('admin_init', function () {
-  // register static footer part
-  register_setting(
-    'reading', // option group "reading", default WP group
-    'theme_footer_part', // option name
-    [
-      'type' => 'string',
-      'sanitize_callback' => 'sanitize_text_field',
-      'default' => NULL,
-    ]
-  );
-
-  // register static header you page
-  register_setting(
-    'reading', // option group "reading", default WP group
-    'theme_header_part', // option name
-    [
-      'type' => 'string',
-      'sanitize_callback' => 'sanitize_text_field',
-      'default' => NULL,
-    ]
-  );
-
-  // add new setting for header you page part
-  add_settings_field(
-    'theme_header_part', // ID
-    __('Header', 'vara'), // Title
-    function () {
-      $staticId = get_option('theme_header_part');
-      // get all pages
-      $args = array(
-        'posts_per_page' => -1,
-        'orderby' => 'name',
-        'order' => 'ASC',
-        'post_type' => 'elementor_library',
-        'meta_query' => array(
-          array(
-            'key' => '_elementor_template_type',
-            'value' => 'section',
-          )
-        )
-      );
-      $items = get_posts($args);
-      echo '<select id="theme_header_part" name="theme_header_part">';
-      // empty option as default
-      echo '<option value="0">' . __('— Select —', LATOYA_THEME_DOMAIN) . '</option>';
-      // foreach page we create an option element, with the post-ID as value
-      foreach ($items as $item) {
-        // add selected to the option if value is the same as $project_page_id
-        $selected = ($staticId == $item->ID) ? 'selected="selected"' : '';
-        echo '<option value="' . $item->ID . '" ' . $selected . '>' . $item->post_title . '</option>';
-      }
-      echo '</select>';
-    }, // Callback
-    'reading',
-    'default',
-    array('label_for' => 'theme_header_part')
-  );
-
-  // add new setting for footer part
-  add_settings_field(
-    'theme_footer_part', // ID
-    __('Footer', 'vara'), // Title
-    function () {
-      $staticId = get_option('theme_footer_part');
-      // get all pages
-      $args = array(
-        'posts_per_page' => -1,
-        'orderby' => 'name',
-        'order' => 'ASC',
-        'post_type' => 'elementor_library',
-        'meta_query' => array(
-          array(
-            'key' => '_elementor_template_type',
-            'value' => 'section',
-          )
-        )
-      );
-      $items = get_posts($args);
-      echo '<select id="theme_footer_part" name="theme_footer_part">';
-      // empty option as default
-      echo '<option value="0">' . __('— Select —', LATOYA_THEME_DOMAIN) . '</option>';
-      // foreach page we create an option element, with the post-ID as value
-      foreach ($items as $item) {
-        // add selected to the option if value is the same as $project_page_id
-        $selected = ($staticId == $item->ID) ? 'selected="selected"' : '';
-        echo '<option value="' . $item->ID . '" ' . $selected . '>' . $item->post_title . '</option>';
-      }
-      echo '</select>';
-    }, // Callback
-    'reading',
-    'default',
-    array('label_for' => 'theme_footer_part')
-  );
-});

@@ -24,7 +24,7 @@ class FANA_Product_Carousel_Widget extends Widget_Base
 
   public function get_icon()
   {
-    return 'eicon-slider-3d';
+    return 'eicon-icon-box';
   }
 
   public function get_categories()
