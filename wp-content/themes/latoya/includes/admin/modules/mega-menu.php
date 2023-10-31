@@ -57,7 +57,7 @@ add_action('init', 'prefix_create_custom_post_type_mega_menu');
 function add_mega_menu_submenu()
 {
   add_submenu_page(
-    THEME_OPTION_SLUG,
+    THEME_OPTIONS_SLUG,
     'Mega Menu',
     'Mega Menu',
     'manage_options',

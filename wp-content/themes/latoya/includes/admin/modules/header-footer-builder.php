@@ -34,7 +34,7 @@ add_action('init', 'create_custom_post_type_header_footer_builder', 1, 1);
 function add_header_footer_submenu()
 {
   add_submenu_page(
-    THEME_OPTION_SLUG,
+    THEME_OPTIONS_SLUG,
     'Header Footer Builder',
     'Header Footer Builder',
     'manage_options',

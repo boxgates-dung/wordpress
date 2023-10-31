@@ -41,7 +41,7 @@ $theme_options_config = get_option('theme_options_config', [
 ?>
 
 <div class="wrap theme-option-wrap">
-  <h1><?php esc_html_e('Theme Options', THEME_OPTION_DOMAIN); ?></h1>
+  <h1><?php esc_html_e('Theme Options', THEME_OPTIONS_DOMAIN); ?></h1>
 
   <nav class="nav-tab-wrapper">
     <?php foreach ($tabs as $index => $tab) {
@@ -62,11 +62,11 @@ $theme_options_config = get_option('theme_options_config', [
         <!-- Header Config -->
         <tr>
           <th scope="row">
-            <label for="theme_options_header_id"><?php esc_html_e('Header Template', THEME_OPTION_DOMAIN);?></label>
+            <label for="theme_options_header_id"><?php esc_html_e('Header Template', THEME_OPTIONS_DOMAIN);?></label>
           </th>
           <td>
             <select id="theme_options_header_id" name="theme_options_header_id">
-              <option value="0"><?php esc_html_e('— Select —', THEME_OPTION_DOMAIN);?></option>
+              <option value="0"><?php esc_html_e('— Select —', THEME_OPTIONS_DOMAIN);?></option>
 
               <?php
               $args = array(
@@ -82,7 +82,7 @@ $theme_options_config = get_option('theme_options_config', [
               }
               ?>
             </select>
-            <p><?php esc_html_e('Add new header', THEME_OPTION_DOMAIN); ?> <a href="/wp-admin/edit.php?post_type=hf_builder">template</a></p>
+            <p><?php esc_html_e('Add new header', THEME_OPTIONS_DOMAIN); ?> <a href="/wp-admin/edit.php?post_type=hf_builder">template</a></p>
           </td>
         </tr>
         <!-- End Header Config -->
@@ -90,11 +90,11 @@ $theme_options_config = get_option('theme_options_config', [
         <!-- Footer Config -->
         <tr>
           <th scope="row">
-            <label for="theme_options_footer_id"><?php esc_html_e('Footer Template', THEME_OPTION_DOMAIN);?></label>
+            <label for="theme_options_footer_id"><?php esc_html_e('Footer Template', THEME_OPTIONS_DOMAIN);?></label>
           </th>
           <td>
             <select id="theme_options_footer_id" name="theme_options_footer_id">
-              <option value="0"><?php esc_html_e('— Select —', THEME_OPTION_DOMAIN);?></option>
+              <option value="0"><?php esc_html_e('— Select —', THEME_OPTIONS_DOMAIN);?></option>
 
               <?php
               $args = array(
@@ -111,7 +111,7 @@ $theme_options_config = get_option('theme_options_config', [
               ?>
             </select>
 
-            <p> <?php esc_html_e('Add new footer', THEME_OPTION_DOMAIN);?> <a href="/wp-admin/edit.php?post_type=hf_builder">template</a></p>
+            <p> <?php esc_html_e('Add new footer', THEME_OPTIONS_DOMAIN);?> <a href="/wp-admin/edit.php?post_type=hf_builder">template</a></p>
           </td>
         </tr>
         <!-- End Footer Config -->
