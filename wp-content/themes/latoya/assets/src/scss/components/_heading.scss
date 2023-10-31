@@ -100,6 +100,17 @@
 //   font-family: $second-font-family;
 // }
 
+.woocommerce-privacy-policy-link,
+.login-account-button,
+.create-account-button,
+.woocommerce-LostPassword {
+  color: $primary-color;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
 .price {
   color: $primary-color;
   font-weight: 600;

@@ -110,8 +110,8 @@ p.woocommerce-mini-cart__buttons {
   }
 
   @include media-breakpoint-down(lg) {
-    left: 17px;
-    right: auto;
+    left: auto;
+    right: 17px;
     top: 13px;
     border: 0;
   }

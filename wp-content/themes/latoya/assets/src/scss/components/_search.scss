@@ -195,3 +195,41 @@
     flex-wrap: wrap;
   }
 }
+
+/* Desktop Search form */ 
+.search-form-wrap {
+  max-width: 920px;
+
+  .input-group {
+    display: grid;
+    grid-template-areas: 'cat input search';
+    grid-template-columns: auto 1fr auto;
+
+    button {
+      grid-area: search;
+      padding: 0 20px;
+      font-size: 15px;
+      height: 100%;
+      line-height: 61px;
+    }
+
+    .select-category {
+      grid-area: cat;
+    }
+
+    input[type="text"] {
+      grid-area: input;
+      width: 100%;
+      background-color: $light-color;
+      line-height: 61px;
+      height: 100%;
+    }
+    
+  }
+
+  .form-group {
+    border: 1px solid #eee;
+    background-color: $light-color;
+    position: relative;
+  }
+}

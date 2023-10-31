@@ -69,7 +69,7 @@ function latoya_product_search_form()
   echo '<div class="input-group">';
 
   echo '<div class="select-category order-3 w-100">';
-  echo '<select name="product_cat" class="dropdown_product_cat border-0 rounded-0 position-relative">';
+  echo '<select name="product_cat" class="latoya-dropdown dropdown_product_cat border-0 rounded-0 position-relative">';
   echo '<option value="" selected="selected">' . __('All', LATOYA_THEME_DOMAIN) . '</option>';
   foreach ($product_cats as $cat) {
     echo '<option class="level-0" value="' . $cat->slug . '">' . $cat->name . '&nbsp;&nbsp;(' . $cat->count . ')</option>';
@@ -95,3 +95,12 @@ function latoya_bulk_saving () {
   get_template_part('template-parts/bulk', 'saving');
 }
 add_action('latoya_bulk_saving', 'latoya_bulk_saving');
+
+
+/**
+ * Hook render form login
+ * */ 
+function latoya_form_login () {
+  wc_get_template('myaccount/form-login.php');
+}
+add_action('latoya_form_login', 'latoya_form_login');

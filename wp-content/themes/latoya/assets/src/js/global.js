@@ -62,5 +62,74 @@ $(document).ready(function () {
       $('.search-results').addClass('d-none')
     }
   })
+
+  /**
+   * Register form and login action form
+   * Show and hidden form login and register
+   * */
+  $('.create-account-button').click(function (e) {
+    e.preventDefault()
+    $(this).parents('.u-columns').addClass('active-register')
+  })
+  $('.login-account-button').click(function (e) {
+    e.preventDefault()
+    $(this).parents('.u-columns').removeClass('active-register')
+  })
+
+  /**
+   * Custom dropdown
+   * */
+
+  $('.latoya-dropdown').each(function () {
+    const _self = $(this)
+    _self.wrap('<div class="latoya-dropdown-wrap"></div>')
+
+    let html_option = ''
+    _self.find('option').each(function () {
+
+      const class_attr = $(this).attr('class')? $(this).attr('class') : ''
+
+      if ($(this).is(':selected')) {
+        html_option += `<li class="option ${class_attr} selected"><span>${$(this).text()}</span></li>`
+      }else {
+        html_option += `<li class="option ${class_attr}"><span>${$(this).text()}</span></li>`
+      }
+    })
+
+    const html_select_box = `<div class="select-box"><i class="dropdown-icon"></i><span>${_self.find(':selected').text()}</span></div>`
+    const html_options = `<div class="options-wrap d-none"><ul class="options">${html_option}</ul></div>`
+
+    _self.parents('.latoya-dropdown-wrap').append(html_select_box + html_options)
+    _self.addClass('d-none')
+  })
+
+  $('.latoya-dropdown-wrap .select-box').click(function (event) {
+    event.stopPropagation()
+    const _this_options = $(this).parents('.latoya-dropdown-wrap').find('.options-wrap')
+    if (_this_options.hasClass('d-none')) {
+      _this_options.removeClass('d-none')
+    } else {
+      _this_options.addClass('d-none')
+    }
+  })
+
+  $('body').click(function() {
+    $('.latoya-dropdown-wrap .select-box').parents('.latoya-dropdown-wrap').find('.options-wrap').addClass('d-none')
+  })
+
+  $('.latoya-dropdown-wrap .option').click(function () {
+    const _self = $(this)
+    const _this_ele = _self.parents('.latoya-dropdown-wrap')
+    const label = _self.find('span').text()
+    const index = _self.index()
+    const val_index = _this_ele.find('select').find('option').eq(index).val()
+
+    _this_ele.find('.select-box').find('span').text(label)
+    _this_ele.find('select').val(val_index).trigger( 'change' )
+
+    _self.parents('.options-wrap').find('.selected').removeClass('selected')
+    _self.addClass('selected')
+    _self.parents('.options-wrap').addClass('d-none')
+  })
 })
 // }

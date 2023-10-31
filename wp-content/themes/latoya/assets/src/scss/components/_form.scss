@@ -16,7 +16,6 @@ textarea {
   color: #6b6b6b;
 }
 
-
 .quantity {
   .box {
     background: $light-color;
@@ -69,6 +68,172 @@ textarea {
     text-align: center;
     background-color: transparent;
     padding: 0 2px;
+  }
+}
+
+.woocommerce-form__label-for-checkbox {
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+
+    &::before {
+      background: $light-color;
+      color: $color-text;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      line-height: 20px;
+      text-align: center;
+      justify-content: center;
+      border: 2px solid #646464;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 16px;
+      margin-left: 0;
+      font-size: 0;
+      vertical-align: middle;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s;
+      cursor: pointer;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      content: "";
+      speak: none;
+      font-style: normal;
+      font-family: "tb-icon";
+    }
+  }
+
+  input[type=checkbox] {
+    display: none;
+
+    &:checked+span:before {
+      font-size: 8px;
+      background: $primary-color;
+      color: $light-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+/* Login form */
+
+.latoya-auth-form {
+  margin: auto;
+  max-width: 480px;
+
+  .form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+    line-height: 38px;
+    font-weight: 400;
+    font-family: $second-font-family;
+    color: $primary-color;
+  }
+
+  .login-form-footer {
+    margin: 0 0 18px;
+    font-size: 17px;
+  }
+
+  .u-columns {
+    overflow: hidden;
+
+    &.active-register {
+      .latoya-login-form {
+        left: -100%;
+        position: absolute;
+      }
+
+      .latoya-register-form {
+        position: relative;
+        left: 0;
+      }
+    }
+
+    .latoya-login-form {
+      position: relative;
+      left: 0;
+      top: 0;
+      transition: all 0.4s ease;
+    }
+
+    .latoya-register-form {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      transition: all 0.4s ease;
+    }
+  }
+}
+
+.woocommerce form {
+  .show-password-input {
+    top: auto;
+    &::after {
+      content: "\E036";
+      font-weight: 400;
+      font-family: "tb-icon";
+      color: $body-color;
+    }
+
+    &.display-password {
+      &::after {
+        color: $color-text;
+      }
+    }
+  }
+}
+
+.latoya-dropdown-wrap {
+  position: relative;
+
+  .options-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+
+    z-index: 200;
+    min-width: 200px;
+    right: auto;
+    border: solid 1px #ddd;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    -webkit-box-shadow: none;
+    background-color: #fff;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow: auto;
+
+    li {
+      list-style: none;
+
+      position: relative;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 8px 15px;
+      cursor: pointer;
+
+      &:hover, &.selected {
+        color: $primary-color;
+      }
+    }
   }
 }
 
@@ -191,7 +356,7 @@ textarea {
 //     padding: 30px 23px 24px;
 //     border: 1px solid $border-color;
 //     margin-top: 40px;
-  
+
 //     @include media-breakpoint-down(lg) {
 //       padding: 0;
 //       border: 0;
@@ -210,7 +375,7 @@ textarea {
 
 //   &>input+label {
 //     cursor: pointer;
-    
+
 //     &::before {
 //       content: " ";
 //       background: #fff;

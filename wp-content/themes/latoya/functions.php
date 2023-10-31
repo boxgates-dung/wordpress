@@ -102,6 +102,16 @@ function removing_woo_styles()
   wp_dequeue_style('woocommerce-smallscreen');
 }
 
+add_filter('body_class', 'woocommerce_body_classes');
+function woocommerce_body_classes($classes)
+{
+  $classes[] = 'woocommerce';
+  $classes[] = 'woocommerce-page';
+  $classes[] = 'woocommerce-js';
+
+  return $classes;
+}
+
 /**
  * Remove breadcrumb in shop page
  */
