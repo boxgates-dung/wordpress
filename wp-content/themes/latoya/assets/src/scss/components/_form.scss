@@ -194,49 +194,6 @@ textarea {
   }
 }
 
-.latoya-dropdown-wrap {
-  position: relative;
-
-  .options-wrap {
-    position: absolute;
-    top: 100%;
-    left: 0;
-
-
-    z-index: 200;
-    min-width: 200px;
-    right: auto;
-    border: solid 1px #ddd;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    -webkit-box-shadow: none;
-    background-color: #fff;
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-    max-height: 250px;
-    overflow: auto;
-
-    li {
-      list-style: none;
-
-      position: relative;
-      border-bottom: 1px solid #f5f5f5;
-      padding: 8px 15px;
-      cursor: pointer;
-
-      &:hover, &.selected {
-        color: $primary-color;
-      }
-    }
-  }
-}
-
 // #order_comments {
 //   min-height: 200px;
 //   font-size: 15px;

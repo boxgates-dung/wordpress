@@ -40,6 +40,7 @@ function latoya_template_footer()
   /* Offcanvas */
   get_template_part('template-parts/offcanvas/offcanvas', 'menu');
   get_template_part('template-parts/offcanvas/offcanvas', 'search');
+  get_template_part('template-parts/offcanvas/offcanvas', 'recently-viewed');
   get_template_part('template-parts/offcanvas/offcanvas', 'wishlist-and-mini-cart');
 
   /* Modals */
@@ -70,7 +71,7 @@ function latoya_product_search_form()
 
   echo '<div class="select-category order-3 w-100">';
   echo '<select name="product_cat" class="latoya-dropdown dropdown_product_cat border-0 rounded-0 position-relative">';
-  echo '<option value="" selected="selected">' . __('All', LATOYA_THEME_DOMAIN) . '</option>';
+  echo '<option value="" selected="selected">' . __('All Categories', LATOYA_THEME_DOMAIN) . '</option>';
   foreach ($product_cats as $cat) {
     echo '<option class="level-0" value="' . $cat->slug . '">' . $cat->name . '&nbsp;&nbsp;(' . $cat->count . ')</option>';
   }

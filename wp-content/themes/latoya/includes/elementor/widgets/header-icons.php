@@ -52,7 +52,7 @@ class Latoya_Header_Icons_Widget extends Widget_Base
 ?>
     <div class="row header-icons">
       <div class="search-offcanvas">
-        <a href="#" class="btn-search-icon search-open" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
+        <a href="#" class="btn-search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
           <i aria-hidden="true" class="tb-icon tb-icon-search-normal"></i>
         </a>
       </div>
@@ -64,15 +64,9 @@ class Latoya_Header_Icons_Widget extends Widget_Base
       </div>
 
       <div class="product-recently-viewed-header">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="btn-compare-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRecentlyViewed" aria-controls="offcanvasRecentlyViewed">
           <i aria-hidden="true" class="tb-icon tb-icon-recently-viewed"></i>
         </a>
-
-        <div class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </div>
       </div>
 
       <div class="wishlist">

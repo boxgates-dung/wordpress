@@ -1,8 +1,72 @@
-.cart-dropdown {
-  .widget_shopping_cart_content {
+.latoya-dropdown-wrap {
+  position: relative;
 
-    .product_list_widget {
-      max-height: 400px;
+  ul {
+    border-radius: 0;
+    padding: 0;
+    max-height: 330px;
+    overflow: auto;
+    z-index: 9999;
+
+    li {
+      position: relative;
+      border-bottom: 1px solid #f5f5f5;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.selected {
+        a {
+          color: $primary-color;
+        }
+      }
+
+      a {
+        display: inline-block;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        letter-spacing: 0;
+        overflow: hidden;
+        white-space: normal;
+        padding: 5px 15px;
+        line-height: 33px;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .select-box {
+    position: relative;
+    display: inline-block;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: normal;
+    cursor: pointer;
+
+    .dropdown-icon {
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      color: $color-text;
+      margin-right: 15px;
+
+      &::before {
+        content: "\e604";
+        font-family: "simple-line-icons";
+      }
+    }
+
+    &::after {
+      display: none;
     }
   }
 }

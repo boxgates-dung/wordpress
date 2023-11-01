@@ -43,7 +43,8 @@ $(document).ready(function () {
   })
 
   $('.search-form.ajax-search select[name="product_cat"]').change(function () {
-    const search_form_input = $('.search-form.ajax-search input[type="text"]')
+    const _this_form = $(this).parents('.search-form')
+    const search_form_input = _this_form.find('input[name="s"]')
     const keywork = search_form_input.val()
     search_form_input.val(keywork).trigger('keyup')
   })
@@ -55,7 +56,7 @@ $(document).ready(function () {
   )
 
   $(document).mouseup(function (e) {
-    let container = $('.search-results')
+    let container = $('.search-results, .latoya-dropdown-wrap .select-box')
 
     // If the target of the click isn't the container
     if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -76,60 +77,46 @@ $(document).ready(function () {
     $(this).parents('.u-columns').removeClass('active-register')
   })
 
+  $('a[data-bs-target="#loginModal"]').click(function () {
+    $('.u-columns').removeClass('active-register')
+  })
+
   /**
    * Custom dropdown
    * */
-
   $('.latoya-dropdown').each(function () {
     const _self = $(this)
     _self.wrap('<div class="latoya-dropdown-wrap"></div>')
 
     let html_option = ''
     _self.find('option').each(function () {
-
       const class_attr = $(this).attr('class')? $(this).attr('class') : ''
 
       if ($(this).is(':selected')) {
-        html_option += `<li class="option ${class_attr} selected"><span>${$(this).text()}</span></li>`
+        html_option += `<li class="option ${class_attr} selected"><a href="#" class="dropdown-item">${$(this).text()}</a></li>`
       }else {
-        html_option += `<li class="option ${class_attr}"><span>${$(this).text()}</span></li>`
+        html_option += `<li class="option ${class_attr}"><a href="#" class="dropdown-item">${$(this).text()}</a></li>`
       }
     })
 
-    const html_select_box = `<div class="select-box"><i class="dropdown-icon"></i><span>${_self.find(':selected').text()}</span></div>`
-    const html_options = `<div class="options-wrap d-none"><ul class="options">${html_option}</ul></div>`
+    const html_select_box = `<div class="select-box dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="dropdown-icon"></i><span>${_self.find(':selected').text()}</span></div>`
+    const html_options = `<ul class="dropdown-menu options">${html_option}</ul>`
 
     _self.parents('.latoya-dropdown-wrap').append(html_select_box + html_options)
     _self.addClass('d-none')
   })
 
-  $('.latoya-dropdown-wrap .select-box').click(function (event) {
-    event.stopPropagation()
-    const _this_options = $(this).parents('.latoya-dropdown-wrap').find('.options-wrap')
-    if (_this_options.hasClass('d-none')) {
-      _this_options.removeClass('d-none')
-    } else {
-      _this_options.addClass('d-none')
-    }
-  })
-
-  $('body').click(function() {
-    $('.latoya-dropdown-wrap .select-box').parents('.latoya-dropdown-wrap').find('.options-wrap').addClass('d-none')
-  })
-
   $('.latoya-dropdown-wrap .option').click(function () {
     const _self = $(this)
     const _this_ele = _self.parents('.latoya-dropdown-wrap')
-    const label = _self.find('span').text()
+    const label = _self.find('a').text()
     const index = _self.index()
-    const val_index = _this_ele.find('select').find('option').eq(index).val()
 
     _this_ele.find('.select-box').find('span').text(label)
-    _this_ele.find('select').val(val_index).trigger( 'change' )
+    _this_ele.find('select').prop('selectedIndex', index).change()
 
-    _self.parents('.options-wrap').find('.selected').removeClass('selected')
+    _self.parents('.options').find('.selected').removeClass('selected')
     _self.addClass('selected')
-    _self.parents('.options-wrap').addClass('d-none')
   })
 })
 // }

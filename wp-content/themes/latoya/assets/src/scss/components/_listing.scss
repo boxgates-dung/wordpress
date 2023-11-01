@@ -99,10 +99,52 @@ ul.cart_list {
       dt {
         font-size: 14px;
       }
-  
+
       dd {
         color: $body-color;
         font-size: 15px;
+      }
+    }
+  }
+}
+
+/* History view */
+ul.list-recent {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+  padding: 0;
+
+  li.product-item {
+    -webkit-box-flex: 10%;
+    -moz-box-flex: 10%;
+    -webkit-flex: 10%;
+    -ms-flex: 10%;
+    flex: 10%;
+    max-width: 10%;
+    padding: 0 12px;
+    list-style: none;
+
+    img {
+      -webkit-transition: .35s;
+      -o-transition: .35s;
+      transition: .35s;
+      border: 1px solid transparent;
+      opacity: 1;
+      aspect-ratio: 48/64;
+      object-fit: cover;
+      width: 100%;
+
+      &:hover {
+        border-color: $primary-color;
       }
     }
   }

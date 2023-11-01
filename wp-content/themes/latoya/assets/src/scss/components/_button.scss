@@ -102,11 +102,16 @@ p.woocommerce-mini-cart__buttons {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     display: inline-block;
+    transition: all 0.3s ease;
   }
 
   &:hover {
     background-color: $light-color;
     color: $primary-color;
+
+    i {
+      color: #ff4800;
+    }
   }
 
   @include media-breakpoint-down(lg) {

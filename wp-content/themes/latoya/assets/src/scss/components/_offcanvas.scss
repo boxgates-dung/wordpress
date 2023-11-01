@@ -124,9 +124,13 @@
   height: 100%;
   background-color: #faf9f7;
 
+  .heading {
+    position: relative;
+  }
+
   .btn-close {
-    right: 50px;
-    top: 50px;
+    right: 0;
+    top: 0;
   }
 
   h5 {
@@ -137,6 +141,10 @@
 
   .offcanvas-body {
     padding: 30px 50px;
+  }
+
+  .search-form-wrap {
+    margin-top: 60px;
   }
 }
 
@@ -169,5 +177,13 @@
     .offcanvas-body {
       overflow: scroll;
     }
+  }
+}
+
+#offcanvasRecentlyViewed {
+  height: max-content;
+
+  .offcanvas-body {
+    padding: 24px 12px;
   }
 }
