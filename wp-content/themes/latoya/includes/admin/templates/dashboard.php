@@ -18,6 +18,31 @@ $tabs = array(
     'slug'    => 'hf-table',
     'page_id' => ''
   ),
+  array(
+    'name'    => 'Shop Page',
+    'slug'    => 'shop-table',
+    'page_id' => ''
+  ),
+  array(
+    'name'    => 'Single Product',
+    'slug'    => 'single-product-table',
+    'page_id' => ''
+  ),
+  array(
+    'name'    => 'Blog',
+    'slug'    => 'blog-table',
+    'page_id' => ''
+  ),
+  array(
+    'name'    => 'Single Blog',
+    'slug'    => 'single-blog-table',
+    'page_id' => ''
+  ),
+  array(
+    'name'    => 'Search Ajax',
+    'slug'    => 'search-table',
+    'page_id' => ''
+  ),
 );
 
 
