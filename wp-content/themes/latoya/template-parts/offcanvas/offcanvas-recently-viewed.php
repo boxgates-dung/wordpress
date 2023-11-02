@@ -4,7 +4,7 @@
     <?php
 
 
-    $cookie_name = "bgx_product_recently_viewed";
+    $cookie_name = "product_recently_viewed";
 
     if (!isset($_COOKIE[$cookie_name])) {
       echo "Cookie named '" . $cookie_name . "' is not set!";

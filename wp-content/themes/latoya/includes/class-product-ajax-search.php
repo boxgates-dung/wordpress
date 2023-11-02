@@ -22,6 +22,10 @@ class Product_Ajax_Search
 
   public function __construct()
   {
+    $this->init();
+  }
+
+  public function init() {
     add_shortcode('product_search_form', [$this, 'product_search_form']);
     add_action('wp_footer', [$this, 'product_search_form_script']);
 

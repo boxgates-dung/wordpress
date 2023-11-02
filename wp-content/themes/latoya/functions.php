@@ -14,7 +14,7 @@ define('LATOYA_THEME_DIR', get_template_directory() . '/');
 
 // Latoya ajax, functions, hooks.
 require_once LATOYA_THEME_DIR . 'includes/class-product-ajax-search.php';
-require_once LATOYA_THEME_DIR . 'includes/class-recently-viewed.php';
+require_once LATOYA_THEME_DIR . 'includes/class-product-recently-viewed.php';
 require_once LATOYA_THEME_DIR . 'includes/class-walker-menu.php';
 
 require_once LATOYA_THEME_DIR . 'includes/ajax.php';
