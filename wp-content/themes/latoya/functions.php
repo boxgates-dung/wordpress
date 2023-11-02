@@ -13,12 +13,16 @@ define('LATOYA_THEME_URI', get_template_directory_uri() . '/');
 define('LATOYA_THEME_DIR', get_template_directory() . '/');
 
 // Latoya ajax, functions, hooks.
+require_once LATOYA_THEME_DIR . 'includes/class-product-ajax-search.php';
+require_once LATOYA_THEME_DIR . 'includes/class-recently-viewed.php';
+require_once LATOYA_THEME_DIR . 'includes/class-walker-menu.php';
+
 require_once LATOYA_THEME_DIR . 'includes/ajax.php';
 require_once LATOYA_THEME_DIR . 'includes/template-functions.php';
 require_once LATOYA_THEME_DIR . 'includes/template-hooks.php';
 require_once LATOYA_THEME_DIR . 'includes/elementor/elementor.php';
 require_once LATOYA_THEME_DIR . 'includes/admin/index.php';
-require_once LATOYA_THEME_DIR . 'includes/class-walker-menu.php';
+
 
 /**
  * Theme setup.

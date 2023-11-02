@@ -54,38 +54,9 @@ add_action('latoya_theme_footer', 'latoya_template_footer');
  * */
 function latoya_product_search_form()
 {
-  $args = array(
-    'taxonomy'     => 'product_cat',
-    'orderby'      => 'name',
-    'show_count'   => 0,
-    'pad_counts'   => 0,
-    'hierarchical' => 1,
-    'title_li'     => '',
-    'hide_empty'   => true
-  );
-  $product_cats = get_categories($args);
 
-  echo '<form action="' . esc_url(get_home_url()) . '" data-ajax_action="' . esc_url(admin_url('admin-ajax.php')) . '" method="get" class="search-form ajax-search show-category">';
-  echo '<div class="form-group">';
-  echo '<div class="input-group">';
+  do_shortcode('[product_search_form]');
 
-  echo '<div class="select-category order-3 w-100">';
-  echo '<select name="product_cat" class="latoya-dropdown dropdown_product_cat border-0 rounded-0 position-relative">';
-  echo '<option value="" selected="selected">' . __('All Categories', LATOYA_THEME_DOMAIN) . '</option>';
-  foreach ($product_cats as $cat) {
-    echo '<option class="level-0" value="' . $cat->slug . '">' . $cat->name . '&nbsp;&nbsp;(' . $cat->count . ')</option>';
-  }
-  echo '</select>';
-  echo '</div>';
-
-  echo '<button type="submit" class="button-search btn btn-sm border-0 shadow-none>"><i class="tb-icon tb-icon-search-normal"></i></button>';
-  echo '<input type="text" placeholder="'.__('Search in 20.000+ products...', LATOYA_THEME_DOMAIN).'" name="s" required="" class="form-control input-sm border-0 px-1 shadow-none" autocomplete="off">';
-  echo '<input type="hidden" name="post_type" value="product" class="post_type">';
-
-  echo '<div class="search-results-wrapper"> <div class="search-results position-absolute bg-white d-none"> </div></div>';
-  echo '</div>';
-  echo '</div>';
-  echo '</form>';
 }
 add_action('latoya_product_search_form', 'latoya_product_search_form');
 
@@ -96,7 +67,6 @@ function latoya_bulk_saving () {
   get_template_part('template-parts/bulk', 'saving');
 }
 add_action('latoya_bulk_saving', 'latoya_bulk_saving');
-
 
 /**
  * Hook render form login
