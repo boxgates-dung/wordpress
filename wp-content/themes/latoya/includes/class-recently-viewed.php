@@ -23,3 +23,5 @@ class Recently_Viewed
   {
   }
 }
+
+Recently_Viewed::get_instance();
