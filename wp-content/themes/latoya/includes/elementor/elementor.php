@@ -7,8 +7,6 @@ use Elementor\Controls_Manager;
 use Elementor\Elements_Manager;
 use Elementor\Plugin;
 
-const BGX_COOKIE_RECENT = 'bgx_product_recently_viewed';
-
 final class Custom_Elementor
 {
   const VERSION = '1.0.0';
@@ -33,7 +31,6 @@ final class Custom_Elementor
     add_filter('elementor/fonts/groups', array($this, 'elementor_group'));
     add_filter('elementor/fonts/additional_fonts', array($this, 'add_elementor_fonts'));
     add_action('wp_ajax_jpro_filter', [$this, 'ajaxProjects']);
-    add_action('woocommerce_before_single_product', [$this, 'setCookieRecentlyViewed']);
   }
 
   public function init()
@@ -167,18 +164,6 @@ final class Custom_Elementor
   public function add_elementor_fonts($fonts)
   {
     return $fonts;
-  }
-
-  public function setCookieRecentlyViewed()
-  {
-    global $post;
-    if ($post->post_type == 'product') {
-      $cookieValue = empty($_COOKIE[BGX_COOKIE_RECENT]) ? [] : json_decode($_COOKIE[BGX_COOKIE_RECENT]);
-      if (empty($cookieValue) && !in_array($post->ID, $cookieValue)) {
-        $cookieValue[] = $post->ID;
-        setcookie(BGX_COOKIE_RECENT, json_encode($cookieValue), time() + (86400 * 30), "/"); // 86400 = 1 day
-      }
-    }
   }
 }
 

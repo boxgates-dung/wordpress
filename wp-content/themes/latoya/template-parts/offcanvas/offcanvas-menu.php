@@ -9,7 +9,7 @@
       'theme_location' => 'primary',
       'container' => '',
       'menu_class' => 'primary-mobile-menu-nav',
-      "walker"          => new Woostify_Walker_Menu(),
+      "walker"          => new Latoya_Walker_Menu(),
     ]) ?>
     <!-- End render menu -->
   </div>

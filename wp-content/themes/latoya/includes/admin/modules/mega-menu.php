@@ -5,8 +5,8 @@ function prefix_create_custom_post_type_mega_menu()
    * The $labels describes how the post type appears.
    */
   $labels = array(
-    'name'          => 'Products', // Plural name
-    'singular_name' => 'Product'   // Singular name
+    'name'          => 'Mega Menu', // Plural name
+    'singular_name' => 'Mega Menu'   // Singular name
   );
 
   /*
@@ -35,7 +35,7 @@ function prefix_create_custom_post_type_mega_menu()
     'hierarchical'        => false, // Allows hierarchical categorization, if set to false, the Custom Post Type will behave like Post, else it will behave like Page
     'public'              => true,  // Makes the post type public
     'show_ui'             => true,  // Displays an interface for this post type
-    'show_in_menu'        => false,  // Displays in the Admin Menu (the left panel)
+    'show_in_menu'        => false, // Displays in the Admin Menu (the left panel)
     'show_in_nav_menus'   => true,  // Displays in Appearance -> Menus
     'show_in_admin_bar'   => true,  // Displays in the black admin bar
     'menu_position'       => 5,     // The position number in the left menu
@@ -66,3 +66,72 @@ function add_mega_menu_submenu()
   );
 }
 add_action('admin_menu', 'add_mega_menu_submenu');
+
+/**
+ * Check is mega menu
+ * */
+function is_mega_menu($id)
+{
+
+
+  
+  return true;
+}
+
+/**
+ * Display custom field in menu dashboard
+ * */
+function nav_menu_item_custom_field($item_id)
+{
+  print_r(wp_get_nav_menu_object($item_id));
+  $menuitems = wp_get_nav_menu_items($item_id, array( 'order' => 'DESC' ) );
+  print_r($menuitems);
+
+  $mega_menu_width = get_post_meta($item_id, 'mega-menu-item-width', true);
+
+  if (is_mega_menu($item_id)) {
+    // Option mega menu width select box
+    $options = array(
+      array(
+        'value' => '',
+        'title' => 'Default',
+      ),
+      array(
+        'value' => 'container',
+        'title' => 'Container Width',
+      ),
+      array(
+        'value' => 'full',
+        'title' => 'Full Width',
+      ),
+    );
+
+    // Display fields
+    echo '<p class="mega_menu_item_width">';
+    echo '<label for="edit-mega-menu-item-width-' . $item_id . '">';
+    echo __('Mega Menu Item Width', LATOYA_THEME_DOMAIN);
+    echo '<br>';
+    echo '<select id="edit-mega-menu-item-width-' . $item_id . '" name="mega-menu-item-width[' . $item_id . ']">';
+    foreach ($options as $option) {
+      echo '<option value="' . esc_attr($option['value']) . '" ' . ($option['value'] == $mega_menu_width ? 'selected' : '') . '>' . __($option['title'], LATOYA_THEME_DOMAIN) . '</option>';
+    }
+    echo '</select>';
+    echo '</label>';
+    echo '</p>';
+  }
+}
+add_action('wp_nav_menu_item_custom_fields', 'nav_menu_item_custom_field');
+
+/**
+ * Save post meta mega menu
+ * */
+function save_mega_menu_item_width($menu_id, $menu_item_db_id)
+{
+  if (isset($_POST['mega-menu-item-width'][$menu_item_db_id])) {
+    $sanitized_data = sanitize_text_field($_POST['mega-menu-item-width'][$menu_item_db_id]);
+    update_post_meta($menu_item_db_id, 'mega-menu-item-width', $sanitized_data);
+  } else {
+    delete_post_meta($menu_item_db_id, 'mega-menu-item-width');
+  }
+}
+add_action('wp_update_nav_menu_item', 'save_mega_menu_item_width', 10, 2);

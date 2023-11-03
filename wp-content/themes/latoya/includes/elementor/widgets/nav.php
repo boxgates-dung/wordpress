@@ -404,7 +404,19 @@ class Latoya_Nav_Widget extends Widget_Base
   {
     $settings = $this->get_settings_for_display();
 
-    echo 'dasdas';
+    ?>
+
+    <!-- Render menu -->
+    <?php wp_nav_menu([
+      'theme_location'  => 'primary',
+      'container'       => '',
+      'menu_class'      => 'primary-menu-nav',
+      "walker"          => new Latoya_Walker_Menu(),
+    ]) ?>
+    <!-- End render menu -->
+
+<?php
+
     
   }
 }

@@ -1,7 +1,7 @@
 ul.primary-menu-nav {
   margin: 0;
   padding: 0;
-  
+
   .menu-item-has-children {
     &>a::after {
       content: "";
@@ -43,13 +43,15 @@ ul.primary-menu-nav {
       font-size: 15px;
     }
 
-    &>ul.sub-menu {
+    &>ul.sub-menu,
+    &>.sub-mega-menu {
       opacity: 0;
       visibility: hidden;
     }
 
     // Submenu style
-    ul.sub-menu {
+    ul.sub-menu,
+    &>.sub-mega-menu {
       position: absolute;
       z-index: 0;
       background: #fff;
@@ -119,6 +121,10 @@ ul.primary-menu-nav {
       }
     }
 
+    &>.sub-mega-menu {
+      width: auto;
+    }
+
     // Hover and show menu
     &:hover {
       &>a {
@@ -130,12 +136,26 @@ ul.primary-menu-nav {
         }
       }
 
-      &>.sub-menu {
+      &>.sub-menu,
+      &>.sub-mega-menu {
         display: block;
         opacity: 1;
         visibility: visible;
         z-index: 1000;
       }
+    }
+  }
+}
+
+.menu-mega-sub-container {
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 }
@@ -207,6 +227,7 @@ ul.primary-mobile-menu-nav {
     li {
       list-style: none;
     }
+
     // display: none;
   }
 }

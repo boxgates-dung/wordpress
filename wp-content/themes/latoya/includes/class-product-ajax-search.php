@@ -25,7 +25,8 @@ class Product_Ajax_Search
     $this->init();
   }
 
-  public function init() {
+  public function init(): void
+  {
     add_shortcode('product_search_form', [$this, 'product_search_form']);
     add_action('wp_footer', [$this, 'product_search_form_script']);
 
@@ -37,7 +38,7 @@ class Product_Ajax_Search
    * Product search form
    * 
    */
-  public function product_search_form()
+  public function product_search_form(): void
   {
     $args = array(
       'taxonomy'     => 'product_cat',
@@ -77,7 +78,7 @@ class Product_Ajax_Search
    * Script action product search form
    * 
    */
-  public function product_search_form_script()
+  public function product_search_form_script(): void
   {
 ?>
     <script type="application/javascript">
@@ -185,7 +186,7 @@ class Product_Ajax_Search
 <?php
   }
 
-  public function ajax_search_products()
+  public function ajax_search_products(): void
   {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
       $search_keyword   = (isset($_GET['s'])) ? esc_attr($_GET['s']) : '';
