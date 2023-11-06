@@ -14,6 +14,13 @@ if (!class_exists('latoya_Walker_Menu')) {
    */
   class Latoya_Walker_Menu extends Walker_Nav_Menu
   {
+    public $wp;
+
+    public function __construct()
+    {
+      global $wp;
+      $this->wp = $wp;
+    }
     /**
      * Walker menu
      *
@@ -40,10 +47,7 @@ if (!class_exists('latoya_Walker_Menu')) {
       if ('mega_menu' === $item->object) {
         $this->megamenu_width    = get_post_meta($item->ID, 'mega_menu_item_width', true);
         $this->megamenu_width    = '' !== $this->megamenu_width ? $this->megamenu_width : 'content';
-        $this->megamenu_position = get_post_meta($item->ID, 'latoya_mega_menu_item_position', true);
-        $this->megamenu_url      = get_post_meta($item->ID, 'latoya_mega_menu_item_url', true);
-        $this->megamenu_icon     = get_post_meta($item->ID, 'latoya_mega_menu_item_icon', true);
-        $this->megamenu_icon     = str_replace('ti-', '', $this->megamenu_icon);
+        $this->megamenu_url      = get_post_meta($item->ID, 'mega_menu_item_url', true);
         $href                    = $this->megamenu_url;
 
         if (!$href) {
@@ -58,6 +62,10 @@ if (!class_exists('latoya_Walker_Menu')) {
         if ('parent' === $this->megamenu_position) {
           $classes[] = 'menu-item-has-children-same-position';
         }
+
+        if (home_url($this->wp->request) == home_url($this->megamenu_url)) {
+          $classes[] = 'current-menu-item';
+        }
       }
       $classes = array_filter($classes);
 
@@ -65,7 +73,7 @@ if (!class_exists('latoya_Walker_Menu')) {
       $has_child = in_array('menu-item-has-children', $classes, true) ? true : false;
 
       // Join classes name.
-      $class_names = join(' ', apply_filters('latoya_mega_menu_css_class', $classes, $item, $args));
+      $class_names = join(' ', (array) apply_filters('latoya_mega_menu_css_class', $classes, $item, $args));
       $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
       // Ids.
@@ -80,7 +88,7 @@ if (!class_exists('latoya_Walker_Menu')) {
       $atts['target'] = !empty($item->target) ? $item->target : '';
       $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
       $atts['href']   = !empty($item->url) ? $item->url : '';
-      $atts           = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
+      $atts           = (array) apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
       $attributes     = '';
 
       foreach ($atts as $attr => $value) {
@@ -102,8 +110,6 @@ if (!class_exists('latoya_Walker_Menu')) {
       // Menu icon.
       if ('mega_menu' === $item->object && $this->megamenu_icon) {
         $item_output .= '<span class="menu-item-icon">';
-        // $item_output .= latoya_Icon::fetch_svg_icon($this->megamenu_icon, false);
-        // $item_output .= 'icon';
         $item_output .= '</span>';
       }
 
@@ -115,7 +121,7 @@ if (!class_exists('latoya_Walker_Menu')) {
 
       // Add arrow icon.
       if ($has_child) {
-        $item_output .= '<span class="menu-item-arrow arrow-icon">' . '' . '</span>';
+        $item_output .= '<span class="menu-item-arrow arrow-icon"></span>';
       }
 
       $item_output .= '</a>';
@@ -161,7 +167,16 @@ if (!class_exists('latoya_Walker_Menu')) {
         }
 
         if (!empty($mega_menu)) {
-          $item_output .= '<ul class="sub-mega-menu">';
+          $menu_width_type = get_post_meta($item->ID, 'mega_menu_item_width', true);
+
+          if ($menu_width_type == 'container') {
+            $cus_menu_width = get_post_meta($item->ID, 'cus_menu_width', true);
+            $cus_menu_width = $cus_menu_width ? 'style="width: ' . $cus_menu_width . 'px"' : '';
+            $item_output .= '<ul class="sub-mega-menu" ' . $cus_menu_width . '>';
+          } else {
+            $item_output .= '<ul class="sub-mega-menu">';
+          }
+
           $item_output .= '<div class="mega-menu-wrapper">';
           $item_output .= $mega_menu;
           $item_output .= '</div>';
@@ -172,6 +187,19 @@ if (!class_exists('latoya_Walker_Menu')) {
       $item_output .= $args->after;
 
       $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
+
+    public function special_nav_class($classes, $item)
+    {
+
+      $classes[] = 'nav__link';
+
+      if (in_array('current-menu-item', $classes)) {
+
+        $classes[] = 'nav__link-active';
+      }
+
+      return $classes;
     }
   }
 }

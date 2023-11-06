@@ -145,7 +145,7 @@ table {
     }
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     // tr td, th {
     //   display: revert !important;
     //   padding: 15px;
@@ -216,7 +216,7 @@ table.cart {
     }
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
 
     th, td {
       padding: 16px;

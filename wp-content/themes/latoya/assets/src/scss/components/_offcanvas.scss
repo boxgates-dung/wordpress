@@ -160,7 +160,7 @@
     overflow: hidden;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     position: fixed;
     max-width: 90%;
     opacity: 1;

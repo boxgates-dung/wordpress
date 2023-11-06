@@ -1,4 +1,4 @@
-<div class="mobile-nav d-lg-none position-fixed top-0 start-0 w-100 bg-white shadow-sm clearfix">
+<div class="mobile-nav d-xl-none position-fixed top-0 start-0 w-100 bg-white shadow-sm clearfix">
   <!-- Top notification -->
   <div class="topbar-device-mobile p-1 text-center text-light bg-success d-none">
     Background gradient

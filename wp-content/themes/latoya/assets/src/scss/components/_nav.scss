@@ -47,3 +47,16 @@
     margin-right: 5px;
   }
 }
+
+#header {
+  .elementor-widget-latoya-nav {
+    position: static;
+  }
+
+  .e-parent>.e-con-inner {
+    position: relative;
+    &>* {
+      position: static;
+    }
+  }
+}

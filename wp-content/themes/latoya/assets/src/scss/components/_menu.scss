@@ -28,6 +28,28 @@ ul.primary-menu-nav {
     -o-transition: .3s;
     transition: .3s;
 
+    &.has-mega-menu-full-width {
+      position: static;
+
+      .sub-mega-menu {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    &:first-child {
+      &>a {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+
+    &.current-menu-item {
+      &>a{
+        color: $primary-color;
+      }
+    }
+
     &>a {
       padding: 30px 8px;
       display: inherit;
@@ -128,6 +150,8 @@ ul.primary-menu-nav {
     // Hover and show menu
     &:hover {
       &>a {
+        color: $primary-color;
+
         &::after {
           -webkit-transform: rotate(-180deg);
           -ms-transform: rotate(-180deg);
