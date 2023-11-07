@@ -106,6 +106,28 @@ ul.cart_list {
       }
     }
   }
+
+  .blockUI.blockOverlay {
+    background-color: #ffffff78 !important;
+    opacity: 1 !important;
+    
+    &::after {
+      content: '';
+      -webkit-animation: spin 2s linear infinite;
+      -o-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+      border: 2px solid #2f4799;
+      border-radius: 50%;
+      border-right-color: transparent;
+      display: block;
+      height: 36px;
+      left: calc(50% - 18px);
+      position: absolute;
+      top: calc(50% - 18px);
+      width: 36px;
+      z-index: 9;
+    }
+  }
 }
 
 /* History view */
@@ -145,6 +167,15 @@ ul.list-recent {
 
       &:hover {
         border-color: $primary-color;
+      }
+    }
+  }
+
+  &.empty {
+    li.product-item {
+      img {
+        border: dashed 2px $primary-color;
+        cursor: pointer;
       }
     }
   }

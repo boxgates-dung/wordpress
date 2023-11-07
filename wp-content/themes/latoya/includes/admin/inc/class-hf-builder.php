@@ -44,7 +44,7 @@ class HF_Builder
       'public'              => true,
       'show_ui'             => true,
       'show_in_menu'        => false,
-      'show_in_nav_menus'   => true,
+      'show_in_nav_menus'   => false, // Not show on nav menu
       'show_in_admin_bar'   => true,
       'menu_position'       => 5,
       'menu_icon'           => true,

@@ -122,6 +122,64 @@ p.woocommerce-mini-cart__buttons {
   }
 }
 
+.latoya-to-top {
+  position: fixed;
+  z-index: 999;
+  bottom: 61px;
+  right: 0;
+  left: auto;
+  text-align: center;
+  font-size: 35px;
+  display: inline-block;
+  pointer-events: none;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all .5s ease-in-out 0s;
+  -o-transition: all .5s ease-in-out 0s;
+  transition: all .5s ease-in-out 0s;
+
+  &.active {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    pointer-events: all;
+    right: 51px;
+  }
+
+  a {
+    position: relative;
+    -webkit-transition: all .4s ease-in-out 0s;
+    -o-transition: all .4s ease-in-out 0s;
+    transition: all .4s ease-in-out 0s;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    font-family: $second-font-family;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    background-color: $color-text;
+    color: $light-color;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    display: none;
+  }
+}
+
 // .form-row {
 
 //   button,

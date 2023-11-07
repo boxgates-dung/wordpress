@@ -105,7 +105,7 @@ class Mega_Menu
    * Add custom fields to menu item setings.
    * Display on location Appearance>menus -> Menu structure
    * */
-  public function nav_menu_item_custom_field($item_id, $item_object)
+  public function nav_menu_item_custom_field($item_id, $item_object): void
   {
     if ($item_object->object == 'mega_menu') {
       $cus_menu_width     = get_post_meta($item_id, 'cus_menu_width', true);
@@ -187,7 +187,7 @@ class Mega_Menu
   /**
    * Save data custom fields if have action save menu
    * */
-  public function save_mega_menu_item_width($menu_id, $menu_item_db_id)
+  public function save_mega_menu_item_width($menu_id, $menu_item_db_id): void
   {
     // Save url
     if (isset($_POST['mega_menu_item_url'][$menu_item_db_id])) {

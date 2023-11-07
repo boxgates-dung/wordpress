@@ -89,6 +89,12 @@ class Product_Recently_Viewed
         echo '</li>';
       }
       echo '</ul>';
+    } else {
+      echo '<ul class="list-recent empty">';
+      echo '<li class="product-item">';
+      echo '<img src="' . LATOYA_THEME_URI . '/assets/images/empty-image.png" class="attachment-thumbnail size-thumbnail" alt="" decoding="async">';
+      echo '</li>';
+      echo '</ul>';
     }
   }
 }

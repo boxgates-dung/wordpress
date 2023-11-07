@@ -59,9 +59,9 @@ if (!class_exists('latoya_Walker_Menu')) {
         $classes[] = 'has-mega-menu-' . $this->megamenu_width . '-width';
         $classes[] = latoya_is_elementor_page($item->object_id) ? 'mega-menu-elementor' : '';
 
-        if ('parent' === $this->megamenu_position) {
-          $classes[] = 'menu-item-has-children-same-position';
-        }
+        // if ('parent' === $this->megamenu_position) {
+        //   $classes[] = 'menu-item-has-children-same-position';
+        // }
 
         if (home_url($this->wp->request) == home_url($this->megamenu_url)) {
           $classes[] = 'current-menu-item';
@@ -108,10 +108,10 @@ if (!class_exists('latoya_Walker_Menu')) {
       }
 
       // Menu icon.
-      if ('mega_menu' === $item->object && $this->megamenu_icon) {
-        $item_output .= '<span class="menu-item-icon">';
-        $item_output .= '</span>';
-      }
+      // if ('mega_menu' === $item->object && $this->megamenu_icon) {
+      //   $item_output .= '<span class="menu-item-icon">';
+      //   $item_output .= '</span>';
+      // }
 
       $title = apply_filters('the_title', $item->title, $item->ID);
       $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
