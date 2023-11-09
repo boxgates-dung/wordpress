@@ -12,8 +12,8 @@ define('THEME_OPTIONS_DIR', get_template_directory() . '/includes/admin/');
 define('THEME_OPTIONS_SLUG', 'theme_options');
 
 // Modules
-require_once THEME_OPTIONS_DIR . 'inc/class-hf-builder.php';
-require_once THEME_OPTIONS_DIR . 'inc/class-mega-menu.php';
+require_once THEME_OPTIONS_DIR . 'classes/class-hf-builder.php';
+require_once THEME_OPTIONS_DIR . 'classes/class-mega-menu.php';
 
 // Add new menu theme option
 add_action('admin_menu', 'theme_options');

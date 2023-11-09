@@ -49,9 +49,9 @@ $tabs = array(
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['theme_options_general']) && wp_verify_nonce($_POST['theme_options_general'], 'theme_options_general_action')) {
-    $theme_options = [];
+    $theme_options = array();
 
-    $theme_options = [
+    $theme_options = array(
       // General
       'back_to_top_button'  => $_POST['theme_options_back_to_top_button'] ?? '',
 
@@ -61,24 +61,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       'footer_id'           => $_POST['theme_options_footer_id'] ?? '',
 
       // Blog
-      'blog_sidebar'        => $_POST['theme_options_blog_sidebar'] ?? '',
-      'post_row'            => $_POST['theme_options_post_row'] ?? '',
-    ];
+      'blog_archive_layout' => $_POST['theme_options_blog_archive_layout'] ?? '',
+      'blog_columns'        => $_POST['theme_options_blog_columns'] ?? '',
+      'layout_blog'         => $_POST['theme_options_layout_blog'] ?? '',
+    );
 
     update_option('theme_options_config', $theme_options);
   }
 }
 
-$theme_options_config = get_option('theme_options_config', [
+$theme_options_config = get_option('theme_options_config', array(
   'back_to_top_button'  => '',
 
   'top_header_id'       => '',
   'header_id'           => '',
   'footer_id'           => '',
 
-  'blog_sidebar'        => '',
-  'post_row'            => '',
-]);
+  'blog_archive_layout' => '',
+  'blog_columns'        => '',
+  'layout_blog'         => '',
+));
 ?>
 
 <div class="wrap theme-option-wrap">

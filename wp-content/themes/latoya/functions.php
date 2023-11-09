@@ -20,9 +20,10 @@ require_once LATOYA_THEME_DIR . 'includes/class-product-recently-viewed.php';
 require_once LATOYA_THEME_DIR . 'includes/ajax.php';
 require_once LATOYA_THEME_DIR . 'includes/template-functions.php';
 require_once LATOYA_THEME_DIR . 'includes/template-hooks.php';
-require_once LATOYA_THEME_DIR . 'includes/elementor/elementor.php';
 require_once LATOYA_THEME_DIR . 'includes/admin/index.php';
 
+require_once LATOYA_THEME_DIR . 'elementor/elementor.php';
+require_once LATOYA_THEME_DIR . 'includes/customize/customize.php';
 
 /**
  * Theme setup.
@@ -119,3 +120,8 @@ function woocommerce_body_classes($classes)
  * Remove breadcrumb in shop page
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20); /*remove breadcrumb*/
+
+add_filter( 'woocommerce_template_path', function( $path ){
+  $my_path = get_stylesheet_directory() . '/plugins/woocommerce/';
+  return file_exists( $my_path ) ? 'plugins/woocommerce/' : $path;
+} );
