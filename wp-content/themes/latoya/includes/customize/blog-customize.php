@@ -61,6 +61,17 @@ class Blog_Customize
         'full-width'      => esc_html__('Full Width', LATOYA_THEME_DOMAIN),
       ),
     ));
+
+
+    add_action( 'admin_menu', function() 
+{
+    add_theme_page(
+        'Custom customizer', 
+        'Custom customizer', 
+        'install_plugins', 
+        'customize.php?url=' . urlencode('http://EXAMPLE.COM/hello-world/') 
+    );
+});
   }
 }
 
