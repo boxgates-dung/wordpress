@@ -29,19 +29,22 @@ define('WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_DOMAIN', 'WOOCHECKOUT GATEWAY PAYPAL')
 add_action('plugins_loaded', 'woocheckout_gateway_paypal_load');
 function woocheckout_gateway_paypal_load()
 {
+  // Check plugin woocommerce is active
   if (!class_exists('WooCommerce')) {
     add_action('admin_notices', function () {
-      echo '<div class="error"><p><strong>' . sprintf(esc_html__('Stripe requires WooCommerce to be installed and active. You can download %s here.', 'woocommerce-gateway-stripe'), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>') . '</strong></p></div>';
+      echo '<div class="error"><p><strong>' . sprintf(esc_html__('Stripe requires WooCommerce to be installed and active. You can download %s here.', WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_DOMAIN), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>') . '</strong></p></div>';
     });
     return;
   }
 
+  // Check php version minimun
   if (version_compare(phpversion(), WOOCHECKOUT_GATEWAY_PAYPAL_MIN_PHP_VER, '<')) {
     add_action('admin_notices', function () {
-      echo '<div class="error"><p>' . sprintf(__('WooCommerce Stripe - The minimum PHP version required for this plugin is %1$s. You are running %2$s.', 'woocommerce-gateway-stripe'), 'sdsd', phpversion()) . '</p></div>';
+      echo '<div class="error"><p>' . sprintf(__('WooCommerce Stripe - The minimum PHP version required for this plugin is %1$s. You are running %2$s.', WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_DOMAIN), WOOCHECKOUT_GATEWAY_PAYPAL_MIN_PHP_VER, phpversion()) . '</p></div>';
     });
     return;
   }
+  // require_once WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_PATH . './update.php';
 
   // Loaded class
   require_once WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_PATH . './load.php';
