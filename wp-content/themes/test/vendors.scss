@@ -1,0 +1,186 @@
+$grid-gutter-width: 20px;
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+
+@import "~bootstrap/scss/mixins";
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/nav";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/spinners";
+
+@import '~swiper/css';
+@import '~swiper/css/navigation';
+@import '~swiper/css/thumbs';
+@import "~swiper/css/free-mode";
+@import "~select2/dist/css/select2";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min';
+
+// Helpers
+@import "~bootstrap/scss/bootstrap-utilities";
+@import "~bootstrap/scss/mixins";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+.demo {
+
+  font-family: 'Poppins';
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .screen-reader-text {
+    display: none;
+  }
+
+  .quantity {
+    width: 100px;
+    margin: 0 auto 10px;
+    justify-content: space-around;
+    display: inline-flex;
+    border: 1px solid #dddddd;
+    border-radius: 0;
+    line-height: 38px;
+
+    .input-text.qty {
+      margin: 0;
+      color: #000;
+      width: 28px;
+      height: 38px;
+      line-height: normal;
+      text-align: center;
+      padding: 11px 0;
+      background: none;
+      border-radius: 0;
+      border: none;
+      font-size: 13px;
+    }
+
+    .plus,
+    .minus {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  // ========================//
+
+  .page-title {
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    margin: 0 0 15px;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    tbody {
+      tr {
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+
+        td {
+          padding: 20px 10px;
+          border: 0;
+        }
+      }
+    }
+
+    .product-thumbnail {
+      padding-left: 0;
+
+      a {
+        aspect-ratio: 6/7.5;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .product-name {
+      a {
+        color: #111;
+        font-size: 14px;
+        text-transform: none;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      dl {
+        padding: 5px 0;
+        font-size: 11px;
+        font-style: italic;
+        margin: 0;
+
+        dt {
+          font-weight: 400;
+          display: inline-block;
+          margin-right: 4px;
+        }
+
+        dd, p {
+          display: inline-block;
+          margin: 0;
+        }
+      }
+
+      .price {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    table {
+      thead {
+        display: none;
+      }
+
+      .product-price,
+      .product-subtotal,
+      .product-remove {
+        display: none;
+      }
+
+      .product-thumbnail {
+        width: 70px;
+      }
+
+      .product-quantity {
+        padding-right: 0;
+        width: 80px;
+
+        a.remove {
+          display: block;
+          text-align: center;
+          font-size: 13px;
+          color: #444;
+        }
+      }
+    }
+  }
+}
