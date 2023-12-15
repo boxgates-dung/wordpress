@@ -44,7 +44,7 @@ function woocheckout_gateway_paypal_load()
     });
     return;
   }
-  // require_once WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_PATH . './update.php';
+  require_once WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_PATH . './update.php';
 
   // Loaded class
   require_once WOOCHECKOUT_GATEWAY_PAYPAL_PLUGIN_PATH . './load.php';

@@ -1,0 +1,195 @@
+.active-filter {
+    padding: 0;
+  
+    li {
+      list-style: none;
+  
+      &>a {
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 3px 0 0;
+        padding: 3px 22px 3px 6px;
+        background: #000;
+        color: #fff;
+        font-size: 11px;
+        position: relative;
+        transition: all 0.3s ease;
+  
+        &::before,
+        &::after {
+          border-top: 1px solid #fff;
+          content: "";
+          height: 0;
+          right: 6px;
+          position: absolute;
+          top: calc(50% - 0.5px);
+          width: 10px;
+        }
+  
+        &::before {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+  
+        &::after {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+  
+        &:hover {
+          background-color: #ff5f20;
+        }
+      }
+    }
+  }
+  
+  .shop-sidebar {
+    ul.variations-color {
+      li.color {
+        display: inline-block;
+        padding: 0;
+        margin: 0 5px 5px 0;
+        position: relative;
+        overflow: visible;
+        width: max-content;
+  
+        a {
+          padding: 0 5px 5px 0 !important;
+          overflow: visible !important;
+  
+          &::after,
+          &::before {
+            display: none;
+          }
+  
+          &:hover {
+            .tooltip-label {
+              visibility: visible;
+              opacity: 1;
+              bottom: calc(100% + 7px);
+            }
+          }
+        }
+  
+        .clrbox {
+          font-size: 11px;
+          display: block;
+          width: 20px;
+          height: 20px;
+          overflow: hidden;
+          border-radius: 0;
+          border: solid 1px #f8f8f8;
+        }
+  
+        .tooltip-label {
+          font-size: 11px;
+          text-transform: none;
+          line-height: 18px;
+          transition: all .2s ease-in-out;
+          visibility: hidden;
+          opacity: 0;
+          bottom: calc(100% + 20px);
+          background-color: #000;
+          color: #fff;
+          border-radius: 0;
+          padding: 0 5px;
+          white-space: nowrap;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+  
+          &::before {
+            content: "";
+            border: 5px solid transparent;
+            border-top-color: #000;
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            margin-left: -5px;
+          }
+        }
+  
+        &.chosen {
+          .clrbox {
+            position: relative;
+  
+            &::before {
+              color: #fff;
+              content: "x";
+              display: flex;
+              font-family: adorn-icons;
+              height: 100%;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+            }
+          }
+        }
+      }
+  
+      .count {
+        display: none;
+      }
+    }
+  
+    ul.variations-size {
+      li.size {
+        list-style: none;
+  
+        a {
+          padding: 0 5px 5px 0 !important;
+          overflow: visible !important;
+          font-weight: 400;
+          font-size: 12px;
+  
+          &::after,
+          &::before {
+            display: none;
+          }
+        }
+  
+        .count {
+          display: none;
+        }
+  
+        .checkbox {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin: 0 5px 0 0;
+          border: 1px solid rgba(68,68,68,.3);
+          background: #fff;
+          vertical-align: middle;
+          font-size: 11px;
+          font-weight: 400;
+          line-height: 16px;
+          text-align: center;
+        }
+  
+        &.chosen {
+          .checkbox {
+            color: #fff;
+            background-color: #444;
+  
+            &::before {
+              content: "\ea7f";
+              font-family: adorn-icons;
+  
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
