@@ -1,0 +1,237 @@
+$grid-gutter-width: 20px;
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+
+@import "~bootstrap/scss/mixins";
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/nav";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/spinners";
+
+@import '~swiper/css';
+@import '~swiper/css/navigation';
+@import '~swiper/css/thumbs';
+@import "~swiper/css/free-mode";
+@import "~select2/dist/css/select2";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min';
+
+// Helpers
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body.woocommerce-checkoutx {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px;
+
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.woocommerce-checkoutx {
+
+  .checkout-modern-bg {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+
+    .checkout-modern-bg-left {
+      width: 60%;
+    }
+
+    .checkout-modern-bg-right {
+      width: 40%;
+      background-color: #F9F9F9;
+    }
+  }
+
+  .checkout-modern-wrap {
+    --bs-gutter-x: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .checkout-modern-left-wrap {
+    width: 60%;
+    padding-right: 70px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .checkout-modern-right-wrap {
+    width: 40%;
+    padding-left: 70px;
+    padding-top: 65px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: #F9F9F9;
+      border-left: 1px solid #ececec;
+    }
+  }
+
+  .bc-modern {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 67px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #000;
+    }
+  }
+
+
+  .modern-wrap .flex-nowrap {
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    font-weight: 500;
+
+    a {
+      text-decoration: none;
+      color: #111;
+    }
+  }
+
+  .woocommerce-input-wrapper {
+    display: block;
+  }
+
+  .col-1,
+  .col-2 {
+    width: 100%;
+
+    h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .woocommerce-form__label-for-checkbox {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .input-checkbox {
+        width: auto;
+      }
+    }
+  }
+
+  .form-row {
+    label {
+      margin-bottom: 5px;
+      color: #777;
+
+      .required {
+        color: red;
+      }
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: white;
+    font-family: inherit;
+    border: 1px solid #f1f1f1;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #333333;
+    display: block;
+    font-size: 100%;
+    margin: 0;
+    padding: 0.48276em;
+    height: 42px;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    .bc-modern {
+      padding: 0 15px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .checkout-modern-bg {
+      display: none;
+    }
+
+    .col-1,
+    .col-2,
+    .woocommerce-checkout-review-order-table,
+    .woocommerce-checkout-payment {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .woocommerce-checkout-payment {
+      margin-bottom: 0;
+    }
+
+    .checkout-modern-left-wrap,
+    .checkout-modern-right-wrap {
+      width: 100%;
+      padding: 0;
+      background-color: #f5f5f5;
+
+      &::before {
+        display: none;
+      }
+    }
+
+  }
+}
