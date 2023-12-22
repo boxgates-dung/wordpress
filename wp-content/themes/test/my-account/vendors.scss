@@ -1,0 +1,292 @@
+$grid-gutter-width: 20px;
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+
+@import "~bootstrap/scss/mixins";
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/nav";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/spinners";
+
+@import '~swiper/css';
+@import '~swiper/css/navigation';
+@import '~swiper/css/thumbs';
+@import "~swiper/css/free-mode";
+@import "~select2/dist/css/select2";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min';
+
+// Helpers
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body.woocommerce-accountx {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px;
+  color: #444;
+
+  .container {
+    max-width: 1200px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    color: #000;
+    font-size: 14px;
+    max-width: 100%;
+    padding: 0 15px;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid #dddddd;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    height: 44px;
+    padding: 0 15px;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.woocommerce-accountx {
+  .my-account-row {
+    --bs-gutter-x: 35px;
+  }
+
+  .woocommerce-MyAccount-navigation {
+    ul {
+      padding: 0;
+      margin: 0;
+      border: solid 1px #eee;
+
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &+li {
+          a {
+            border-top: solid 1px #eee;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: #444;
+          padding: 10px;
+          transition: all 0.3s ease;
+          display: block;
+          font-weight: 500;
+          letter-spacing: 1px;
+          border-color: #333;
+        }
+
+        &.is-active,
+        &:hover {
+          a {
+            color: #fff;
+            background-color: #333;
+            border-color: #333;
+          }
+        }
+      }
+    }
+
+    .woocommerce-MyAccount-navigation-link {
+      a::before {
+        font-family: "Font Awesome 6 Free";
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-rendering: auto;
+        font-size: 14px;
+        font-weight: 900;
+        margin-right: 6px;
+      }
+
+      &--dashboard a::before {
+        content: "\f624";
+      }
+
+      &--orders a::before {
+        content: "\f187";
+      }
+
+      &--downloads a::before {
+        content: "\f358";
+      }
+
+      &--edit-address a::before {
+        content: "\f3c5";
+      }
+
+      &--edit-account a::before {
+        content: "\f007";
+      }
+
+      &--customer-logout a::before {
+        content: "\f08b";
+      }
+    }
+  }
+
+  // .woocommerce-MyAccount-content {}
+
+  @include media-breakpoint-down(md) {
+    .my-account-row {
+      --bs-gutter-x: 10px;
+    }
+
+    .woocommerce-MyAccount-content {
+      margin-top: 20px;
+    }
+  }
+
+
+  // == USER AUTH == //
+  .user-auth {
+    margin: 0 auto 60px;
+    max-width: 450px;
+    overflow: hidden;
+    position: relative;
+
+    .login-form,
+    .register-form {
+      padding: 40px;
+      transition: all .4s ease-in-out;
+      width: 100%;
+      top: 0;
+      border: 1px solid #eeeeee;
+
+      &>h2 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .woocommerce-form-row {
+        margin-bottom: 20px;
+      }
+
+      .auth-switch-form {
+        text-align: center;
+        margin: 0;
+      }
+
+      .woocommerce-form__label-for-checkbox {
+        line-height: 0;
+
+        span {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            border: solid 1px #eee;
+            border-radius: 0;
+            margin-right: 5px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        input {
+          display: none;
+        }
+
+        input:checked+span {
+          &::before {
+            background-color: #111;
+            border-color: #111;
+          }
+
+          &::after {
+            position: absolute;
+            top: 1px;
+            left: 3px;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f00c";
+            color: #fff;
+            line-height: 16px;
+          }
+        }
+      }
+
+      .lost_password {
+        line-height: 0;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .login-form {
+      left: 0;
+      position: relative;
+    }
+
+    .register-form {
+      left: 100%;
+      position: absolute;
+    }
+
+    &.active {
+      .login-form {
+        left: -100%;
+        position: absolute;
+      }
+
+      .register-form {
+        left: 0;
+        position: relative;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+
+      .login-form,
+      .register-form {
+        border: none;
+        padding: 10px;
+      }
+    }
+  }
+
+}
