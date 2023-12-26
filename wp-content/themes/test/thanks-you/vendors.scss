@@ -1,0 +1,111 @@
+$grid-gutter-width: 20px;
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+
+@import "~bootstrap/scss/mixins";
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/nav";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/spinners";
+
+@import '~swiper/css';
+@import '~swiper/css/navigation';
+@import '~swiper/css/thumbs';
+@import "~swiper/css/free-mode";
+@import "~select2/dist/css/select2";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min';
+
+// Helpers
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body.woocommerce-checkoutx {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px;
+
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.woocommerce-checkoutx {
+
+  .product-gallery,
+  .product-sub-gallery {
+    overflow: hidden;
+    position: relative;
+    max-width: 480px;
+    padding: 0;
+  }
+
+
+  .product-img--main {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 5/6;
+    float: left;
+  }
+
+  .product-img--main__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    cursor: zoom-in;
+  }
+
+  .product-sub-gallery {
+    .swiper-slide {
+      aspect-ratio: 1/1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .toggle-footer-links {
+    @include media-breakpoint-down(md) {
+      &>* {
+        display: none;
+      }
+
+      .title {
+        display: block;
+      }
+
+      .title.active+* {
+        display: block;
+      }
+    }
+  }
+}
