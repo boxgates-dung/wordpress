@@ -1,0 +1,30 @@
+{
+  "name": "zwp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch assets/src/scss/styles.scss:assets/dist/css/styles.min.css --style compressed",
+    "sass:build": "sass assets/src/scss/styles.scss:assets/dist/css/styles.min.css --style compressed --no-source-map",
+    "js:watch": "browserify assets/src/js/index.js --standalone assets/src/js -o assets/dist/js/app.min.js --debug --verbose -t [ babelify --presets [ @babel/preset-env ] ]",
+    "js:build": "browserify assets/src/js/index.js && uglifyjs assets/src/js/index.js -o assets/dist/js/app.min.js",
+    "watch": "npm run js:watch && npm run sass:watch",
+    "build": "npm run js:build && npm run sass:build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "babelify": "^10.0.0",
+    "nodemon": "^3.0.2",
+    "sass": "^1.69.5",
+    "uglify-js": "^3.17.4",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "grapesjs": "^0.21.8",
+    "grapesjs-mjml": "^1.0.5"
+  }
+}
