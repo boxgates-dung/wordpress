@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "custom.css";
+@import "editor-style.css";
+
+/* Components */
+@import "components/alert.css";
+@import "components/form.css";
+@import "components/navbar.css";
+@import "components/table.css";
